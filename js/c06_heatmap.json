@@ -1,0 +1,281 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {
+    "text": "Bush walking peaks at 35 to 44 and holds to 64. Running falls away after 34.",
+    "subtitle": "Participation in each age band relative to the activity's overall rate. Darker green means that age group is over-represented.",
+    "offset": 79
+  },
+  "width": "container",
+  "height": {
+    "step": 30
+  },
+  "data": {
+    "url": "data/c06_heatmap_age_profile.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "activity_order": "number",
+        "group_order": "number",
+        "rate_pct": "number",
+        "activity_total_pct": "number",
+        "index_vs_activity_total": "number"
+      }
+    }
+  },
+  "transform": [
+    {
+      "filter": "datum.activity_total_pct >= 0.7"
+    },
+    {
+      "calculate": "datum.rate_pct >= 10 ? format(datum.rate_pct, '.0f') + '%' : format(datum.rate_pct, '.1f') + '%'",
+      "as": "label"
+    },
+    {
+      "calculate": "format(datum.index_vs_activity_total, '.2f') + 'x the activity average'",
+      "as": "index_txt"
+    },
+    {
+      "calculate": "format(datum.activity_total_pct, '.1f') + '%'",
+      "as": "total_txt"
+    },
+    {
+      "calculate": "replace(datum.group, '-', ' to ')",
+      "as": "age_label"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "age_label",
+      "type": "ordinal",
+      "sort": [
+        "15 to 17",
+        "18 to 24",
+        "25 to 34",
+        "35 to 44",
+        "45 to 54",
+        "55 to 64",
+        "65+"
+      ],
+      "axis": {
+        "orient": "top",
+        "title": "Age band",
+        "labelAngle": 0,
+        "ticks": false,
+        "domain": false,
+        "labelColor": "#1d1d1f",
+        "labelPadding": 8
+      },
+      "scale": {
+        "domain": [
+          "15 to 17",
+          "18 to 24",
+          "25 to 34",
+          "35 to 44",
+          "45 to 54",
+          "55 to 64",
+          "65+"
+        ]
+      }
+    },
+    "y": {
+      "field": "activity_label",
+      "type": "ordinal",
+      "sort": {
+        "field": "activity_order"
+      },
+      "axis": {
+        "title": null,
+        "ticks": false,
+        "domain": false,
+        "labelPadding": 12,
+        "labelColor": {
+          "expr": "indexof(['Walking', 'Running', 'Cycling', 'Swimming', 'Gym and fitness', 'Football (soccer)'], datum.value) >= 0 ? '#8e8e93' : '#1d1d1f'"
+        }
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rect",
+        "stroke": "#ffffff",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "color": {
+          "field": "index_vs_activity_total",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0.4,
+              1,
+              1.6
+            ],
+            "range": [
+              "#762a83",
+              "#f5f5f7",
+              "#2f6f4e"
+            ],
+            "clamp": true,
+            "interpolate": "lab"
+          },
+          "legend": {
+            "title": "Times the activity's overall rate",
+            "orient": "none",
+            "values": [
+              0.4,
+              0.7,
+              1,
+              1.3,
+              1.6
+            ],
+            "labelExpr": "format(datum.value, '.1f') + 'x'",
+            "gradientLength": 260,
+            "legendX": -155,
+            "legendY": -105
+          }
+        },
+        "tooltip": [
+          {
+            "field": "activity_label",
+            "title": "Activity"
+          },
+          {
+            "field": "age_label",
+            "title": "Age band"
+          },
+          {
+            "field": "label",
+            "title": "Share of this age band"
+          },
+          {
+            "field": "total_txt",
+            "title": "All adults"
+          },
+          {
+            "field": "index_txt",
+            "title": "Relative"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 11
+      },
+      "encoding": {
+        "text": {
+          "field": "label"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.index_vs_activity_total > 1.3 || datum.index_vs_activity_total < 0.55",
+            "value": "#ffffff"
+          },
+          "value": "#1d1d1f"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.activity_label == 'Bush walking' && datum.group == '25-34'"
+        },
+        {
+          "calculate": "'55 to 64'",
+          "as": "x_end"
+        }
+      ],
+      "mark": {
+        "type": "rect",
+        "fill": null,
+        "stroke": "#1d1d1f",
+        "strokeWidth": 2,
+        "cornerRadius": 2
+      },
+      "encoding": {
+        "x": {
+          "field": "age_label",
+          "type": "ordinal",
+          "sort": [
+            "15 to 17",
+            "18 to 24",
+            "25 to 34",
+            "35 to 44",
+            "45 to 54",
+            "55 to 64",
+            "65+"
+          ],
+          "bandPosition": 0
+        },
+        "x2": {
+          "field": "x_end",
+          "bandPosition": 1
+        },
+        "y": {
+          "field": "activity_label",
+          "type": "ordinal",
+          "sort": {
+            "field": "activity_order"
+          },
+          "bandPosition": 0
+        },
+        "y2": {
+          "field": "activity_label",
+          "bandPosition": 1
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.activity_label == 'Running' && datum.group == '55-64'"
+        },
+        {
+          "calculate": "'65+'",
+          "as": "x_end"
+        }
+      ],
+      "mark": {
+        "type": "rect",
+        "fill": null,
+        "stroke": "#1d1d1f",
+        "strokeWidth": 2,
+        "cornerRadius": 2
+      },
+      "encoding": {
+        "x": {
+          "field": "age_label",
+          "type": "ordinal",
+          "sort": [
+            "15 to 17",
+            "18 to 24",
+            "25 to 34",
+            "35 to 44",
+            "45 to 54",
+            "55 to 64",
+            "65+"
+          ],
+          "bandPosition": 0
+        },
+        "x2": {
+          "field": "x_end",
+          "bandPosition": 1
+        },
+        "y": {
+          "field": "activity_label",
+          "type": "ordinal",
+          "sort": {
+            "field": "activity_order"
+          },
+          "bandPosition": 0
+        },
+        "y2": {
+          "field": "activity_label",
+          "bandPosition": 1
+        }
+      }
+    }
+  ]
+}

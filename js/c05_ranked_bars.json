@@ -1,0 +1,219 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {
+    "text": "Bush walking is 3rd. The next nature activity, surfing, is 19th.",
+    "subtitle": "The 25 most popular physical activities for adults: share who took part in the 12 months to December 2025.",
+    "offset": 45
+  },
+  "width": "container",
+  "height": {
+    "step": 22
+  },
+  "data": {
+    "url": "data/c05_strip_all_activities.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "category_order": "number",
+        "rate_pct": "number",
+        "participants": "number",
+        "rank_in_region": "number"
+      }
+    }
+  },
+  "transform": [
+    {
+      "calculate": "(datum.nature_based === true || datum.nature_based === 'True') ? 'Nature-based activity' : 'Other activity'",
+      "as": "kind"
+    },
+    {
+      "joinaggregate": [
+        {
+          "op": "count",
+          "as": "n_activities"
+        }
+      ]
+    },
+    {
+      "window": [
+        {
+          "op": "row_number",
+          "as": "rank"
+        }
+      ],
+      "sort": [
+        {
+          "field": "rate_pct",
+          "order": "descending"
+        }
+      ]
+    },
+    {
+      "filter": "datum.rank <= 25"
+    },
+    {
+      "calculate": "datum.rank + '. ' + datum.activity_label",
+      "as": "row_label"
+    },
+    {
+      "calculate": "(datum.rate_pct < 1 ? format(datum.rate_pct, '.2f') : format(datum.rate_pct, '.1f')) + '%'",
+      "as": "rate_txt"
+    },
+    {
+      "calculate": "format(datum.participants, ',')",
+      "as": "people_txt"
+    },
+    {
+      "calculate": "datum.rank + ' of ' + datum.n_activities",
+      "as": "rank_txt"
+    },
+    {
+      "calculate": "datum.rate_pct >= 10 ? format(datum.rate_pct, '.0f') + '%' : format(datum.rate_pct, '.1f') + '%'",
+      "as": "value_label"
+    }
+  ],
+  "encoding": {
+    "y": {
+      "field": "row_label",
+      "type": "nominal",
+      "sort": {
+        "field": "rank",
+        "op": "min",
+        "order": "ascending"
+      },
+      "axis": {
+        "title": null,
+        "ticks": false,
+        "domain": false,
+        "labelPadding": 10,
+        "labelColor": {
+          "expr": "(indexof(datum.value, 'Bush walking') >= 0 || indexof(datum.value, 'Surfing') >= 0 || indexof(datum.value, 'Fishing') >= 0 || indexof(datum.value, 'Canoeing and kayaking') >= 0) ? '#1d1d1f' : '#6e6e73'"
+        }
+      }
+    },
+    "x": {
+      "field": "rate_pct",
+      "type": "quantitative",
+      "scale": {
+        "domain": [
+          0,
+          55
+        ]
+      },
+      "axis": {
+        "title": "Share of adults who took part",
+        "values": [
+          0,
+          10,
+          20,
+          30,
+          40,
+          50
+        ],
+        "labelExpr": "datum.value + '%'",
+        "grid": true
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "size": 14,
+        "cornerRadiusEnd": 2
+      },
+      "encoding": {
+        "color": {
+          "field": "kind",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Nature-based activity",
+              "Other activity"
+            ],
+            "range": [
+              "#2f6f4e",
+              "#8e8e93"
+            ]
+          },
+          "legend": {
+            "title": null,
+            "orient": "none",
+            "legendX": -163,
+            "legendY": -28
+          }
+        },
+        "tooltip": [
+          {
+            "field": "activity_label",
+            "title": "Activity"
+          },
+          {
+            "field": "rate_txt",
+            "title": "Share of adults"
+          },
+          {
+            "field": "people_txt",
+            "title": "Estimated participants"
+          },
+          {
+            "field": "rank_txt",
+            "title": "Rank"
+          },
+          {
+            "field": "category",
+            "title": "Category"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.kind == 'Nature-based activity'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 6,
+        "fontSize": 12,
+        "fontWeight": 600,
+        "color": "#2f6f4e"
+      },
+      "encoding": {
+        "text": {
+          "field": "value_label"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.activity_label == 'Golf'"
+        },
+        {
+          "calculate": "9",
+          "as": "ax"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "fontSize": 11,
+        "color": "#6e6e73"
+      },
+      "encoding": {
+        "x": {
+          "field": "ax",
+          "type": "quantitative"
+        },
+        "text": {
+          "value": "Ranks 4 to 18 hold no nature activity"
+        }
+      }
+    }
+  ]
+}

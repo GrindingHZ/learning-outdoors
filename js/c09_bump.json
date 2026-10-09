@@ -1,0 +1,274 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {
+    "text": "Being outdoors is the second reason to exercise by 65, up from fifth at 15",
+    "subtitle": [
+      "Reasons given by adults who participated in 2025, ranked within each age band. The top line is the most common reason.",
+      "Shares are shown for being outdoors: it climbs from 5th to 2nd while its share rises from 47% to 53%."
+    ]
+  },
+  "width": "container",
+  "height": 360,
+  "data": {
+    "url": "data/c09_bump_motivations_by_age.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "age_order": "number",
+        "share_pct": "number",
+        "rank": "number"
+      }
+    }
+  },
+  "transform": [
+    {
+      "calculate": "datum.motivation == 'To be outdoors' ? 'outdoors' : (datum.motivation == 'Fun' || datum.motivation == 'Health and fitness') ? 'mid' : 'rest'",
+      "as": "tier"
+    },
+    {
+      "calculate": "format(datum.share_pct, '.1f') + '% of participants'",
+      "as": "share_txt"
+    },
+    {
+      "calculate": "datum.rank == 1 ? '1st' : datum.rank == 2 ? '2nd' : datum.rank == 3 ? '3rd' : datum.rank + 'th'",
+      "as": "rank_txt"
+    },
+    {
+      "calculate": "replace(datum.age_band, '-', ' to ')",
+      "as": "age_label"
+    },
+    {
+      "calculate": "datum.motivation == 'To be outdoors' ? datum.motivation + ' ' + format(datum.share_pct, '.0f') + '%' : datum.motivation",
+      "as": "end_label"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "age_order",
+      "type": "quantitative",
+      "scale": {
+        "domain": [
+          -1.25,
+          7.25
+        ]
+      },
+      "axis": {
+        "title": "Age band",
+        "values": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "labelExpr": "['15 to 17', '18 to 24', '25 to 34', '35 to 44', '45 to 54', '55 to 64', '65+'][datum.value]",
+        "labelColor": "#1d1d1f",
+        "grid": true,
+        "gridColor": "#f2f2f5",
+        "ticks": false,
+        "domain": false
+      }
+    },
+    "y": {
+      "field": "rank",
+      "type": "quantitative",
+      "scale": {
+        "domain": [
+          0.6,
+          8.4
+        ],
+        "reverse": true
+      },
+      "axis": null
+    },
+    "color": {
+      "field": "tier",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "outdoors",
+          "mid",
+          "rest"
+        ],
+        "range": [
+          "#2f6f4e",
+          "#8e8e93",
+          "#d2d2d7"
+        ]
+      },
+      "legend": null
+    }
+  },
+  "layer": [
+    {
+      "params": [
+        {
+          "name": "hover",
+          "select": {
+            "type": "point",
+            "fields": [
+              "motivation"
+            ],
+            "on": "mouseover",
+            "clear": "mouseout"
+          }
+        }
+      ],
+      "mark": {
+        "type": "line",
+        "interpolate": "monotone",
+        "strokeWidth": 3
+      },
+      "encoding": {
+        "detail": {
+          "field": "motivation"
+        },
+        "order": {
+          "field": "age_order"
+        },
+        "opacity": {
+          "condition": {
+            "param": "hover",
+            "empty": true,
+            "value": 1
+          },
+          "value": 0.2
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "circle",
+        "size": 110,
+        "stroke": "#ffffff",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "opacity": {
+          "condition": {
+            "param": "hover",
+            "empty": true,
+            "value": 1
+          },
+          "value": 0.2
+        },
+        "tooltip": [
+          {
+            "field": "motivation",
+            "title": "Reason"
+          },
+          {
+            "field": "age_label",
+            "title": "Age band"
+          },
+          {
+            "field": "rank_txt",
+            "title": "Rank"
+          },
+          {
+            "field": "share_txt",
+            "title": "Share"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.age_order == 0"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -12,
+        "fontSize": 12
+      },
+      "encoding": {
+        "text": {
+          "field": "end_label"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.tier == 'outdoors'",
+            "value": "#2f6f4e"
+          },
+          "value": "#6e6e73"
+        },
+        "opacity": {
+          "condition": {
+            "param": "hover",
+            "empty": true,
+            "value": 1
+          },
+          "value": 0.2
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.age_order == 6"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 12,
+        "fontSize": 12
+      },
+      "encoding": {
+        "text": {
+          "field": "end_label"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.tier == 'outdoors'",
+            "value": "#2f6f4e"
+          },
+          "value": "#6e6e73"
+        },
+        "opacity": {
+          "condition": {
+            "param": "hover",
+            "empty": true,
+            "value": 1
+          },
+          "value": 0.2
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.motivation == 'To be outdoors' && datum.age_order == 4"
+        },
+        {
+          "calculate": "3.5",
+          "as": "ry"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "fontSize": 11,
+        "color": "#6e6e73"
+      },
+      "encoding": {
+        "y": {
+          "field": "ry",
+          "type": "quantitative"
+        },
+        "text": {
+          "value": "Steady in 4th place from 35 to 64"
+        },
+        "color": {
+          "value": "#6e6e73"
+        }
+      }
+    }
+  ]
+}

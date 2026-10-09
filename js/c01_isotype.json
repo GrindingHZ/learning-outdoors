@@ -1,0 +1,161 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {
+    "text": "Out of every 100: 17 adults bush walk, 1 child in an organised group, 21 students on field trips",
+    "subtitle": [
+      "Each figure is one person.",
+      "Adults: bush walked in 2025. Children aged 0 to 14: bush walked in an organised group outside school hours.",
+      "15 year olds: say their teacher takes them on field trips to investigate environmental issues (PISA 2025)."
+    ]
+  },
+  "data": {
+    "url": "data/c01_isotype_argument.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "panel_order": "number",
+        "person": "number",
+        "col": "number",
+        "row": "number",
+        "people_per_100": "number",
+        "rate_pct": "number"
+      }
+    }
+  },
+  "transform": [
+    {
+      "calculate": "datum.active === true || datum.active === 'True'",
+      "as": "is_active"
+    },
+    {
+      "calculate": "datum.is_active ? 'Yes' : 'No'",
+      "as": "state"
+    },
+    {
+      "calculate": "(datum.rate_pct < 1 ? format(datum.rate_pct, '.2f') : format(datum.rate_pct, '.1f')) + '%'",
+      "as": "rate_txt"
+    },
+    {
+      "calculate": "datum.panel == 'Adults' ? '17.5% of adults, about 3.95 million people' : datum.panel == 'Children' ? '1.1% of children, about 1 in 90' : datum.panel == '15 year olds' ? '20.8% in Australia, against 31.1% across the OECD' : ''",
+      "as": "note"
+    }
+  ],
+  "facet": {
+    "field": "header",
+    "type": "nominal",
+    "sort": {
+      "field": "panel_order",
+      "op": "min"
+    },
+    "header": {
+      "title": null,
+      "labelFontSize": 14,
+      "labelFontWeight": 600,
+      "labelAnchor": "start",
+      "labelAlign": "left",
+      "labelPadding": 8
+    }
+  },
+  "columns": 3,
+  "spacing": {
+    "column": 24
+  },
+  "spec": {
+    "width": 273,
+    "height": 225,
+    "encoding": {
+      "x": {
+        "field": "col",
+        "type": "quantitative",
+        "axis": null,
+        "scale": {
+          "domain": [
+            -0.5,
+            9.5
+          ]
+        }
+      },
+      "y": {
+        "field": "row",
+        "type": "quantitative",
+        "axis": null,
+        "scale": {
+          "domain": [
+            -0.5,
+            11.4
+          ],
+          "reverse": true
+        }
+      }
+    },
+    "layer": [
+      {
+        "mark": {
+          "type": "point",
+          "filled": true,
+          "size": 300,
+          "opacity": 1,
+          "shape": "M0 -0.8333a0.25 0.25 0 1 1 0 0.5 0.25 0.25 0 0 1 0 -0.5zm-0.3333 0.6667h0.6667a0.0833 0.0833 0 0 1 0.0833 0.0833v0.5h-0.1667v0.5833h-0.5v-0.5833H-0.4167v-0.5a0.0833 0.0833 0 0 1 0.0833 -0.0833z"
+        },
+        "encoding": {
+          "color": {
+            "field": "state",
+            "type": "nominal",
+            "scale": {
+              "domain": [
+                "Yes",
+                "No"
+              ],
+              "range": [
+                "#2f6f4e",
+                "#e5e5ea"
+              ]
+            },
+            "legend": null
+          },
+          "tooltip": [
+            {
+              "field": "panel",
+              "title": "Group"
+            },
+            {
+              "field": "people_per_100",
+              "title": "People in every 100"
+            },
+            {
+              "field": "rate_txt",
+              "title": "Exact share"
+            },
+            {
+              "field": "measure",
+              "title": "Measure"
+            }
+          ]
+        }
+      },
+      {
+        "transform": [
+          {
+            "filter": "datum.person == 0"
+          }
+        ],
+        "mark": {
+          "type": "text",
+          "align": "left",
+          "baseline": "middle",
+          "fontSize": 11,
+          "color": "#6e6e73",
+          "dx": -13
+        },
+        "encoding": {
+          "y": {
+            "datum": 10.9
+          },
+          "text": {
+            "field": "note"
+          }
+        }
+      }
+    ]
+  }
+}

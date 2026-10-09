@@ -1,0 +1,415 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {
+    "text": "Most nature activities lean male. Bush walking and equestrian lean female.",
+    "subtitle": [
+      "Share of adults who did the activity in 2025. Women to the right, men to the left.",
+      "Bush walking's bars are cut short so the smaller activities stay readable; its values are labelled."
+    ]
+  },
+  "data": {
+    "url": "data/c07_butterfly_gender.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "female_minus_male_pts": "number",
+        "rate_pct": "number",
+        "signed_rate_pct": "number"
+      }
+    }
+  },
+  "transform": [
+    {
+      "calculate": "(datum.rate_pct < 1 ? format(datum.rate_pct, '.2f') : format(datum.rate_pct, '.1f')) + '%'",
+      "as": "rate_txt"
+    },
+    {
+      "calculate": "(datum.female_minus_male_pts > 0 ? '+' : '') + format(datum.female_minus_male_pts, '.1f') + ' points'",
+      "as": "gap_txt"
+    },
+    {
+      "calculate": "min(datum.rate_pct, 2)",
+      "as": "shown"
+    },
+    {
+      "calculate": "datum.rate_pct > 2",
+      "as": "is_cut"
+    },
+    {
+      "calculate": "1.66",
+      "as": "gap_from"
+    },
+    {
+      "calculate": "1.74",
+      "as": "gap_to"
+    },
+    {
+      "calculate": "format(datum.rate_pct, '.1f') + '%'",
+      "as": "value_label"
+    }
+  ],
+  "spacing": 10,
+  "resolve": {
+    "scale": {
+      "y": "shared"
+    }
+  },
+  "hconcat": [
+    {
+      "title": {
+        "text": "Men",
+        "anchor": "end",
+        "color": "#8e8e93",
+        "fontSize": 14,
+        "fontWeight": 600,
+        "offset": 10
+      },
+      "width": 316,
+      "height": {
+        "step": 27
+      },
+      "transform": [
+        {
+          "filter": "datum.gender == 'Men'"
+        }
+      ],
+      "encoding": {
+        "y": {
+          "field": "activity_label",
+          "type": "nominal",
+          "sort": {
+            "field": "female_minus_male_pts",
+            "op": "max",
+            "order": "descending"
+          },
+          "axis": null
+        }
+      },
+      "layer": [
+        {
+          "mark": {
+            "type": "bar",
+            "size": 16,
+            "color": "#8e8e93",
+            "cornerRadiusEnd": 2
+          },
+          "encoding": {
+            "x": {
+              "field": "shown",
+              "type": "quantitative",
+              "scale": {
+                "domain": [
+                  0,
+                  2
+                ],
+                "reverse": true
+              },
+              "axis": {
+                "title": null,
+                "values": [
+                  0,
+                  0.5,
+                  1,
+                  1.5,
+                  2
+                ],
+                "labelExpr": "datum.value + '%'",
+                "grid": true
+              }
+            },
+            "tooltip": [
+              {
+                "field": "activity_label",
+                "title": "Activity"
+              },
+              {
+                "field": "gender",
+                "title": "Gender"
+              },
+              {
+                "field": "rate_txt",
+                "title": "Share of adults"
+              },
+              {
+                "field": "gap_txt",
+                "title": "Women minus men"
+              }
+            ]
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum.is_cut"
+            }
+          ],
+          "mark": {
+            "type": "bar",
+            "size": 22,
+            "color": "#f7f9f8"
+          },
+          "encoding": {
+            "x": {
+              "field": "gap_from",
+              "type": "quantitative"
+            },
+            "x2": {
+              "field": "gap_to"
+            }
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum.is_cut"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "right",
+            "baseline": "middle",
+            "dx": -6,
+            "fontSize": 12,
+            "fontWeight": 600,
+            "color": "#1d1d1f"
+          },
+          "encoding": {
+            "x": {
+              "field": "shown",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "value_label"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "width": 170,
+      "height": {
+        "step": 27
+      },
+      "transform": [
+        {
+          "filter": "datum.gender == 'Women'"
+        }
+      ],
+      "encoding": {
+        "y": {
+          "field": "activity_label",
+          "type": "nominal",
+          "sort": {
+            "field": "female_minus_male_pts",
+            "op": "max",
+            "order": "descending"
+          },
+          "axis": null
+        }
+      },
+      "layer": [
+        {
+          "transform": [
+            {
+              "filter": "datum.activity_label != 'Bush walking'"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "center",
+            "baseline": "middle",
+            "fontSize": 12,
+            "color": "#1d1d1f"
+          },
+          "encoding": {
+            "x": {
+              "value": 85
+            },
+            "text": {
+              "field": "activity_label"
+            }
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum.activity_label == 'Bush walking'"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "center",
+            "baseline": "middle",
+            "fontSize": 12,
+            "color": "#1d1d1f",
+            "fontWeight": 600
+          },
+          "encoding": {
+            "x": {
+              "value": 85
+            },
+            "text": {
+              "field": "activity_label"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "text": "Women",
+        "anchor": "start",
+        "color": "#2f6f4e",
+        "fontSize": 14,
+        "fontWeight": 600,
+        "offset": 10
+      },
+      "width": 316,
+      "height": {
+        "step": 27
+      },
+      "transform": [
+        {
+          "filter": "datum.gender == 'Women'"
+        }
+      ],
+      "encoding": {
+        "y": {
+          "field": "activity_label",
+          "type": "nominal",
+          "sort": {
+            "field": "female_minus_male_pts",
+            "op": "max",
+            "order": "descending"
+          },
+          "axis": null
+        }
+      },
+      "layer": [
+        {
+          "mark": {
+            "type": "bar",
+            "size": 16,
+            "color": "#2f6f4e",
+            "cornerRadiusEnd": 2
+          },
+          "encoding": {
+            "x": {
+              "field": "shown",
+              "type": "quantitative",
+              "scale": {
+                "domain": [
+                  0,
+                  2
+                ]
+              },
+              "axis": {
+                "title": null,
+                "values": [
+                  0,
+                  0.5,
+                  1,
+                  1.5,
+                  2
+                ],
+                "labelExpr": "datum.value + '%'",
+                "grid": true
+              }
+            },
+            "tooltip": [
+              {
+                "field": "activity_label",
+                "title": "Activity"
+              },
+              {
+                "field": "gender",
+                "title": "Gender"
+              },
+              {
+                "field": "rate_txt",
+                "title": "Share of adults"
+              },
+              {
+                "field": "gap_txt",
+                "title": "Women minus men"
+              }
+            ]
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum.is_cut"
+            }
+          ],
+          "mark": {
+            "type": "bar",
+            "size": 22,
+            "color": "#f7f9f8"
+          },
+          "encoding": {
+            "x": {
+              "field": "gap_from",
+              "type": "quantitative"
+            },
+            "x2": {
+              "field": "gap_to"
+            }
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum.is_cut"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "middle",
+            "dx": 6,
+            "fontSize": 12,
+            "fontWeight": 600,
+            "color": "#1d1d1f"
+          },
+          "encoding": {
+            "x": {
+              "field": "shown",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "value_label"
+            }
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum.activity_label == 'Equestrian'"
+            },
+            {
+              "calculate": "0.82",
+              "as": "nx"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "middle",
+            "fontSize": 11,
+            "color": "#6e6e73"
+          },
+          "encoding": {
+            "x": {
+              "field": "nx",
+              "type": "quantitative"
+            },
+            "text": {
+              "value": "Five times as many women as men"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

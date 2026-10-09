@@ -1,0 +1,264 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {
+    "text": "Nature is what adults do. Football is what children do.",
+    "subtitle": "Adults: any participation. Children: organised activity outside school hours only. Each step along the axis is ten times more people.",
+    "offset": 51
+  },
+  "width": "container",
+  "height": {
+    "step": 26
+  },
+  "data": {
+    "url": "data/c08_dumbbell_adults_vs_children.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "adult_pct": "number",
+        "child_pct": "number",
+        "ratio_adult_to_child": "number"
+      }
+    }
+  },
+  "transform": [
+    {
+      "filter": "datum.adult_pct > 0 && datum.child_pct > 0"
+    },
+    {
+      "calculate": "(datum.adult_pct < 1 ? format(datum.adult_pct, '.2f') : format(datum.adult_pct, '.1f')) + '%'",
+      "as": "adult_txt"
+    },
+    {
+      "calculate": "(datum.child_pct < 1 ? format(datum.child_pct, '.2f') : format(datum.child_pct, '.1f')) + '%'",
+      "as": "child_txt"
+    }
+  ],
+  "encoding": {
+    "y": {
+      "field": "activity_label",
+      "type": "nominal",
+      "sort": {
+        "field": "adult_pct",
+        "op": "max",
+        "order": "descending"
+      },
+      "axis": {
+        "title": null,
+        "ticks": false,
+        "domain": false,
+        "labelPadding": 12,
+        "labelColor": {
+          "expr": "datum.value == 'Swimming' || datum.value == 'Football (soccer)' ? '#8e8e93' : '#1d1d1f'"
+        }
+      }
+    },
+    "x": {
+      "type": "quantitative",
+      "scale": {
+        "type": "log",
+        "domain": [
+          0.01,
+          70
+        ]
+      },
+      "axis": {
+        "title": "Share of the population who took part",
+        "values": [
+          0.01,
+          0.1,
+          1,
+          10
+        ],
+        "labelExpr": "datum.value == 0.01 ? '1 in 10,000' : datum.value == 0.1 ? '1 in 1,000' : datum.value == 1 ? '1 in 100' : '1 in 10'",
+        "grid": true
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "strokeWidth": 2,
+        "color": "#c7c7cc"
+      },
+      "encoding": {
+        "x": {
+          "field": "child_pct"
+        },
+        "x2": {
+          "field": "adult_pct"
+        },
+        "opacity": {
+          "condition": {
+            "test": "datum.group == 'Reference'",
+            "value": 0.5
+          },
+          "value": 1
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "fold": [
+            "adult_pct",
+            "child_pct"
+          ],
+          "as": [
+            "cohort_key",
+            "pct"
+          ]
+        },
+        {
+          "calculate": "datum.cohort_key == 'adult_pct' ? 'Adults, any participation' : 'Children, organised outside school'",
+          "as": "cohort"
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "size": 140,
+        "stroke": "#ffffff",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "x": {
+          "field": "pct"
+        },
+        "color": {
+          "field": "cohort",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Adults, any participation",
+              "Children, organised outside school"
+            ],
+            "range": [
+              "#2f6f4e",
+              "#8e8e93"
+            ]
+          },
+          "legend": {
+            "title": null,
+            "orient": "none",
+            "labelLimit": 320,
+            "legendX": -157,
+            "legendY": -34
+          }
+        },
+        "opacity": {
+          "condition": {
+            "test": "datum.group == 'Reference'",
+            "value": 0.5
+          },
+          "value": 1
+        },
+        "tooltip": [
+          {
+            "field": "activity_label",
+            "title": "Activity"
+          },
+          {
+            "field": "adult_txt",
+            "title": "Adults"
+          },
+          {
+            "field": "child_txt",
+            "title": "Children (organised)"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "activity_label": "Bush walking",
+            "x": 1.11,
+            "t": "1.1% of children"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -11,
+        "fontSize": 12,
+        "fontWeight": 600,
+        "color": "#1d1d1f"
+      },
+      "encoding": {
+        "x": {
+          "field": "x"
+        },
+        "y": {
+          "field": "activity_label"
+        },
+        "text": {
+          "field": "t"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "activity_label": "Bush walking",
+            "x": 17.47,
+            "t": "17% of adults"
+          },
+          {
+            "activity_label": "Football (soccer)",
+            "x": 14.31,
+            "t": "14% of children"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 11,
+        "fontSize": 12,
+        "fontWeight": 600,
+        "color": "#1d1d1f"
+      },
+      "encoding": {
+        "x": {
+          "field": "x"
+        },
+        "y": {
+          "field": "activity_label"
+        },
+        "text": {
+          "field": "t"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.activity_label == 'Surf lifesaving'"
+        },
+        {
+          "calculate": "1.6",
+          "as": "ax"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "fontSize": 11,
+        "color": "#6e6e73"
+      },
+      "encoding": {
+        "x": {
+          "field": "ax",
+          "type": "quantitative"
+        },
+        "text": {
+          "value": "Children lead only here and in Scouts"
+        }
+      }
+    }
+  ]
+}

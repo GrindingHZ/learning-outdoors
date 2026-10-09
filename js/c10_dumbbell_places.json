@@ -1,0 +1,254 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {
+    "text": "Adults are active in public space. Children are active at the club.",
+    "subtitle": "Share of participants whose activity took place at each kind of place, 2025. People can name more than one.",
+    "offset": 51
+  },
+  "width": "container",
+  "height": {
+    "step": 34
+  },
+  "data": {
+    "url": "data/c10_dumbbell_places.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "adult_pct": "number",
+        "child_pct": "number",
+        "child_minus_adult_pts": "number"
+      }
+    }
+  },
+  "transform": [
+    {
+      "calculate": "format(datum.adult_pct, '.1f') + '%'",
+      "as": "adult_txt"
+    },
+    {
+      "calculate": "format(datum.child_pct, '.1f') + '%'",
+      "as": "child_txt"
+    },
+    {
+      "calculate": "(datum.child_minus_adult_pts > 0 ? '+' : '') + format(datum.child_minus_adult_pts, '.1f') + ' points'",
+      "as": "gap_txt"
+    }
+  ],
+  "encoding": {
+    "y": {
+      "field": "place_label",
+      "type": "nominal",
+      "sort": {
+        "field": "adult_pct",
+        "op": "max",
+        "order": "descending"
+      },
+      "axis": {
+        "title": null,
+        "ticks": false,
+        "domain": false,
+        "labelPadding": 12,
+        "labelColor": "#1d1d1f",
+        "labelLimit": 260
+      }
+    },
+    "x": {
+      "type": "quantitative",
+      "scale": {
+        "domain": [
+          0,
+          80
+        ]
+      },
+      "axis": {
+        "title": "Share of participants",
+        "values": [
+          0,
+          20,
+          40,
+          60
+        ],
+        "labelExpr": "datum.value + '%'",
+        "grid": true
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "strokeWidth": 2,
+        "color": "#c7c7cc"
+      },
+      "encoding": {
+        "x": {
+          "field": "child_pct"
+        },
+        "x2": {
+          "field": "adult_pct"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "fold": [
+            "adult_pct",
+            "child_pct"
+          ],
+          "as": [
+            "cohort_key",
+            "pct"
+          ]
+        },
+        {
+          "calculate": "datum.cohort_key == 'adult_pct' ? 'Adults, any participation' : 'Children, organised outside school'",
+          "as": "cohort"
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "size": 140,
+        "stroke": "#ffffff",
+        "strokeWidth": 1.5,
+        "opacity": 1
+      },
+      "encoding": {
+        "x": {
+          "field": "pct"
+        },
+        "color": {
+          "field": "cohort",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Adults, any participation",
+              "Children, organised outside school"
+            ],
+            "range": [
+              "#2f6f4e",
+              "#8e8e93"
+            ]
+          },
+          "legend": {
+            "title": null,
+            "orient": "none",
+            "labelLimit": 320,
+            "legendX": -218,
+            "legendY": -34
+          }
+        },
+        "tooltip": [
+          {
+            "field": "place_label",
+            "title": "Place"
+          },
+          {
+            "field": "adult_txt",
+            "title": "Adults"
+          },
+          {
+            "field": "child_txt",
+            "title": "Children (organised)"
+          },
+          {
+            "field": "gap_txt",
+            "title": "Children minus adults"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "place_label": "Public space (parks, beaches, trails)",
+            "x": 15.02,
+            "t": "15% of children"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -12,
+        "fontSize": 12,
+        "fontWeight": 600,
+        "color": "#1d1d1f"
+      },
+      "encoding": {
+        "x": {
+          "field": "x"
+        },
+        "y": {
+          "field": "place_label"
+        },
+        "text": {
+          "field": "t"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "place_label": "Public space (parks, beaches, trails)",
+            "x": 62.39,
+            "t": "62% of adults"
+          },
+          {
+            "place_label": "Sports club",
+            "x": 28.05,
+            "t": "28% of children"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 12,
+        "fontSize": 12,
+        "fontWeight": 600,
+        "color": "#1d1d1f"
+      },
+      "encoding": {
+        "x": {
+          "field": "x"
+        },
+        "y": {
+          "field": "place_label"
+        },
+        "text": {
+          "field": "t"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.place_label == 'School or university'"
+        },
+        {
+          "calculate": "32",
+          "as": "ax"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "fontSize": 11,
+        "color": "#6e6e73"
+      },
+      "encoding": {
+        "x": {
+          "field": "ax",
+          "type": "quantitative"
+        },
+        "text": {
+          "value": "Children's share is higher at clubs, schools and private venues"
+        }
+      }
+    }
+  ]
+}
