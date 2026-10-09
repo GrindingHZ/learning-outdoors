@@ -1,0 +1,63 @@
+{
+  "font": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+  "background": "transparent",
+  "padding": {
+    "left": 1,
+    "right": 2,
+    "top": 4,
+    "bottom": 4
+  },
+  "view": {
+    "stroke": null
+  },
+  "title": {
+    "fontSize": 18,
+    "fontWeight": 600,
+    "anchor": "start",
+    "color": "#1d1d1f",
+    "subtitleFontSize": 13,
+    "subtitleColor": "#6e6e73",
+    "subtitlePadding": 6,
+    "offset": 18
+  },
+  "axis": {
+    "labelFontSize": 12,
+    "labelColor": "#6e6e73",
+    "titleFontSize": 12,
+    "titleColor": "#86868b",
+    "titleFontWeight": 400,
+    "gridColor": "#ececf0",
+    "domainColor": "#d2d2d7",
+    "tickColor": "#d2d2d7",
+    "labelPadding": 6,
+    "titlePadding": 10
+  },
+  "legend": {
+    "labelFontSize": 12,
+    "labelColor": "#6e6e73",
+    "titleFontSize": 12,
+    "titleColor": "#86868b",
+    "titleFontWeight": 400,
+    "symbolSize": 90,
+    "orient": "top",
+    "direction": "horizontal",
+    "gradientLength": 220,
+    "gradientThickness": 10
+  },
+  "header": {
+    "labelFontSize": 13,
+    "labelColor": "#1d1d1f",
+    "labelFontWeight": 500,
+    "titleFontSize": 12
+  },
+  "range": {
+    "category": [
+      "#2f6f4e",
+      "#8e8e93",
+      "#d95f02",
+      "#9fc6b0",
+      "#c7c7cc",
+      "#1d1d1f"
+    ]
+  }
+}
