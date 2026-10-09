@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Learning Outdoors</title>
+  <meta name="description" content="Australians go into nature as adults. What happens before that? A data story built with Vega-Lite for FIT3179.">
+  <meta name="author" content="Henson Zein">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/vega@6.4.0/build/vega.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.3/build/vega-lite.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@7.2.0/build/vega-embed.min.js"></script>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <h1>Learning Outdoors</h1>
+    <p class="standfirst">Australians go into nature as adults. What happens before that?</p>
+    <p class="byline">Henson Zein, Monash FIT3179, October 2026</p>
+  </div>
+</header>
+
+<div class="page">
+
+  <figure class="chart overview">
+    <div id="c01" class="vis"></div>
+    <figcaption>AusPlay, Australian Sports Commission, January to December 2025 (adults and children). PISA 2025 Results (Volume I), OECD (15 year olds). Figures are rounded to whole people per 100.</figcaption>
+  </figure>
+
+  <section id="popular">
+    <div class="section-head">
+      <div class="lede">
+        <span class="section-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="4" r="2"/><path d="M11.5 22l1.5-7 3 3v4"/><path d="M13 15l1-6 3 3 2.5 1"/><path d="M14 9l-3.5 2-1 3.5"/><path d="M19.5 22V11"/></svg></span>
+        <h2>Bush walking is Australia's third most popular physical activity</h2>
+        <p>AusPlay is the Australian Sports Commission's national survey of physical activity. A person counts as a participant if they did the activity at least once in the previous 12 months.</p>
+      </div>
+      <aside class="pull"><span class="num">3.95m</span><span class="lbl">adults bush walked in 2025, behind only walking and the gym</span></aside>
+    </div>
+    <p>Only walking and the gym reach more people. Rank every activity AusPlay measures and the next nature activity, surfing, does not appear until 19th, with about thirteen times fewer people.</p>
+    <figure class="chart">
+      <div id="c05" class="vis"></div>
+      <figcaption>AusPlay, Australian Sports Commission, January to December 2025. Adults aged 15 and over. The 25 most popular of 127 activities with a reported estimate; each of the other 102 involves fewer than 1 in 100 adults.</figcaption>
+    </figure>
+  </section>
+
+  <section id="where">
+    <div class="section-head">
+      <div class="lede">
+        <span class="section-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg></span>
+        <h2>It happens everywhere, but not evenly</h2>
+        <p>Two maps, two questions. The first asks where bush walking is most common as a share of adults. The second asks where the walkers actually are. They give different answers, because a high rate in a small state adds fewer people than an ordinary rate in a big one. Use the menu to redraw the first map for other nature activities.</p>
+      </div>
+      <aside class="pull"><span class="num">27.5%</span><span class="lbl">of Tasmanian adults bush walk, the highest share of any state or territory</span></aside>
+    </div>
+    <div class="two-up">
+      <figure class="chart">
+        <div id="c02-control" class="control"></div>
+        <div id="c02" class="vis fluid"></div>
+        <figcaption>AusPlay, Australian Sports Commission, January to December 2025. Adults aged 15 and over, by state or territory. Albers equal-area projection. Colours are five equal steps between the lowest and highest state for the chosen activity. The ACT is drawn as a circle because it is too small to see.</figcaption>
+      </figure>
+      <figure class="chart">
+        <div class="control" aria-hidden="true"></div>
+        <div id="c03" class="vis fluid"></div>
+        <figcaption>AusPlay, Australian Sports Commission, January to December 2025. Estimated number of adults who bush walked, by state or territory. Albers equal-area projection; circle area is proportional to the number of walkers.</figcaption>
+      </figure>
+    </div>
+    <p>Bush walking is popular everywhere. Other nature activities cluster where the geography allows them: surf on the coasts, snow in the south east, fishing in the north.</p>
+    <figure class="chart">
+      <div id="c04" class="vis"></div>
+      <figcaption>AusPlay, Australian Sports Commission, January to December 2025. Adults aged 15 and over. State rate divided by the national rate for the same activity. Albers equal-area projection. The ACT is drawn as a circle.</figcaption>
+    </figure>
+  </section>
+
+  <section id="lasts">
+    <div class="section-head">
+      <div class="lede">
+        <span class="section-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h10M7 21h10"/><path d="M8 3c0 5 8 5 8 9s-8 4-8 9"/><path d="M16 3c0 5-8 5-8 9s8 4 8 9"/></svg></span>
+        <h2>An adult habit that lasts</h2>
+        <p>Most physical activity fades with age. The grid below compares each age band with the activity's overall rate, so every row can be read on its own terms. Look for how long the green lasts along the bush walking row, then compare it with running.</p>
+      </div>
+      <aside class="pull"><span class="num">21%</span><span class="lbl">of 35 to 44 year olds bush walk, the peak age band. At 55 to 64 it is still 20%</span></aside>
+    </div>
+    <figure class="chart">
+      <div id="c06" class="vis"></div>
+      <figcaption>AusPlay, Australian Sports Commission, January to December 2025. Adults aged 15 and over. The last six rows are common activities shown for comparison. Nature activities done by fewer than 7 in 1,000 adults are left out because their age estimates are too uncertain.</figcaption>
+    </figure>
+    <p>Nature activities mostly skew male. Bush walking and equestrian sports are the exceptions, and bush walking is the only one large enough to shape the national picture.</p>
+    <figure class="chart">
+      <div id="c07" class="vis"></div>
+      <figcaption>AusPlay, Australian Sports Commission, January to December 2025. Adults aged 15 and over. Bush walking's bars are cut short so the smaller activities stay readable; its values are labelled.</figcaption>
+    </figure>
+  </section>
+
+  <section id="children">
+    <div class="section-head">
+      <div class="lede">
+        <span class="section-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="4.5" r="2"/><path d="M9 7v7M9 14l-3 7M9 14l3 7M5 10.5h8"/><circle cx="18" cy="18" r="3"/></svg></span>
+        <h2>Children's activity happens at clubs and on the field</h2>
+        <p>AusPlay measures children differently. For under 15s it counts only organised activity outside school hours. Free play and school sport are not included, so the children's figures below are a floor, not a total. Even so, the shape of the gap is clear.</p>
+      </div>
+      <aside class="pull"><span class="num">1.1%</span><span class="lbl">of children bush walk in an organised group outside school, against 14% who play organised football</span></aside>
+    </div>
+    <figure class="chart">
+      <div id="c08" class="vis"></div>
+      <figcaption>AusPlay, Australian Sports Commission, January to December 2025. Adults aged 15 and over, any participation. Children aged 0 to 14, organised activity outside school hours.</figcaption>
+    </figure>
+    <p>The same survey asks where the activity took place. For adults the answer is public space: parks, beaches and trails. For children it is a club or a school facility.</p>
+    <figure class="chart">
+      <div id="c10" class="vis"></div>
+      <figcaption>AusPlay, Australian Sports Commission, January to December 2025. Share of participants naming each kind of place. People can name more than one.</figcaption>
+    </figure>
+  </section>
+
+  <section id="why">
+    <div class="section-head">
+      <div class="lede">
+        <span class="section-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7.5-4.6-7.5-10.2A4.2 4.2 0 0 1 12 7.3a4.2 4.2 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z"/></svg></span>
+        <h2>Why people say they go</h2>
+        <p>AusPlay asks participants why they are active and lets them give more than one reason. Ranking the reasons within each age band shows what rises and what falls. Fun leads for adults under 25; health and fitness leads from 25 onwards. Follow the green line.</p>
+      </div>
+      <aside class="pull"><span class="num">58%</span><span class="lbl">of active 55 to 64 year olds say being outdoors is one of their reasons</span></aside>
+    </div>
+    <figure class="chart">
+      <div id="c09" class="vis"></div>
+      <figcaption>AusPlay, Australian Sports Commission, January to December 2025. Adult participants aged 15 and over. Reasons ranked by the share of participants naming them within each age band. Hover a line to see the shares.</figcaption>
+    </figure>
+  </section>
+
+  <section id="know">
+    <div class="section-head">
+      <div class="lede">
+        <span class="section-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg></span>
+        <h2>What students know</h2>
+        <p>PISA is the OECD's international test of 15 year olds. Its 2025 round reports an environmental science score for 85 countries and economies. Australia sits in the top group.</p>
+      </div>
+      <aside class="pull"><span class="num">510</span><span class="lbl">points for Australian students, 30 above the OECD average and 11th of 85</span></aside>
+    </div>
+    <figure class="chart">
+      <div id="c11" class="vis"></div>
+      <figcaption>PISA 2025 Results (Volume I), OECD, Table I.B1.5. Mean environmental science score, 85 systems with a reported score. Singapore, Hong Kong and Macao are drawn as dots, as are two systems that cover only part of a country: Beijing, Shanghai, Jiangsu and Zhejiang (China), and 17 regions of Ukraine. Equal Earth projection.</figcaption>
+    </figure>
+  </section>
+
+  <section id="schools">
+    <div class="section-head">
+      <div class="lede">
+        <span class="section-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V10l7-5 7 5v11"/><path d="M10 21v-5h4v5"/><circle cx="12" cy="11" r="1.5"/></svg></span>
+        <h2>What schools do</h2>
+        <p>PISA also asks students what happens in class. Australian students report more chances to research environmental issues, and more assessment of what they know, than the OECD average. On one item they report much less.</p>
+      </div>
+      <aside class="pull"><span class="num">4th</span><span class="lbl">lowest of 90 systems for the share of students taken on environmental field trips</span></aside>
+    </div>
+    <figure class="chart">
+      <div id="c12" class="vis"></div>
+      <figcaption>PISA 2025 Results (Volume I), OECD, Table I.B1.5. Share of students who agree or strongly agree, for the 90 countries and economies that report all four statements. Orange line: Australia. Dark grey line: OECD average.</figcaption>
+    </figure>
+    <p>Principals describe what their school offers. Australia stands out for garden programs and for sharing Indigenous knowledge about the environment. It falls behind on hands-on field work, such as biodiversity audits and field trips to waste facilities.</p>
+    <figure class="chart">
+      <div id="c13" class="vis"></div>
+      <figcaption>PISA 2025 Results (Volume I), OECD, Table I.B1.5. Share of students in schools whose principal reports offering the activity frequently or very frequently. Hover a line to isolate it.</figcaption>
+    </figure>
+  </section>
+
+  <section id="drift">
+    <div class="section-head">
+      <div class="lede">
+        <span class="section-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l6 6 4-4 8 8"/><path d="M21 11v6h-6"/></svg></span>
+        <h2>Knowledge is drifting, and interest goes with experience</h2>
+        <p>PISA asked students in 2006, and again in 2025, whether they could explain environmental issues such as greenhouse gases. The arrows compare Australian students with the OECD average across those nineteen years.</p>
+      </div>
+      <aside class="pull"><span class="num">&minus;9</span><span class="lbl">points: fewer Australian students can explain greenhouse gases than in 2006</span></aside>
+    </div>
+    <figure class="chart">
+      <div id="c14" class="vis"></div>
+      <figcaption>PISA 2006 and PISA 2025, OECD. Share of 15 year olds who say they could explain the issue.</figcaption>
+    </figure>
+    <p>Across countries, students who report field trips are more likely to want an environmental career. This is a pattern between countries, not proof that trips cause interest. Australia and the United Kingdom, both high scorers on the world map above, sit in the bottom left. Drag across the chart to highlight a group.</p>
+    <figure class="chart">
+      <div id="c15" class="vis"></div>
+      <figcaption>PISA 2025 Results (Volume I), OECD, Table I.B1.5. 82 systems with data on all three measures. The dashed line shows the overall direction across all 82. Systems the OECD flags for sampling issues are included.</figcaption>
+    </figure>
+  </section>
+
+</div>
+
+<section class="closing-band" aria-label="Closing">
+  <p>The outdoor habit is real, it is adult, and it is learned late. The data on this page is the case for moving it earlier.</p>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <h2>Sources</h2>
+      <ul>
+        <li>AusPlay survey, data tables January to December 2025 (national and eight state and territory workbooks). Australian Sports Commission, Clearinghouse for Sport, released 30 April 2026. <a href="https://www.ausport.gov.au/clearinghouse/research/ausplay/results">ausport.gov.au/clearinghouse/research/ausplay/results</a></li>
+        <li>PISA 2025 Results (Volume I), Annex B1, Chapter 5, "Students and the environment". OECD, released 8 September 2026. <a href="https://www.oecd.org/en/publications/pisa-2025-results-volume-i_73451bc5-en.html">oecd.org, PISA 2025 Results (Volume I)</a>, data workbook at <a href="https://stat.link/h3z8b1">stat.link/h3z8b1</a></li>
+        <li>Australian state and territory boundaries: <a href="https://github.com/tonywr71/GeoJson-Data">tonywr71/GeoJson-Data</a> on GitHub, converted to TopoJSON and clipped to Australia with mapshaper.</li>
+        <li>World country boundaries (world-110m): <a href="https://github.com/vega/vega-datasets">vega-datasets</a> on GitHub, keyed by ISO numeric code.</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Notes on the data</h2>
+      <p>AusPlay children's figures cover organised activity outside school hours only. AusPlay estimates carry margins of error of roughly 2.5 percentage points nationally and up to 7 points for the smaller jurisdictions, so Northern Territory and ACT figures for niche activities are approximate. PISA field trip and school activity items are self reported by students and principals. The OECD flags Canada, the Netherlands, New Zealand, Norway, the United States and Albania for sampling issues.</p>
+      <h2>Method</h2>
+      <p>Data cleaned with Python (pandas). Charts and maps built with Vega-Lite; each one is a separate JSON file in the <code>js</code> folder of this repository.</p>
+      <p>Henson Zein, Monash University, FIT3179 Data Visualisation, October 2026. Text and charts released under CC BY 4.0. Data remains under its publishers' terms.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/embed.js"></script>
+</body>
+</html>
