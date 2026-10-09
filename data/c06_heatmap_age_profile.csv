@@ -1,0 +1,127 @@
+activity,activity_label,activity_order,group,group_order,rate_pct,activity_total_pct,index_vs_activity_total
+Bush walking,Bush walking,0,15-17,2,14.6,17.47,0.84
+Bush walking,Bush walking,0,18-24,3,17.33,17.47,0.99
+Bush walking,Bush walking,0,25-34,4,20.3,17.47,1.16
+Bush walking,Bush walking,0,35-44,5,21.45,17.47,1.23
+Bush walking,Bush walking,0,45-54,6,19.69,17.47,1.13
+Bush walking,Bush walking,0,55-64,7,19.55,17.47,1.12
+Bush walking,Bush walking,0,65+,8,9.57,17.47,0.55
+Canoeing/Kayaking,Canoeing and kayaking,3,15-17,2,0.66,1.0,0.66
+Canoeing/Kayaking,Canoeing and kayaking,3,18-24,3,0.64,1.0,0.64
+Canoeing/Kayaking,Canoeing and kayaking,3,25-34,4,0.97,1.0,0.97
+Canoeing/Kayaking,Canoeing and kayaking,3,35-44,5,1.13,1.0,1.13
+Canoeing/Kayaking,Canoeing and kayaking,3,45-54,6,1.25,1.0,1.25
+Canoeing/Kayaking,Canoeing and kayaking,3,55-64,7,1.48,1.0,1.48
+Canoeing/Kayaking,Canoeing and kayaking,3,65+,8,0.68,1.0,0.68
+Cycling,Cycling,14,15-17,2,6.66,8.29,0.8
+Cycling,Cycling,14,18-24,3,5.59,8.29,0.67
+Cycling,Cycling,14,25-34,4,7.12,8.29,0.86
+Cycling,Cycling,14,35-44,5,9.26,8.29,1.12
+Cycling,Cycling,14,45-54,6,11.59,8.29,1.4
+Cycling,Cycling,14,55-64,7,11.95,8.29,1.44
+Cycling,Cycling,14,65+,8,5.58,8.29,0.67
+Equestrian,Equestrian,8,15-17,2,0.55,0.44,1.25
+Equestrian,Equestrian,8,18-24,3,0.68,0.44,1.55
+Equestrian,Equestrian,8,25-34,4,0.57,0.44,1.3
+Equestrian,Equestrian,8,35-44,5,0.44,0.44,1.0
+Equestrian,Equestrian,8,45-54,6,0.41,0.44,0.93
+Equestrian,Equestrian,8,55-64,7,0.59,0.44,1.34
+Equestrian,Equestrian,8,65+,8,0.1,0.44,0.23
+Fishing (recreational),Fishing,2,15-17,2,1.07,1.07,1.0
+Fishing (recreational),Fishing,2,18-24,3,0.66,1.07,0.62
+Fishing (recreational),Fishing,2,25-34,4,0.93,1.07,0.87
+Fishing (recreational),Fishing,2,35-44,5,0.96,1.07,0.9
+Fishing (recreational),Fishing,2,45-54,6,1.44,1.07,1.35
+Fishing (recreational),Fishing,2,55-64,7,1.55,1.07,1.45
+Fishing (recreational),Fishing,2,65+,8,0.92,1.07,0.86
+Fitness/Gym,Gym and fitness,16,15-17,2,37.32,34.1,1.09
+Fitness/Gym,Gym and fitness,16,18-24,3,43.44,34.1,1.27
+Fitness/Gym,Gym and fitness,16,25-34,4,42.06,34.1,1.23
+Fitness/Gym,Gym and fitness,16,35-44,5,36.39,34.1,1.07
+Fitness/Gym,Gym and fitness,16,45-54,6,32.93,34.1,0.97
+Fitness/Gym,Gym and fitness,16,55-64,7,29.52,34.1,0.87
+Fitness/Gym,Gym and fitness,16,65+,8,23.68,34.1,0.69
+Football/soccer,Football (soccer),17,15-17,2,17.01,5.62,3.03
+Football/soccer,Football (soccer),17,18-24,3,12.33,5.62,2.19
+Football/soccer,Football (soccer),17,25-34,4,9.36,5.62,1.67
+Football/soccer,Football (soccer),17,35-44,5,6.94,5.62,1.23
+Football/soccer,Football (soccer),17,45-54,6,3.28,5.62,0.58
+Football/soccer,Football (soccer),17,55-64,7,0.95,5.62,0.17
+Football/soccer,Football (soccer),17,65+,8,0.14,5.62,0.02
+Lifesaving surf,Surf lifesaving,11,15-17,2,0.49,0.13,3.77
+Lifesaving surf,Surf lifesaving,11,18-24,3,0.11,0.13,0.85
+Lifesaving surf,Surf lifesaving,11,25-34,4,0.1,0.13,0.77
+Lifesaving surf,Surf lifesaving,11,35-44,5,0.15,0.13,1.15
+Lifesaving surf,Surf lifesaving,11,45-54,6,0.14,0.13,1.08
+Lifesaving surf,Surf lifesaving,11,55-64,7,0.17,0.13,1.31
+Lifesaving surf,Surf lifesaving,11,65+,8,0.04,0.13,0.31
+Mountain biking,Mountain biking,5,15-17,2,1.72,0.73,2.36
+Mountain biking,Mountain biking,5,18-24,3,0.48,0.73,0.66
+Mountain biking,Mountain biking,5,25-34,4,0.61,0.73,0.84
+Mountain biking,Mountain biking,5,35-44,5,0.97,0.73,1.33
+Mountain biking,Mountain biking,5,45-54,6,1.21,0.73,1.66
+Mountain biking,Mountain biking,5,55-64,7,0.71,0.73,0.97
+Mountain biking,Mountain biking,5,65+,8,0.21,0.73,0.29
+Rock climbing/Abseiling/Caving,Rock climbing and caving,7,15-17,2,1.79,0.46,3.89
+Rock climbing/Abseiling/Caving,Rock climbing and caving,7,18-24,3,0.98,0.46,2.13
+Rock climbing/Abseiling/Caving,Rock climbing and caving,7,25-34,4,0.6,0.46,1.3
+Rock climbing/Abseiling/Caving,Rock climbing and caving,7,35-44,5,0.55,0.46,1.2
+Rock climbing/Abseiling/Caving,Rock climbing and caving,7,45-54,6,0.25,0.46,0.54
+Rock climbing/Abseiling/Caving,Rock climbing and caving,7,55-64,7,0.16,0.46,0.35
+Rock climbing/Abseiling/Caving,Rock climbing and caving,7,65+,8,0.05,0.46,0.11
+Rowing,Rowing,6,15-17,2,0.95,0.59,1.61
+Rowing,Rowing,6,18-24,3,0.41,0.59,0.69
+Rowing,Rowing,6,25-34,4,0.52,0.59,0.88
+Rowing,Rowing,6,35-44,5,0.51,0.59,0.86
+Rowing,Rowing,6,45-54,6,0.71,0.59,1.2
+Rowing,Rowing,6,55-64,7,0.85,0.59,1.44
+Rowing,Rowing,6,65+,8,0.46,0.59,0.78
+Running/jogging,Running,13,15-17,2,26.57,16.53,1.61
+Running/jogging,Running,13,18-24,3,26.65,16.53,1.61
+Running/jogging,Running,13,25-34,4,27.66,16.53,1.67
+Running/jogging,Running,13,35-44,5,20.85,16.53,1.26
+Running/jogging,Running,13,45-54,6,15.77,16.53,0.95
+Running/jogging,Running,13,55-64,7,8.46,16.53,0.51
+Running/jogging,Running,13,65+,8,1.84,16.53,0.11
+Sailing,Sailing,9,15-17,2,0.3,0.33,0.91
+Sailing,Sailing,9,18-24,3,0.14,0.33,0.42
+Sailing,Sailing,9,25-34,4,0.17,0.33,0.52
+Sailing,Sailing,9,35-44,5,0.22,0.33,0.67
+Sailing,Sailing,9,45-54,6,0.36,0.33,1.09
+Sailing,Sailing,9,55-64,7,0.69,0.33,2.09
+Sailing,Sailing,9,65+,8,0.4,0.33,1.21
+Ski & snowboard,Skiing and snowboarding,4,15-17,2,0.27,0.81,0.33
+Ski & snowboard,Skiing and snowboarding,4,18-24,3,0.68,0.81,0.84
+Ski & snowboard,Skiing and snowboarding,4,25-34,4,0.89,0.81,1.1
+Ski & snowboard,Skiing and snowboarding,4,35-44,5,0.82,0.81,1.01
+Ski & snowboard,Skiing and snowboarding,4,45-54,6,1.01,0.81,1.25
+Ski & snowboard,Skiing and snowboarding,4,55-64,7,1.4,0.81,1.73
+Ski & snowboard,Skiing and snowboarding,4,65+,8,0.4,0.81,0.49
+Surfing,Surfing,1,15-17,2,2.22,1.38,1.61
+Surfing,Surfing,1,18-24,3,1.27,1.38,0.92
+Surfing,Surfing,1,25-34,4,1.57,1.38,1.14
+Surfing,Surfing,1,35-44,5,1.82,1.38,1.32
+Surfing,Surfing,1,45-54,6,1.77,1.38,1.28
+Surfing,Surfing,1,55-64,7,1.35,1.38,0.98
+Surfing,Surfing,1,65+,8,0.51,1.38,0.37
+Swimming,Swimming,15,15-17,2,17.62,15.39,1.14
+Swimming,Swimming,15,18-24,3,16.34,15.39,1.06
+Swimming,Swimming,15,25-34,4,16.58,15.39,1.08
+Swimming,Swimming,15,35-44,5,18.31,15.39,1.19
+Swimming,Swimming,15,45-54,6,16.66,15.39,1.08
+Swimming,Swimming,15,55-64,7,15.99,15.39,1.04
+Swimming,Swimming,15,65+,8,9.74,15.39,0.63
+Underwater sports,Diving and snorkelling,10,15-17,2,0.72,0.84,0.86
+Underwater sports,Diving and snorkelling,10,18-24,3,0.68,0.84,0.81
+Underwater sports,Diving and snorkelling,10,25-34,4,1.05,0.84,1.25
+Underwater sports,Diving and snorkelling,10,35-44,5,1.09,0.84,1.3
+Underwater sports,Diving and snorkelling,10,45-54,6,0.82,0.84,0.98
+Underwater sports,Diving and snorkelling,10,55-64,7,1.14,0.84,1.36
+Underwater sports,Diving and snorkelling,10,65+,8,0.37,0.84,0.44
+Walking (Recreational),Walking,12,15-17,2,30.35,50.2,0.6
+Walking (Recreational),Walking,12,18-24,3,34.19,50.2,0.68
+Walking (Recreational),Walking,12,25-34,4,41.86,50.2,0.83
+Walking (Recreational),Walking,12,35-44,5,47.55,50.2,0.95
+Walking (Recreational),Walking,12,45-54,6,58.67,50.2,1.17
+Walking (Recreational),Walking,12,55-64,7,66.03,50.2,1.32
+Walking (Recreational),Walking,12,65+,8,55.82,50.2,1.11

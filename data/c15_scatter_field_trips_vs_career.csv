@@ -1,0 +1,83 @@
+country,display_name,label,is_australia,caution,agree_field_trips,interested_pct,env_science_mean,awareness_index
+Albania,Albania,,False,True,66.36,85.08,430.59,0.43
+Argentina,Argentina,,False,False,40.29,71.21,397.09,-0.76
+Armenia,Armenia,,False,False,52.14,80.26,362.44,-0.29
+Australia,Australia,Australia,True,False,20.8,56.29,509.99,0.05
+Austria,Austria,,False,False,26.52,52.1,493.34,-0.03
+Azerbaijan,Azerbaijan,,False,False,55.67,75.58,404.9,-0.23
+Belgium,Belgium,,False,False,25.75,58.97,485.66,-0.23
+Brazil,Brazil,,False,False,41.68,67.25,413.22,-0.26
+Brunei Darussalam,Brunei,,False,False,40.93,71.75,442.86,-0.13
+B-S-J-Z (China),"Beijing, Shanghai, Jiangsu, Zhejiang (China)",,False,False,65.49,77.78,594.09,0.54
+Bulgaria,Bulgaria,,False,False,38.75,59.37,419.25,-0.3
+Canada,Canada,Canada,False,True,23.43,59.68,511.18,0.08
+Chile,Chile,,False,False,27.39,68.7,441.86,-0.34
+Colombia,Colombia,,False,False,36.56,80.17,419.62,-0.43
+Costa Rica,Costa Rica,,False,False,38.59,85.1,429.57,-0.23
+Croatia,Croatia,,False,False,34.94,55.99,473.92,-0.05
+Cyprus,Cyprus,,False,False,33.04,52.96,404.07,-0.41
+Czechia,Czechia,,False,False,37.45,60.1,488.37,-0.23
+Denmark,Denmark,,False,False,32.8,53.87,471.75,-0.13
+Dominican Republic,Dominican Republic,,False,False,41.33,71.48,361.09,-0.58
+Ecuador,Ecuador,,False,False,39.9,78.68,395.9,-0.5
+El Salvador,El Salvador,,False,False,32.44,75.24,381.46,-0.61
+Estonia,Estonia,,False,False,33.1,60.77,520.34,0.02
+Finland,Finland,Finland,False,False,24.78,51.5,501.91,-0.15
+France,France,,False,False,30.73,58.48,486.39,-0.04
+Georgia,Georgia,,False,False,52.71,65.79,420.01,-0.04
+Germany,Germany,,False,False,21.2,45.93,481.45,-0.03
+Greece,Greece,,False,False,40.11,48.36,424.73,-0.38
+Guatemala,Guatemala,,False,False,44.81,81.86,346.52,-0.71
+Hong Kong (China),Hong Kong (China),,False,False,60.95,45.48,496.6,0.09
+Hungary,Hungary,,False,False,42.67,66.63,475.33,-0.14
+Iceland,Iceland,,False,False,30.65,71.1,432.91,-0.51
+Indonesia,Indonesia,Indonesia,False,False,84.55,92.48,392.67,-0.43
+Ireland,Ireland,,False,False,27.22,62.03,503.31,0.22
+Israel,Israel,,False,False,28.22,60.05,443.29,-0.69
+Italy,Italy,,False,False,38.91,71.87,482.02,-0.09
+Japan,Japan,Japan,False,False,31.66,62.21,535.66,-0.42
+Jordan,Jordan,,False,False,45.81,65.35,404.51,-0.32
+Kazakhstan,Kazakhstan,,False,False,47.34,70.25,421.06,-0.02
+Kenya,Kenya,Kenya,False,False,62.37,76.71,331.1,-0.39
+Korea,South Korea,South Korea,False,False,27.94,52.87,522.01,0.12
+Kosovo,Kosovo,,False,False,38.18,78.36,351.07,-0.59
+Kyrgyzstan,Kyrgyzstan,,False,False,48.14,75.87,357.44,-0.42
+Latvia,Latvia,,False,False,41.11,60.01,463.58,-0.29
+Lebanon,Lebanon,,False,False,44.03,55.19,372.48,-0.48
+Lithuania,Lithuania,,False,False,37.01,51.2,487.41,0.07
+Luxembourg,Luxembourg,,False,False,24.59,59.8,471.15,-0.18
+Macao (China),Macao (China),,False,False,55.63,58.51,538.59,0.19
+Malaysia,Malaysia,Malaysia,False,False,71.11,75.75,421.25,-0.1
+Malta,Malta,,False,False,44.2,63.02,453.07,0.3
+Mexico,Mexico,,False,False,39.41,85.21,413.11,-0.45
+Moldova,Moldova,,False,False,45.08,74.58,422.83,-0.21
+Mongolia,Mongolia,,False,False,28.62,74.75,422.82,-0.14
+Montenegro,Montenegro,,False,False,36.49,67.97,438.48,-0.44
+Morocco,Morocco,,False,False,43.64,70.48,357.12,-0.59
+Netherlands,Netherlands,Netherlands,False,True,15.25,41.02,482.57,-0.39
+New Zealand,New Zealand,New Zealand,False,True,21.12,55.47,510.83,-0.09
+North Macedonia,North Macedonia,,False,False,46.75,75.73,371.54,-0.62
+Palestinian Authority,Palestine,,False,False,47.39,66.15,356.51,-0.9
+Paraguay,Paraguay,,False,False,46.03,78.53,355.55,-0.89
+Peru,Peru,,False,False,36.08,86.05,405.27,-0.28
+Philippines,Philippines,,False,False,53.43,65.16,371.09,-0.22
+Poland,Poland,,False,False,33.9,58.9,492.43,-0.27
+Portugal,Portugal,,False,False,52.19,75.82,480.99,0.28
+Qatar,Qatar,,False,False,29.97,71.19,432.09,-0.21
+Romania,Romania,,False,False,45.48,72.89,425.57,-0.34
+Saudi Arabia,Saudi Arabia,,False,False,45.31,78.96,412.94,-0.53
+Serbia,Serbia,,False,False,38.94,63.15,424.9,-0.37
+Singapore,Singapore,Singapore,False,False,35.93,61.65,561.17,0.37
+Slovak Republic,Slovakia,,False,False,43.1,68.54,469.16,-0.3
+Slovenia,Slovenia,,False,False,37.66,58.36,479.75,-0.14
+Spain,Spain,,False,False,37.25,66.71,477.34,-0.32
+Switzerland,Switzerland,,False,False,29.85,56.28,495.35,-0.16
+Chinese Taipei,Taiwan,,False,False,58.24,49.62,539.2,-0.01
+Thailand,Thailand,Thailand,False,False,86.57,83.51,425.28,-0.41
+Türkiye,Turkey,,False,False,30.37,78.5,494.1,0.39
+Ukrainian regions (17 of 27),Ukraine (17 regions),,False,False,29.46,70.92,446.52,-0.12
+United Arab Emirates,United Arab Emirates,,False,False,37.6,74.77,458.03,0.2
+United Kingdom,United Kingdom,United Kingdom,False,False,15.65,53.21,512.52,0.35
+Uruguay,Uruguay,,False,False,31.12,60.8,445.35,-0.62
+Uzbekistan,Uzbekistan,,False,False,62.06,77.91,433.26,-0.12
+Viet Nam,Vietnam,Vietnam,False,False,72.5,92.78,465.29,0.07

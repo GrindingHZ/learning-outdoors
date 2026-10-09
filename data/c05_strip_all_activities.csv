@@ -1,0 +1,128 @@
+activity,activity_label,category,category_order,nature_based,rate_pct,participants,rank_in_region,highlight
+Walking (Recreational),Walking,General outdoor activity,0,False,50.2,11363621,1.0,True
+Fitness/Gym,Gym and fitness,Indoor or facility-based,5,False,34.1,7719043,2.0,True
+Bush walking,Bush walking,Land-based nature,1,True,17.47,3953952,3.0,True
+Running/jogging,Running,General outdoor activity,0,False,16.53,3740484,4.0,False
+Swimming,Swimming,General outdoor activity,0,False,15.39,3483472,5.0,False
+Cycling,Cycling,General outdoor activity,0,False,8.29,1877339,6.0,False
+Pilates,Pilates,Other,6,False,7.18,1625325,7.0,False
+Football/soccer,Football (soccer),Organised sport,4,False,5.62,1273027,8.0,True
+Yoga,Yoga,Indoor or facility-based,5,False,5.07,1148005,9.0,False
+Tennis,Tennis,Organised sport,4,False,4.94,1118407,10.0,False
+Golf,Golf,Organised sport,4,False,4.56,1032838,11.0,False
+Basketball,Basketball,Organised sport,4,False,4.53,1024360,12.0,False
+Cricket,Cricket,Organised sport,4,False,2.49,563967,13.0,False
+Australian football,Australian football,Organised sport,4,False,2.42,547129,14.0,False
+Netball,Netball,Organised sport,4,False,2.11,476973,15.0,False
+Badminton,Badminton,Other,6,False,1.89,426925,16.0,False
+Table tennis,Table tennis,Other,6,False,1.79,405253,17.0,False
+Dancing (recreational),Dancing,Other,6,False,1.63,368719,18.0,False
+Surfing,Surfing,Water-based nature,2,True,1.38,313396,19.0,True
+"Athletics, track and field",Athletics,Organised sport,4,False,1.32,298311,20.0,False
+Volleyball (indoor and outdoor),Volleyball,Other,6,False,1.31,295849,21.0,False
+Pickleball/padel,Pickleball/padel,Other,6,False,1.31,297347,21.0,False
+DanceSport,DanceSport,Other,6,False,1.12,254166,23.0,False
+Fishing (recreational),Fishing,Water-based nature,2,True,1.07,242244,24.0,True
+Canoeing/Kayaking,Canoeing and kayaking,Water-based nature,2,True,1.0,225560,25.0,True
+Weight lifting,Weight lifting,Other,6,False,0.98,222350,26.0,False
+Motor cycling,Motor cycling,Other,6,False,0.95,214266,27.0,False
+Virtual based physical activity,Virtual fitness,Other,6,False,0.95,214994,27.0,False
+Boxing,Boxing,Other,6,False,0.85,191913,29.0,False
+Underwater sports,Diving and snorkelling,Water-based nature,2,True,0.84,189194,30.0,False
+Bowls,Bowls,Other,6,False,0.83,188846,31.0,False
+Ski & snowboard,Skiing and snowboarding,Land-based nature,1,True,0.81,183709,32.0,False
+Rugby league,Rugby league,Other,6,False,0.76,172717,33.0,False
+Mountain biking,Mountain biking,Land-based nature,1,True,0.73,164226,34.0,False
+Touch football,Touch football,Other,6,False,0.71,161056,35.0,False
+Crossfit/Functional fitness,Crossfit/Functional fitness,Other,6,False,0.65,146573,36.0,False
+Tenpin bowling,Tenpin bowling,Other,6,False,0.63,142358,37.0,False
+Martial arts,Martial arts,Other,6,False,0.63,141611,37.0,False
+Rowing,Rowing,Water-based nature,2,True,0.59,132416,39.0,False
+Gymnastics,Gymnastics,Other,6,False,0.54,122131,40.0,False
+Sport climbing,Sport climbing,Indoor or facility-based,5,False,0.54,122749,40.0,False
+Hockey,Hockey,Other,6,False,0.51,115928,42.0,False
+Rock climbing/Abseiling/Caving,Rock climbing and caving,Land-based nature,1,True,0.46,103540,43.0,False
+Equestrian,Equestrian,Land-based nature,1,True,0.44,99949,44.0,False
+Skate,Skate,Other,6,False,0.4,89533,45.0,False
+Squash,Squash,Other,6,False,0.39,88312,46.0,False
+Rugby union,Rugby union,Other,6,False,0.37,84648,47.0,False
+Calisthenics,Calisthenics,Other,6,False,0.36,81353,48.0,False
+Sailing,Sailing,Water-based nature,2,True,0.33,74016,49.0,False
+Baseball,Baseball,Other,6,False,0.31,70050,50.0,False
+Billiards/Snooker/Pool,Billiards/Snooker/Pool,Other,6,False,0.3,68765,51.0,False
+Flying disc,Flying disc,Other,6,False,0.25,56342,52.0,False
+Motor sport,Motor sport,Other,6,False,0.25,57439,52.0,False
+Rope skipping,Rope skipping,Other,6,False,0.25,56075,52.0,False
+Oztag,Oztag,Other,6,False,0.22,50577,55.0,False
+Air sports,Air sports,Other,6,False,0.22,50734,55.0,False
+Paddle sports,Paddle sports,Water-based nature,2,True,0.21,47220,57.0,False
+Ice skating,Ice skating,Other,6,False,0.21,48384,57.0,False
+eSports,eSports,Other,6,False,0.21,47704,57.0,False
+Shooting/field,Shooting/field,Other,6,False,0.2,45996,60.0,False
+Karate,Karate,Other,6,False,0.19,42201,61.0,False
+Archery,Archery,Other,6,False,0.18,40602,62.0,False
+Jujitsu,Jujitsu,Other,6,False,0.17,38590,63.0,False
+Muay Thai,Muay Thai,Other,6,False,0.17,37558,63.0,False
+Darts,Darts,Other,6,False,0.16,36751,65.0,False
+Waterskiing/Wakeboarding,Waterskiing/Wakeboarding,Water-based nature,2,True,0.15,33982,66.0,False
+Shooting/range,Shooting/range,Other,6,False,0.14,30684,67.0,False
+Triathlon,Triathlon,General outdoor activity,0,False,0.14,32394,67.0,False
+Softball,Softball,Other,6,False,0.14,30818,67.0,False
+Lifesaving surf,Surf lifesaving,Water-based nature,2,True,0.13,29391,70.0,False
+Handball,Handball,Other,6,False,0.11,25911,71.0,False
+Taekwondo/Taekwon-do,Taekwondo/Taekwon-do,Other,6,False,0.11,25962,71.0,False
+Mountain climbing,Mountain climbing,Land-based nature,1,True,0.1,22439,73.0,False
+Water polo,Water polo,Other,6,False,0.09,20906,74.0,False
+Scootering,Scootering,Other,6,False,0.09,19288,74.0,False
+Mixed martial arts,Mixed martial arts,Other,6,False,0.09,20998,74.0,False
+Croquet,Croquet,Other,6,False,0.09,20003,74.0,False
+Dodgeball,Dodgeball,Other,6,False,0.08,17376,78.0,False
+Orienteering,Orienteering,Land-based nature,1,True,0.07,15854,79.0,False
+Dragon boat racing,Dragon boat racing,Water-based nature,2,True,0.07,15825,79.0,False
+Adventure racing,Adventure racing,Land-based nature,1,True,0.07,16342,79.0,False
+Jet skiing,Jet skiing,Other,6,False,0.07,15234,79.0,False
+Judo,Judo,Other,6,False,0.07,15026,79.0,False
+Ice hockey,Ice hockey,Other,6,False,0.06,13712,84.0,False
+Gaelic football,Gaelic football,Other,6,False,0.06,14208,84.0,False
+Obstacle,Obstacle,Other,6,False,0.06,12774,84.0,False
+Physical Culture,Physical Culture,Other,6,False,0.06,13759,84.0,False
+Synchronised swimming,Synchronised swimming,Other,6,False,0.05,11842,88.0,False
+Pony Club,Pony Club,Land-based nature,1,True,0.05,10306,88.0,False
+Diving,Diving,Other,6,False,0.05,11252,88.0,False
+Gridiron,Gridiron,Other,6,False,0.05,10298,88.0,False
+Fencing,Fencing,Other,6,False,0.05,10275,88.0,False
+Body building,Body building,Other,6,False,0.04,9330,93.0,False
+Powerlifting,Powerlifting,Other,6,False,0.04,9543,93.0,False
+Wrestling,Wrestling,Other,6,False,0.04,9153,93.0,False
+BMX,BMX,Other,6,False,0.03,6337,96.0,False
+Circus,Circus,Other,6,False,0.03,7650,96.0,False
+Geocaching,Geocaching,Land-based nature,1,True,0.03,7282,96.0,False
+Lacrosse,Lacrosse,Other,6,False,0.03,6843,96.0,False
+Wood chopping,Wood chopping,Other,6,False,0.03,7426,96.0,False
+Outrigger canoe,Outrigger canoe,Water-based nature,2,True,0.03,6079,96.0,False
+Floorball,Floorball,Other,6,False,0.03,6395,96.0,False
+Kendo,Kendo,Other,6,False,0.03,6759,96.0,False
+Eight ball,Eight ball,Other,6,False,0.03,6104,96.0,False
+Sword fighting,Sword fighting,Other,6,False,0.02,5093,105.0,False
+Parkour,Parkour,Other,6,False,0.02,5079,105.0,False
+Rogaining,Rogaining,Land-based nature,1,True,0.02,4892,105.0,False
+Horse racing,Horse racing,Other,6,False,0.02,5532,105.0,False
+Scouts,Scouts,Organised youth outdoors,3,True,0.02,4900,105.0,True
+Baton twirling,Baton twirling,Other,6,False,0.01,2672,110.0,False
+Biathlon,Biathlon,Other,6,False,0.01,1309,110.0,False
+Kung fu wushu,Kung fu wushu,Other,6,False,0.01,2099,110.0,False
+Korfball,Korfball,Other,6,False,0.01,1166,110.0,False
+Kitesurfing/kiteboarding,Kitesurfing/kiteboarding,Water-based nature,2,True,0.01,2987,110.0,False
+Ice racing/speed skating,Ice racing/speed skating,Other,6,False,0.01,1549,110.0,False
+Harness racing,Harness racing,Other,6,False,0.01,2410,110.0,False
+Goalball,Goalball,Other,6,False,0.01,2292,110.0,False
+Campdrafting,Campdrafting,Other,6,False,0.01,2930,110.0,False
+Curling,Curling,Other,6,False,0.01,2213,110.0,False
+Boomerang throwing,Boomerang throwing,Other,6,False,0.01,3392,110.0,False
+Bocce/Boules,Bocce/Boules,Other,6,False,0.01,3157,110.0,False
+Roller Derby,Roller Derby,Other,6,False,0.01,3040,110.0,False
+Marching,Marching,Other,6,False,0.01,2669,110.0,False
+Lifesaving royal,Lifesaving royal,Other,6,False,0.01,1168,110.0,False
+Ready Steady Go Kids,Ready Steady Go Kids,Other,6,False,0.01,1721,110.0,False
+Paintball,Paintball,Other,6,False,0.01,2742,110.0,False
+Tee ball,Tee ball,Other,6,False,0.01,2788,110.0,False

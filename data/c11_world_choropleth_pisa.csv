@@ -1,0 +1,92 @@
+country,display_name,iso3,iso_num,caution,env_science_mean,vs_oecd_pts,band,rank_env_science,pct_level2_or_above,pct_top_performers,agree_field_trips,interested_pct,score_class
+Albania,Albania,ALB,8.0,True,430.59,-49.5,400 to 449,50.0,59.6,0.5,66.36,85.08,400–480
+Argentina,Argentina,ARG,32.0,False,397.09,-83.0,Below 400,70.0,42.6,0.85,40.29,71.21,Under 400
+Armenia,Armenia,ARM,51.0,False,362.44,-117.7,Below 400,77.0,26.8,0.11,52.14,80.26,Under 400
+Australia,Australia,AUS,36.0,False,509.99,29.9,480 to 509,11.0,81.73,12.19,20.8,56.29,480–520
+Austria,Austria,AUT,40.0,False,493.34,13.2,480 to 509,18.0,77.93,8.39,26.52,52.1,480–520
+Azerbaijan,Azerbaijan,AZE,31.0,False,404.9,-75.2,400 to 449,67.0,46.56,0.77,55.67,75.58,400–480
+Belgium,Belgium,BEL,56.0,False,485.66,5.5,480 to 509,23.0,75.29,6.55,25.75,58.97,480–520
+Brazil,Brazil,BRA,76.0,False,413.22,-66.9,400 to 449,63.0,49.43,1.23,41.68,67.25,400–480
+Brunei Darussalam,Brunei,BRN,96.0,False,442.86,-37.3,400 to 449,44.0,62.83,1.67,40.93,71.75,400–480
+B-S-J-Z (China),"Beijing, Shanghai, Jiangsu, Zhejiang (China)",CHN,156.0,False,594.09,114.0,540 and above,1.0,97.66,33.48,65.49,77.78,560 or more
+Bulgaria,Bulgaria,BGR,100.0,False,419.25,-60.9,400 to 449,62.0,51.83,2.46,38.75,59.37,400–480
+Cambodia,Cambodia,KHM,116.0,False,,,,,,,76.49,,
+Canada,Canada,CAN,124.0,True,511.18,31.1,510 to 539,9.0,84.05,10.84,23.43,59.68,480–520
+Chile,Chile,CHL,152.0,False,441.86,-38.3,400 to 449,45.0,63.02,1.5,27.39,68.7,400–480
+Colombia,Colombia,COL,170.0,False,419.62,-60.5,400 to 449,61.0,52.49,1.06,36.56,80.17,400–480
+Costa Rica,Costa Rica,CRI,188.0,False,429.57,-50.6,400 to 449,51.0,57.88,0.71,38.59,85.1,400–480
+Croatia,Croatia,HRV,191.0,False,473.92,-6.2,450 to 479,32.0,73.68,4.69,34.94,55.99,400–480
+Cyprus,Cyprus,CYP,196.0,False,404.07,-76.1,400 to 449,69.0,45.17,2.54,33.04,52.96,400–480
+Czechia,Czechia,CZE,203.0,False,488.37,8.2,480 to 509,20.0,77.8,7.28,37.45,60.1,480–520
+Denmark,Denmark,DNK,208.0,False,471.75,-8.4,450 to 479,33.0,72.09,4.5,32.8,53.87,400–480
+Dominican Republic,Dominican Republic,DOM,214.0,False,361.09,-119.0,Below 400,78.0,26.6,0.01,41.33,71.48,Under 400
+Dushanbe (Tajikistan),Dushanbe (Tajikistan),TJK,762.0,False,,,,,,,67.2,,
+Ecuador,Ecuador,ECU,218.0,False,395.9,-84.2,Below 400,71.0,41.88,0.13,39.9,78.68,Under 400
+El Salvador,El Salvador,SLV,222.0,False,381.46,-98.7,Below 400,73.0,34.73,0.18,32.44,75.24,Under 400
+Estonia,Estonia,EST,233.0,False,520.34,40.2,510 to 539,7.0,88.83,9.51,33.1,60.77,520–560
+Finland,Finland,FIN,246.0,False,501.91,21.8,480 to 509,13.0,79.02,11.62,24.78,51.5,480–520
+France,France,FRA,250.0,False,486.39,6.3,480 to 509,22.0,75.66,6.77,30.73,58.48,480–520
+Georgia,Georgia,GEO,268.0,False,420.01,-60.1,400 to 449,60.0,54.16,0.81,52.71,65.79,400–480
+Germany,Germany,DEU,276.0,False,481.45,1.3,480 to 509,27.0,71.98,8.75,21.2,45.93,480–520
+Greece,Greece,GRC,300.0,False,424.73,-55.4,400 to 449,55.0,54.4,1.59,40.11,48.36,400–480
+Guatemala,Guatemala,GTM,320.0,False,346.52,-133.6,Below 400,84.0,21.02,0.06,44.81,81.86,Under 400
+Hong Kong (China),Hong Kong (China),HKG,344.0,False,496.6,16.5,480 to 509,15.0,79.9,8.81,60.95,45.48,480–520
+Hungary,Hungary,HUN,348.0,False,475.33,-4.8,450 to 479,31.0,73.99,4.87,42.67,66.63,400–480
+Iceland,Iceland,ISL,352.0,False,432.91,-47.2,400 to 449,48.0,57.8,2.4,30.65,71.1,400–480
+Indonesia,Indonesia,IDN,360.0,False,392.67,-87.4,Below 400,72.0,39.49,0.07,84.55,92.48,Under 400
+Ireland,Ireland,IRL,372.0,False,503.31,23.2,480 to 509,12.0,83.01,8.41,27.22,62.03,480–520
+Israel,Israel,ISR,376.0,False,443.29,-36.8,400 to 449,43.0,60.55,4.36,28.22,60.05,400–480
+Italy,Italy,ITA,380.0,False,482.02,1.9,480 to 509,26.0,77.31,4.46,38.91,71.87,480–520
+Japan,Japan,JPN,392.0,False,535.66,55.5,510 to 539,5.0,89.15,15.42,31.66,62.21,520–560
+Jordan,Jordan,JOR,400.0,False,404.51,-75.6,400 to 449,68.0,47.04,0.29,45.81,65.35,400–480
+Kazakhstan,Kazakhstan,KAZ,398.0,False,421.06,-59.1,400 to 449,59.0,52.83,0.6,47.34,70.25,400–480
+Kenya,Kenya,KEN,404.0,False,331.1,-149.0,Below 400,85.0,14.83,0.03,62.37,76.71,Under 400
+Korea,South Korea,KOR,410.0,False,522.01,41.9,510 to 539,6.0,85.48,13.39,27.94,52.87,520–560
+Kosovo,Kosovo,XKX,,False,351.07,-129.0,Below 400,83.0,20.12,0.02,38.18,78.36,Under 400
+Kurdistan Region (Iraq),Kurdistan Region (Iraq),IRQ,368.0,False,,,,,,,41.61,,
+Kyrgyzstan,Kyrgyzstan,KGZ,417.0,False,357.44,-122.7,Below 400,79.0,22.66,0.0,48.14,75.87,Under 400
+Latvia,Latvia,LVA,428.0,False,463.58,-16.5,450 to 479,38.0,70.67,3.08,41.11,60.01,400–480
+Lebanon,Lebanon,LBN,422.0,False,372.48,-107.6,Below 400,74.0,34.33,0.65,44.03,55.19,Under 400
+Lithuania,Lithuania,LTU,440.0,False,487.41,7.3,480 to 509,21.0,79.78,4.95,37.01,51.2,480–520
+Luxembourg,Luxembourg,LUX,442.0,False,471.15,-9.0,450 to 479,34.0,67.43,8.81,24.59,59.8,400–480
+Macao (China),Macao (China),MAC,446.0,False,538.59,58.5,510 to 539,4.0,92.49,12.71,55.63,58.51,520–560
+Malaysia,Malaysia,MYS,458.0,False,421.25,-58.9,400 to 449,58.0,54.37,0.7,71.11,75.75,400–480
+Malta,Malta,MLT,470.0,False,453.07,-27.1,450 to 479,40.0,63.25,5.23,44.2,63.02,400–480
+Mauritius,Mauritius,MUS,480.0,False,,,,,,,52.66,,
+Mexico,Mexico,MEX,484.0,False,413.11,-67.0,400 to 449,64.0,50.39,0.27,39.41,85.21,400–480
+Moldova,Moldova,MDA,498.0,False,422.83,-57.3,400 to 449,56.0,54.0,1.3,45.08,74.58,400–480
+Mongolia,Mongolia,MNG,496.0,False,422.82,-57.3,400 to 449,57.0,56.18,0.37,28.62,74.75,400–480
+Montenegro,Montenegro,MNE,499.0,False,438.48,-41.6,400 to 449,46.0,61.85,1.31,36.49,67.97,400–480
+Morocco,Morocco,MAR,504.0,False,357.12,-123.0,Below 400,80.0,22.21,0.04,43.64,70.48,Under 400
+Netherlands,Netherlands,NLD,528.0,True,482.57,2.4,480 to 509,25.0,73.22,6.6,15.25,41.02,480–520
+New Zealand,New Zealand,NZL,554.0,True,510.83,30.7,510 to 539,10.0,81.45,13.64,21.12,55.47,480–520
+North Macedonia,North Macedonia,MKD,807.0,False,371.54,-108.6,Below 400,75.0,33.78,0.36,46.75,75.73,Under 400
+Norway,Norway,NOR,578.0,True,469.41,-10.7,450 to 479,35.0,70.08,5.56,27.72,,400–480
+Palestinian Authority,Palestine,PSE,275.0,False,356.51,-123.6,Below 400,81.0,22.55,0.01,47.39,66.15,Under 400
+Paraguay,Paraguay,PRY,600.0,False,355.55,-124.6,Below 400,82.0,25.48,0.04,46.03,78.53,Under 400
+Peru,Peru,PER,604.0,False,405.27,-74.9,400 to 449,66.0,47.57,0.3,36.08,86.05,400–480
+Philippines,Philippines,PHL,608.0,False,371.09,-109.0,Below 400,76.0,31.75,0.34,53.43,65.16,Under 400
+Poland,Poland,POL,616.0,False,492.43,12.3,480 to 509,19.0,78.79,7.0,33.9,58.9,480–520
+Portugal,Portugal,PRT,620.0,False,480.99,0.9,480 to 509,28.0,75.11,5.64,52.19,75.82,480–520
+Qatar,Qatar,QAT,634.0,False,432.09,-48.0,400 to 449,49.0,55.95,3.0,29.97,71.19,400–480
+Romania,Romania,ROU,642.0,False,425.57,-54.6,400 to 449,52.0,54.51,2.16,45.48,72.89,400–480
+Rwanda,Rwanda,RWA,646.0,False,,,,,,,55.15,,
+Saudi Arabia,Saudi Arabia,SAU,682.0,False,412.94,-67.2,400 to 449,65.0,50.86,0.47,45.31,78.96,400–480
+Serbia,Serbia,SRB,688.0,False,424.9,-55.2,400 to 449,54.0,55.69,0.86,38.94,63.15,400–480
+Singapore,Singapore,SGP,702.0,False,561.17,81.0,540 and above,2.0,90.34,26.6,35.93,61.65,560 or more
+Slovak Republic,Slovakia,SVK,703.0,False,469.16,-11.0,450 to 479,36.0,71.5,4.59,43.1,68.54,400–480
+Slovenia,Slovenia,SVN,705.0,False,479.75,-0.4,450 to 479,29.0,74.0,6.3,37.66,58.36,400–480
+Spain,Spain,ESP,724.0,False,477.34,-2.8,450 to 479,30.0,75.55,4.27,37.25,66.71,400–480
+Sweden,Sweden,SWE,752.0,False,484.68,4.6,480 to 509,24.0,73.63,8.95,19.43,,480–520
+Switzerland,Switzerland,CHE,756.0,False,495.35,15.2,480 to 509,16.0,77.91,8.95,29.85,56.28,480–520
+Chinese Taipei,Taiwan,TWN,158.0,False,539.2,59.1,510 to 539,3.0,86.58,20.55,58.24,49.62,520–560
+Thailand,Thailand,THA,764.0,False,425.28,-54.8,400 to 449,53.0,55.93,0.58,86.57,83.51,400–480
+Türkiye,Turkey,TUR,792.0,False,494.1,14.0,480 to 509,17.0,80.01,7.9,30.37,78.5,480–520
+Ukrainian regions (17 of 27),Ukraine (17 regions),UKR,804.0,False,446.52,-33.6,400 to 449,41.0,64.54,2.08,29.46,70.92,400–480
+United Arab Emirates,United Arab Emirates,ARE,784.0,False,458.03,-22.1,450 to 479,39.0,64.94,5.45,37.6,74.77,400–480
+United Kingdom,United Kingdom,GBR,826.0,False,512.52,32.4,510 to 539,8.0,83.23,12.48,15.65,53.21,480–520
+United States,United States,USA,840.0,True,499.61,19.5,480 to 509,14.0,76.91,12.54,,,480–520
+Uruguay,Uruguay,URY,858.0,False,445.35,-34.8,400 to 449,42.0,64.19,1.69,31.12,60.8,400–480
+Uzbekistan,Uzbekistan,UZB,860.0,False,433.26,-46.9,400 to 449,47.0,61.85,0.64,62.06,77.91,400–480
+Viet Nam,Vietnam,VNM,704.0,False,465.29,-14.8,450 to 479,37.0,74.0,2.26,72.5,92.78,400–480
+Zambia,Zambia,ZMB,894.0,False,,,,,,,32.68,,

@@ -1,0 +1,18 @@
+activity,adult_pct,child_pct,activity_label,ratio_adult_to_child,group
+Bush walking,17.47,1.11,Bush walking,15.7,Nature-based
+Swimming,15.39,23.3,Swimming,0.7,Reference
+Football/soccer,5.62,14.31,Football (soccer),0.4,Reference
+Surfing,1.38,0.45,Surfing,3.1,Nature-based
+Fishing (recreational),1.07,0.21,Fishing,5.1,Nature-based
+Canoeing/Kayaking,1.0,0.13,Canoeing and kayaking,7.7,Nature-based
+Underwater sports,0.84,0.05,Diving and snorkelling,16.8,Nature-based
+Ski & snowboard,0.81,0.16,Skiing and snowboarding,5.1,Nature-based
+Mountain biking,0.73,0.18,Mountain biking,4.1,Nature-based
+Rowing,0.59,0.1,Rowing,5.9,Nature-based
+Rock climbing/Abseiling/Caving,0.46,0.14,Rock climbing and caving,3.3,Nature-based
+Equestrian,0.44,0.17,Equestrian,2.6,Nature-based
+Sailing,0.33,0.09,Sailing,3.7,Nature-based
+Lifesaving surf,0.13,0.71,Surf lifesaving,0.2,Nature-based
+Orienteering,0.07,0.03,Orienteering,2.3,Nature-based
+Scouts,0.02,0.19,Scouts,0.1,Nature-based
+Guides,0.0,0.11,Guides,0.0,Nature-based

@@ -1,0 +1,89 @@
+region,region_name,activity,activity_label,rate_pct,participants,state_rank,national_rate_pct,vs_national_pts,rate_class,rate_class_order
+TAS,Tasmania,Bush walking,Bush walking,27.52,132990,1,17.47,10.05,25.1–27.5%,4
+ACT,Australian Capital Territory,Bush walking,Bush walking,26.85,106848,2,17.47,9.38,25.1–27.5%,4
+NT,Northern Territory,Bush walking,Bush walking,18.96,39501,3,17.47,1.49,17.8–20.2%,1
+WA,Western Australia,Bush walking,Bush walking,18.27,451127,4,17.47,0.8,17.8–20.2%,1
+QLD,Queensland,Bush walking,Bush walking,17.68,818181,5,17.47,0.21,15.4–17.8%,0
+NSW,New South Wales,Bush walking,Bush walking,17.36,1225023,6,17.47,-0.11,15.4–17.8%,0
+VIC,Victoria,Bush walking,Bush walking,16.12,937035,7,17.47,-1.35,15.4–17.8%,0
+SA,South Australia,Bush walking,Bush walking,15.38,243246,8,17.47,-2.09,15.4–17.8%,0
+TAS,Tasmania,Canoeing/Kayaking,Canoeing and kayaking,2.08,10034,1,1.0,1.08,1.8–2.1%,4
+NT,Northern Territory,Canoeing/Kayaking,Canoeing and kayaking,1.71,3572,2,1.0,0.71,1.6–1.8%,3
+NSW,New South Wales,Canoeing/Kayaking,Canoeing and kayaking,1.22,85796,3,1.0,0.22,1.0–1.3%,1
+ACT,Australian Capital Territory,Canoeing/Kayaking,Canoeing and kayaking,0.94,3753,4,1.0,-0.06,0.8–1.0%,0
+SA,South Australia,Canoeing/Kayaking,Canoeing and kayaking,0.9,14176,5,1.0,-0.1,0.8–1.0%,0
+QLD,Queensland,Canoeing/Kayaking,Canoeing and kayaking,0.89,41394,6,1.0,-0.11,0.8–1.0%,0
+WA,Western Australia,Canoeing/Kayaking,Canoeing and kayaking,0.86,21156,7,1.0,-0.14,0.8–1.0%,0
+VIC,Victoria,Canoeing/Kayaking,Canoeing and kayaking,0.79,45678,8,1.0,-0.21,0.8–1.0%,0
+NT,Northern Territory,Equestrian,Equestrian,1.57,3265,1,0.44,1.13,1.3–1.6%,4
+TAS,Tasmania,Equestrian,Equestrian,1.29,6248,2,0.44,0.85,1.0–1.3%,3
+VIC,Victoria,Equestrian,Equestrian,0.45,25894,3,0.44,0.01,0.2–0.5%,0
+WA,Western Australia,Equestrian,Equestrian,0.44,10972,4,0.44,0.0,0.2–0.5%,0
+NSW,New South Wales,Equestrian,Equestrian,0.42,29914,5,0.44,-0.02,0.2–0.5%,0
+QLD,Queensland,Equestrian,Equestrian,0.41,18991,6,0.44,-0.03,0.2–0.5%,0
+ACT,Australian Capital Territory,Equestrian,Equestrian,0.37,1465,7,0.44,-0.07,0.2–0.5%,0
+SA,South Australia,Equestrian,Equestrian,0.2,3200,8,0.44,-0.24,0.2–0.5%,0
+NT,Northern Territory,Fishing (recreational),Fishing,1.52,3178,1,1.07,0.45,1.3–1.5%,4
+WA,Western Australia,Fishing (recreational),Fishing,1.45,35819,2,1.07,0.38,1.3–1.5%,4
+QLD,Queensland,Fishing (recreational),Fishing,1.41,65258,3,1.07,0.34,1.3–1.5%,4
+SA,South Australia,Fishing (recreational),Fishing,1.25,19759,4,1.07,0.18,1.0–1.3%,3
+NSW,New South Wales,Fishing (recreational),Fishing,1.05,74053,5,1.07,-0.02,1.0–1.3%,3
+TAS,Tasmania,Fishing (recreational),Fishing,0.97,4694,6,1.07,-0.1,0.7–1.0%,2
+VIC,Victoria,Fishing (recreational),Fishing,0.67,38710,7,1.07,-0.4,0.5–0.7%,1
+ACT,Australian Capital Territory,Fishing (recreational),Fishing,0.19,773,8,1.07,-0.88,0.2–0.5%,0
+TAS,Tasmania,Mountain biking,Mountain biking,1.77,8544,1,0.73,1.04,1.5–1.8%,4
+ACT,Australian Capital Territory,Mountain biking,Mountain biking,1.28,5098,2,0.73,0.55,1.3–1.5%,3
+WA,Western Australia,Mountain biking,Mountain biking,1.15,28288,3,0.73,0.42,1.0–1.3%,2
+NT,Northern Territory,Mountain biking,Mountain biking,1.03,2139,4,0.73,0.3,1.0–1.3%,2
+QLD,Queensland,Mountain biking,Mountain biking,0.91,42076,5,0.73,0.18,0.8–1.0%,1
+NSW,New South Wales,Mountain biking,Mountain biking,0.57,40498,6,0.73,-0.16,0.5–0.8%,0
+SA,South Australia,Mountain biking,Mountain biking,0.53,8415,7,0.73,-0.2,0.5–0.8%,0
+VIC,Victoria,Mountain biking,Mountain biking,0.5,29167,8,0.73,-0.23,0.5–0.8%,0
+ACT,Australian Capital Territory,Rock climbing/Abseiling/Caving,Rock climbing and caving,0.59,2339,1,0.46,0.13,0.51–0.59%,4
+NT,Northern Territory,Rock climbing/Abseiling/Caving,Rock climbing and caving,0.57,1187,2,0.46,0.11,0.51–0.59%,4
+WA,Western Australia,Rock climbing/Abseiling/Caving,Rock climbing and caving,0.55,13469,3,0.46,0.09,0.51–0.59%,4
+QLD,Queensland,Rock climbing/Abseiling/Caving,Rock climbing and caving,0.5,22977,4,0.46,0.04,0.42–0.51%,3
+NSW,New South Wales,Rock climbing/Abseiling/Caving,Rock climbing and caving,0.46,32127,5,0.46,0.0,0.42–0.51%,3
+TAS,Tasmania,Rock climbing/Abseiling/Caving,Rock climbing and caving,0.46,2215,5,0.46,0.0,0.42–0.51%,3
+VIC,Victoria,Rock climbing/Abseiling/Caving,Rock climbing and caving,0.46,26539,5,0.46,0.0,0.42–0.51%,3
+SA,South Australia,Rock climbing/Abseiling/Caving,Rock climbing and caving,0.17,2686,8,0.46,-0.29,0.17–0.25%,0
+ACT,Australian Capital Territory,Rowing,Rowing,1.25,4993,1,0.59,0.66,1.1–1.2%,4
+SA,South Australia,Rowing,Rowing,0.76,12012,2,0.59,0.17,0.8–0.9%,2
+NSW,New South Wales,Rowing,Rowing,0.61,43299,3,0.59,0.02,0.6–0.8%,1
+QLD,Queensland,Rowing,Rowing,0.57,26437,4,0.59,-0.02,0.4–0.6%,0
+VIC,Victoria,Rowing,Rowing,0.52,30400,5,0.59,-0.07,0.4–0.6%,0
+WA,Western Australia,Rowing,Rowing,0.49,12052,6,0.59,-0.1,0.4–0.6%,0
+TAS,Tasmania,Rowing,Rowing,0.48,2342,7,0.59,-0.11,0.4–0.6%,0
+NT,Northern Territory,Rowing,Rowing,0.42,882,8,0.59,-0.17,0.4–0.6%,0
+TAS,Tasmania,Sailing,Sailing,0.67,3254,1,0.33,0.34,0.56–0.67%,4
+WA,Western Australia,Sailing,Sailing,0.46,11294,2,0.33,0.13,0.45–0.56%,3
+NSW,New South Wales,Sailing,Sailing,0.36,25367,3,0.33,0.03,0.33–0.45%,2
+QLD,Queensland,Sailing,Sailing,0.35,16226,4,0.33,0.02,0.33–0.45%,2
+VIC,Victoria,Sailing,Sailing,0.26,14841,5,0.33,-0.07,0.22–0.33%,1
+ACT,Australian Capital Territory,Sailing,Sailing,0.25,1006,6,0.33,-0.08,0.22–0.33%,1
+NT,Northern Territory,Sailing,Sailing,0.15,312,7,0.33,-0.18,0.11–0.22%,0
+SA,South Australia,Sailing,Sailing,0.11,1716,8,0.33,-0.22,0.11–0.22%,0
+ACT,Australian Capital Territory,Ski & snowboard,Skiing and snowboarding,1.77,7050,1,0.81,0.96,1.5–1.8%,4
+NSW,New South Wales,Ski & snowboard,Skiing and snowboarding,1.15,81460,2,0.81,0.34,0.9–1.2%,2
+NT,Northern Territory,Ski & snowboard,Skiing and snowboarding,0.87,1812,3,0.81,0.06,0.9–1.2%,2
+VIC,Victoria,Ski & snowboard,Skiing and snowboarding,0.82,47882,4,0.81,0.01,0.6–0.9%,1
+QLD,Queensland,Ski & snowboard,Skiing and snowboarding,0.59,27141,5,0.81,-0.22,0.6–0.9%,1
+WA,Western Australia,Ski & snowboard,Skiing and snowboarding,0.5,12366,6,0.81,-0.31,0.3–0.6%,0
+TAS,Tasmania,Ski & snowboard,Skiing and snowboarding,0.4,1948,7,0.81,-0.41,0.3–0.6%,0
+SA,South Australia,Ski & snowboard,Skiing and snowboarding,0.26,4050,8,0.81,-0.55,0.3–0.6%,0
+WA,Western Australia,Surfing,Surfing,1.76,43496,1,1.38,0.38,1.5–1.8%,4
+NSW,New South Wales,Surfing,Surfing,1.67,117953,2,1.38,0.29,1.5–1.8%,4
+QLD,Queensland,Surfing,Surfing,1.38,63787,3,1.38,0.0,1.1–1.5%,3
+TAS,Tasmania,Surfing,Surfing,1.36,6566,4,1.38,-0.02,1.1–1.5%,3
+SA,South Australia,Surfing,Surfing,1.28,20188,5,1.38,-0.1,1.1–1.5%,3
+VIC,Victoria,Surfing,Surfing,1.01,58683,6,1.38,-0.37,0.8–1.1%,2
+ACT,Australian Capital Territory,Surfing,Surfing,0.57,2272,7,1.38,-0.81,0.5–0.8%,1
+NT,Northern Territory,Surfing,Surfing,0.22,451,8,1.38,-1.16,0.2–0.5%,0
+NT,Northern Territory,Underwater sports,Diving and snorkelling,2.58,5385,1,0.84,1.74,2.2–2.6%,4
+WA,Western Australia,Underwater sports,Diving and snorkelling,1.49,36722,2,0.84,0.65,1.4–1.8%,2
+TAS,Tasmania,Underwater sports,Diving and snorkelling,1.2,5823,3,0.84,0.36,1.1–1.4%,1
+ACT,Australian Capital Territory,Underwater sports,Diving and snorkelling,1.17,4647,4,0.84,0.33,1.1–1.4%,1
+QLD,Queensland,Underwater sports,Diving and snorkelling,0.78,36302,5,0.84,-0.06,0.7–1.1%,0
+SA,South Australia,Underwater sports,Diving and snorkelling,0.7,11083,6,0.84,-0.14,0.7–1.1%,0
+VIC,Victoria,Underwater sports,Diving and snorkelling,0.7,40650,6,0.84,-0.14,0.7–1.1%,0
+NSW,New South Wales,Underwater sports,Diving and snorkelling,0.69,48581,8,0.84,-0.15,0.7–1.1%,0

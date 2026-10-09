@@ -1,0 +1,29 @@
+activity,activity_label,au_minus_oecd_pts,direction,outdoor_or_hands_on,series,pct,x_order
+biodiversity audit,Biodiversity audit of school grounds,-10.3,Below OECD,True,OECD average,21.92,0
+biodiversity audit,Biodiversity audit of school grounds,-10.3,Below OECD,True,Australia,11.59,1
+celebrate env targets,Celebrating environmental targets,-6.1,Below OECD,False,OECD average,22.47,0
+celebrate env targets,Celebrating environmental targets,-6.1,Below OECD,False,Australia,16.39,1
+citizen science,Citizen science and volunteering,-2.2,Below OECD,True,OECD average,18.77,0
+citizen science,Citizen science and volunteering,-2.2,Below OECD,True,Australia,16.53,1
+disaster support,Supporting disaster-hit communities,2.3,Above OECD,False,OECD average,16.63,0
+disaster support,Supporting disaster-hit communities,2.3,Above OECD,False,Australia,18.96,1
+env school groups staff,Staff and student environment groups,-1.7,About the same,False,OECD average,21.36,0
+env school groups staff,Staff and student environment groups,-1.7,About the same,False,Australia,19.67,1
+env student groups,Environmental student groups,0.8,About the same,False,OECD average,36.88,0
+env student groups,Environmental student groups,0.8,About the same,False,Australia,37.73,1
+field trips waste,Field trips to waste facilities,-8.3,Below OECD,True,OECD average,23.48,0
+field trips waste,Field trips to waste facilities,-8.3,Below OECD,True,Australia,15.16,1
+guest speakers,Guest speakers,-8.6,Below OECD,False,OECD average,25.28,0
+guest speakers,Guest speakers,-8.6,Below OECD,False,Australia,16.7,1
+indigenous knowledge,Indigenous knowledge sharing,24.1,Above OECD,False,OECD average,17.28,0
+indigenous knowledge,Indigenous knowledge sharing,24.1,Above OECD,False,Australia,41.38,1
+local env org,Working with local environment groups,-1.3,About the same,True,OECD average,20.05,0
+local env org,Working with local environment groups,-1.3,About the same,True,Australia,18.76,1
+recycling,Recycling programme,7.7,Above OECD,False,OECD average,50.61,0
+recycling,Recycling programme,7.7,Above OECD,False,Australia,58.31,1
+rubbish collection,Rubbish collection,-7.5,Below OECD,True,OECD average,41.11,0
+rubbish collection,Rubbish collection,-7.5,Below OECD,True,Australia,33.59,1
+school garden,School garden,10.5,Above OECD,True,OECD average,27.72,0
+school garden,School garden,10.5,Above OECD,True,Australia,38.21,1
+showcase env,Showcasing environmental achievements,-2.7,Below OECD,False,OECD average,23.1,0
+showcase env,Showcasing environmental achievements,-2.7,Below OECD,False,Australia,20.44,1

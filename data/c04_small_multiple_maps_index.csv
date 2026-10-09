@@ -1,0 +1,49 @@
+region,region_name,activity,activity_label,rate_pct,national_rate_pct,index_vs_national,index_label,index_class_order,index_class
+ACT,Australian Capital Territory,Bush walking,Bush walking,26.85,17.47,1.54,1.5x,3,1.25–2x
+ACT,Australian Capital Territory,Canoeing/Kayaking,Canoeing and kayaking,0.94,1.0,0.94,0.9x,2,"0.8–1.25x, about average"
+ACT,Australian Capital Territory,Fishing (recreational),Fishing,0.19,1.07,0.18,0.2x,0,Under 0.5x
+ACT,Australian Capital Territory,Mountain biking,Mountain biking,1.28,0.73,1.75,1.8x,3,1.25–2x
+ACT,Australian Capital Territory,Ski & snowboard,Skiing and snowboarding,1.77,0.81,2.19,2.2x,4,2x or more
+ACT,Australian Capital Territory,Surfing,Surfing,0.57,1.38,0.41,0.4x,0,Under 0.5x
+NSW,New South Wales,Bush walking,Bush walking,17.36,17.47,0.99,1.0x,2,"0.8–1.25x, about average"
+NSW,New South Wales,Canoeing/Kayaking,Canoeing and kayaking,1.22,1.0,1.22,1.2x,2,"0.8–1.25x, about average"
+NSW,New South Wales,Fishing (recreational),Fishing,1.05,1.07,0.98,1.0x,2,"0.8–1.25x, about average"
+NSW,New South Wales,Mountain biking,Mountain biking,0.57,0.73,0.78,0.8x,1,0.5–0.8x
+NSW,New South Wales,Ski & snowboard,Skiing and snowboarding,1.15,0.81,1.42,1.4x,3,1.25–2x
+NSW,New South Wales,Surfing,Surfing,1.67,1.38,1.21,1.2x,2,"0.8–1.25x, about average"
+NT,Northern Territory,Bush walking,Bush walking,18.96,17.47,1.09,1.1x,2,"0.8–1.25x, about average"
+NT,Northern Territory,Canoeing/Kayaking,Canoeing and kayaking,1.71,1.0,1.71,1.7x,3,1.25–2x
+NT,Northern Territory,Fishing (recreational),Fishing,1.52,1.07,1.42,1.4x,3,1.25–2x
+NT,Northern Territory,Mountain biking,Mountain biking,1.03,0.73,1.41,1.4x,3,1.25–2x
+NT,Northern Territory,Ski & snowboard,Skiing and snowboarding,0.87,0.81,1.07,1.1x,2,"0.8–1.25x, about average"
+NT,Northern Territory,Surfing,Surfing,0.22,1.38,0.16,0.2x,0,Under 0.5x
+QLD,Queensland,Bush walking,Bush walking,17.68,17.47,1.01,1.0x,2,"0.8–1.25x, about average"
+QLD,Queensland,Canoeing/Kayaking,Canoeing and kayaking,0.89,1.0,0.89,0.9x,2,"0.8–1.25x, about average"
+QLD,Queensland,Fishing (recreational),Fishing,1.41,1.07,1.32,1.3x,3,1.25–2x
+QLD,Queensland,Mountain biking,Mountain biking,0.91,0.73,1.25,1.2x,3,1.25–2x
+QLD,Queensland,Ski & snowboard,Skiing and snowboarding,0.59,0.81,0.73,0.7x,1,0.5–0.8x
+QLD,Queensland,Surfing,Surfing,1.38,1.38,1.0,1.0x,2,"0.8–1.25x, about average"
+SA,South Australia,Bush walking,Bush walking,15.38,17.47,0.88,0.9x,2,"0.8–1.25x, about average"
+SA,South Australia,Canoeing/Kayaking,Canoeing and kayaking,0.9,1.0,0.9,0.9x,2,"0.8–1.25x, about average"
+SA,South Australia,Fishing (recreational),Fishing,1.25,1.07,1.17,1.2x,2,"0.8–1.25x, about average"
+SA,South Australia,Mountain biking,Mountain biking,0.53,0.73,0.73,0.7x,1,0.5–0.8x
+SA,South Australia,Ski & snowboard,Skiing and snowboarding,0.26,0.81,0.32,0.3x,0,Under 0.5x
+SA,South Australia,Surfing,Surfing,1.28,1.38,0.93,0.9x,2,"0.8–1.25x, about average"
+TAS,Tasmania,Bush walking,Bush walking,27.52,17.47,1.58,1.6x,3,1.25–2x
+TAS,Tasmania,Canoeing/Kayaking,Canoeing and kayaking,2.08,1.0,2.08,2.1x,4,2x or more
+TAS,Tasmania,Fishing (recreational),Fishing,0.97,1.07,0.91,0.9x,2,"0.8–1.25x, about average"
+TAS,Tasmania,Mountain biking,Mountain biking,1.77,0.73,2.42,2.4x,4,2x or more
+TAS,Tasmania,Ski & snowboard,Skiing and snowboarding,0.4,0.81,0.49,0.5x,0,Under 0.5x
+TAS,Tasmania,Surfing,Surfing,1.36,1.38,0.99,1.0x,2,"0.8–1.25x, about average"
+VIC,Victoria,Bush walking,Bush walking,16.12,17.47,0.92,0.9x,2,"0.8–1.25x, about average"
+VIC,Victoria,Canoeing/Kayaking,Canoeing and kayaking,0.79,1.0,0.79,0.8x,1,0.5–0.8x
+VIC,Victoria,Fishing (recreational),Fishing,0.67,1.07,0.63,0.6x,1,0.5–0.8x
+VIC,Victoria,Mountain biking,Mountain biking,0.5,0.73,0.68,0.7x,1,0.5–0.8x
+VIC,Victoria,Ski & snowboard,Skiing and snowboarding,0.82,0.81,1.01,1.0x,2,"0.8–1.25x, about average"
+VIC,Victoria,Surfing,Surfing,1.01,1.38,0.73,0.7x,1,0.5–0.8x
+WA,Western Australia,Bush walking,Bush walking,18.27,17.47,1.05,1.1x,2,"0.8–1.25x, about average"
+WA,Western Australia,Canoeing/Kayaking,Canoeing and kayaking,0.86,1.0,0.86,0.9x,2,"0.8–1.25x, about average"
+WA,Western Australia,Fishing (recreational),Fishing,1.45,1.07,1.36,1.4x,3,1.25–2x
+WA,Western Australia,Mountain biking,Mountain biking,1.15,0.73,1.58,1.6x,3,1.25–2x
+WA,Western Australia,Ski & snowboard,Skiing and snowboarding,0.5,0.81,0.62,0.6x,1,0.5–0.8x
+WA,Western Australia,Surfing,Surfing,1.76,1.38,1.28,1.3x,3,1.25–2x

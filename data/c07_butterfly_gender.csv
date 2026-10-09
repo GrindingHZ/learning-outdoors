@@ -1,0 +1,27 @@
+activity,activity_label,female_minus_male_pts,skew,gender,rate_pct,signed_rate_pct
+Bush walking,Bush walking,2.3,Women,Men,16.3,-16.3
+Bush walking,Bush walking,2.3,Women,Women,18.6,18.6
+Canoeing/Kayaking,Canoeing and kayaking,-0.07,Men,Men,1.03,-1.03
+Canoeing/Kayaking,Canoeing and kayaking,-0.07,Men,Women,0.96,0.96
+Equestrian,Equestrian,0.6,Women,Men,0.14,-0.14
+Equestrian,Equestrian,0.6,Women,Women,0.74,0.74
+Fishing (recreational),Fishing,-1.22,Men,Men,1.69,-1.69
+Fishing (recreational),Fishing,-1.22,Men,Women,0.47,0.47
+Lifesaving surf,Surf lifesaving,-0.14,Men,Men,0.2,-0.2
+Lifesaving surf,Surf lifesaving,-0.14,Men,Women,0.06,0.06
+Mountain biking,Mountain biking,-0.9,Men,Men,1.18,-1.18
+Mountain biking,Mountain biking,-0.9,Men,Women,0.28,0.28
+Orienteering,Orienteering,0.0,Even,Men,0.07,-0.07
+Orienteering,Orienteering,0.0,Even,Women,0.07,0.07
+Rock climbing/Abseiling/Caving,Rock climbing and caving,-0.17,Men,Men,0.53,-0.53
+Rock climbing/Abseiling/Caving,Rock climbing and caving,-0.17,Men,Women,0.36,0.36
+Rowing,Rowing,-0.2,Men,Men,0.69,-0.69
+Rowing,Rowing,-0.2,Men,Women,0.49,0.49
+Sailing,Sailing,-0.26,Men,Men,0.46,-0.46
+Sailing,Sailing,-0.26,Men,Women,0.2,0.2
+Ski & snowboard,Skiing and snowboarding,-0.29,Men,Men,0.96,-0.96
+Ski & snowboard,Skiing and snowboarding,-0.29,Men,Women,0.67,0.67
+Surfing,Surfing,-0.67,Men,Men,1.73,-1.73
+Surfing,Surfing,-0.67,Men,Women,1.06,1.06
+Underwater sports,Diving and snorkelling,0.0,Even,Men,0.84,-0.84
+Underwater sports,Diving and snorkelling,0.0,Even,Women,0.84,0.84

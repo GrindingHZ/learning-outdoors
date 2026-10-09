@@ -1,0 +1,9 @@
+region,region_name,lon,lat,rate_pct,walkers,motive_outdoors_pct,share_of_all_walkers_pct
+ACT,Australian Capital Territory,149.13,-35.28,26.85,106848,56.23,2.7
+NSW,New South Wales,147.0,-32.5,17.36,1225023,50.94,31.0
+NT,Northern Territory,133.5,-19.5,18.96,39501,49.15,1.0
+QLD,Queensland,144.5,-22.5,17.68,818181,51.04,20.7
+SA,South Australia,135.5,-30.0,15.38,243246,50.16,6.2
+TAS,Tasmania,146.5,-42.0,27.52,132990,57.4,3.4
+VIC,Victoria,144.5,-37.0,16.12,937035,50.66,23.7
+WA,Western Australia,122.0,-25.5,18.27,451127,51.28,11.4

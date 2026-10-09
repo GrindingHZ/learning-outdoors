@@ -1,0 +1,57 @@
+age_band,age_order,item,motivation,share_pct,rank
+15-17,0,Sense of achievement,Achievement,37.55,7
+18-24,1,Sense of achievement,Achievement,37.27,7
+25-34,2,Sense of achievement,Achievement,33.41,8
+35-44,3,Sense of achievement,Achievement,28.86,8
+45-54,4,Sense of achievement,Achievement,27.3,7
+55-64,5,Sense of achievement,Achievement,29.46,7
+65+,6,Sense of achievement,Achievement,28.43,7
+15-17,0,Fun/enjoyment,Fun,71.75,1
+18-24,1,Fun/enjoyment,Fun,64.75,1
+25-34,2,Fun/enjoyment,Fun,61.62,2
+35-44,3,Fun/enjoyment,Fun,60.22,2
+45-54,4,Fun/enjoyment,Fun,57.19,3
+55-64,5,Fun/enjoyment,Fun,58.22,3
+65+,6,Fun/enjoyment,Fun,49.99,3
+15-17,0,Physical health or fitness,Health and fitness,61.51,2
+18-24,1,Physical health or fitness,Health and fitness,62.13,2
+25-34,2,Physical health or fitness,Health and fitness,62.53,1
+35-44,3,Physical health or fitness,Health and fitness,63.12,1
+45-54,4,Physical health or fitness,Health and fitness,67.0,1
+55-64,5,Physical health or fitness,Health and fitness,70.57,1
+65+,6,Physical health or fitness,Health and fitness,74.4,1
+15-17,0,Hobby,Hobby,53.46,4
+18-24,1,Hobby,Hobby,47.36,5
+25-34,2,Hobby,Hobby,41.08,7
+35-44,3,Hobby,Hobby,30.92,7
+18-24,1,Psychological/ mental health/ therapy,Mental health,36.52,8
+25-34,2,Psychological/ mental health/ therapy,Mental health,42.39,6
+35-44,3,Psychological/ mental health/ therapy,Mental health,40.74,6
+45-54,4,Psychological/ mental health/ therapy,Mental health,40.75,5
+55-64,5,Psychological/ mental health/ therapy,Mental health,38.67,6
+65+,6,Psychological/ mental health/ therapy,Mental health,29.7,6
+15-17,0,Social reasons,Social,56.56,3
+18-24,1,Social reasons,Social,54.57,3
+25-34,2,Social reasons,Social,49.18,4
+35-44,3,Social reasons,Social,42.22,5
+45-54,4,Social reasons,Social,38.57,6
+55-64,5,Social reasons,Social,39.46,5
+65+,6,Social reasons,Social,39.98,5
+15-17,0,To be outdoors/to enjoy nature,To be outdoors,47.04,5
+18-24,1,To be outdoors/to enjoy nature,To be outdoors,46.67,6
+25-34,2,To be outdoors/to enjoy nature,To be outdoors,49.07,5
+35-44,3,To be outdoors/to enjoy nature,To be outdoors,49.65,4
+45-54,4,To be outdoors/to enjoy nature,To be outdoors,51.63,4
+55-64,5,To be outdoors/to enjoy nature,To be outdoors,57.51,4
+65+,6,To be outdoors/to enjoy nature,To be outdoors,52.96,2
+15-17,0,Training purposes,Training,34.58,8
+45-54,4,Walk the dog,Walk the dog,23.41,8
+55-64,5,Walk the dog,Walk the dog,26.18,8
+65+,6,Walk the dog,Walk the dog,18.67,8
+15-17,0,To lose weight/ keep weight off/tone,Weight,39.27,6
+18-24,1,To lose weight/ keep weight off/tone,Weight,50.48,4
+25-34,2,To lose weight/ keep weight off/tone,Weight,54.67,3
+35-44,3,To lose weight/ keep weight off/tone,Weight,55.32,3
+45-54,4,To lose weight/ keep weight off/tone,Weight,58.4,2
+55-64,5,To lose weight/ keep weight off/tone,Weight,59.78,2
+65+,6,To lose weight/ keep weight off/tone,Weight,45.52,4
