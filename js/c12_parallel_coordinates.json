@@ -1,0 +1,379 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {
+    "text": "One in five Australian students is taken on field trips to investigate the environment",
+    "subtitle": [
+      "Share of students agreeing with each statement, PISA 2025. Each grey line is one of 90 countries and economies.",
+      "Hover a line to see which country it is."
+    ]
+  },
+  "width": "container",
+  "height": 420,
+  "data": {
+    "url": "data/c12_parallel_class_opportunities.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "item_order": "number",
+        "pct": "number"
+      }
+    }
+  },
+  "transform": [
+    {
+      "calculate": "format(datum.pct, '.1f') + '%'",
+      "as": "pct_txt"
+    },
+    {
+      "calculate": "format(datum.pct, '.0f') + '%'",
+      "as": "pct_lbl"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "item_order",
+      "type": "quantitative",
+      "scale": {
+        "domain": [
+          -0.25,
+          3.65
+        ]
+      },
+      "axis": {
+        "orient": "top",
+        "title": null,
+        "values": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "labelExpr": "['Taken on field trips', 'Class discusses solutions', 'Given chances to research', 'Assessed on environmental knowledge'][datum.value]",
+        "labelColor": "#1d1d1f",
+        "labelFontSize": 12,
+        "labelFontWeight": 600,
+        "grid": false,
+        "ticks": false,
+        "domain": false,
+        "labelPadding": 10,
+        "labelLimit": 300
+      }
+    },
+    "y": {
+      "field": "pct",
+      "type": "quantitative",
+      "scale": {
+        "domain": [
+          0,
+          100
+        ]
+      },
+      "axis": {
+        "title": "Students who agree",
+        "values": [
+          0,
+          25,
+          50,
+          75,
+          100
+        ],
+        "labelExpr": "datum.value + '%'",
+        "grid": true,
+        "domain": false,
+        "ticks": false
+      }
+    }
+  },
+  "layer": [
+    {
+      "transform": [
+        {
+          "filter": "datum.role == 'Australia'"
+        }
+      ],
+      "mark": {
+        "type": "rule",
+        "color": "#c7c7cc",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "y": {
+          "datum": 0
+        },
+        "y2": {
+          "datum": 100
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.role == 'Other'"
+        }
+      ],
+      "mark": {
+        "type": "line",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "detail": {
+          "field": "country"
+        },
+        "order": {
+          "field": "item_order"
+        },
+        "color": {
+          "condition": {
+            "param": "hover",
+            "empty": false,
+            "value": "#1d1d1f"
+          },
+          "value": "#c7c7cc"
+        },
+        "strokeWidth": {
+          "condition": {
+            "param": "hover",
+            "empty": false,
+            "value": 2.5
+          },
+          "value": 1
+        },
+        "opacity": {
+          "condition": {
+            "param": "hover",
+            "empty": false,
+            "value": 1
+          },
+          "value": 0.55
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.role == 'Other'"
+        }
+      ],
+      "params": [
+        {
+          "name": "hover",
+          "select": {
+            "type": "point",
+            "fields": [
+              "country"
+            ],
+            "on": "mouseover",
+            "clear": "mouseout"
+          }
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "size": 40,
+        "opacity": 0
+      },
+      "encoding": {
+        "tooltip": [
+          {
+            "field": "display_name",
+            "title": "Country or economy"
+          },
+          {
+            "field": "item_full",
+            "title": "Statement"
+          },
+          {
+            "field": "pct_txt",
+            "title": "Students who agree"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.role == 'OECD average'"
+        }
+      ],
+      "mark": {
+        "type": "line",
+        "strokeWidth": 2.5,
+        "color": "#6e6e73"
+      },
+      "encoding": {
+        "detail": {
+          "field": "country"
+        },
+        "order": {
+          "field": "item_order"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.role == 'Australia'"
+        }
+      ],
+      "mark": {
+        "type": "line",
+        "strokeWidth": 3,
+        "color": "#d95f02"
+      },
+      "encoding": {
+        "detail": {
+          "field": "country"
+        },
+        "order": {
+          "field": "item_order"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.role != 'Other'"
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "size": 70,
+        "opacity": 1,
+        "stroke": "#ffffff",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "color": {
+          "field": "role",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Australia",
+              "OECD average"
+            ],
+            "range": [
+              "#d95f02",
+              "#6e6e73"
+            ]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "display_name",
+            "title": "Country or economy"
+          },
+          {
+            "field": "item_full",
+            "title": "Statement"
+          },
+          {
+            "field": "pct_txt",
+            "title": "Students who agree"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.role == 'Australia' && (datum.item_order == 0 || datum.item_order == 3)"
+        },
+        {
+          "calculate": "datum.item_order == 0 ? datum.pct_lbl + ', 4th lowest of 90' : datum.item_order == 3 ? 'Australia ' + datum.pct_lbl : datum.pct_lbl",
+          "as": "lbl"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 9,
+        "fontSize": 12,
+        "fontWeight": 600,
+        "color": "#d95f02"
+      },
+      "encoding": {
+        "text": {
+          "field": "lbl"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.role == 'OECD average' && datum.item_order == 0"
+        },
+        {
+          "calculate": "'OECD average ' + datum.pct_lbl",
+          "as": "lbl"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "bottom",
+        "dy": -9,
+        "fontSize": 12,
+        "fontWeight": 600,
+        "color": "#6e6e73"
+      },
+      "encoding": {
+        "text": {
+          "field": "lbl"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.role == 'OECD average' && datum.item_order == 3"
+        },
+        {
+          "calculate": "'OECD average ' + datum.pct_lbl",
+          "as": "lbl"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 9,
+        "fontSize": 12,
+        "fontWeight": 600,
+        "color": "#6e6e73"
+      },
+      "encoding": {
+        "text": {
+          "field": "lbl"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.role == 'Australia' && (datum.item_order == 1 || datum.item_order == 2)"
+        },
+        {
+          "calculate": "datum.item_order == 0 ? datum.pct_lbl + ', 4th lowest of 90' : datum.item_order == 3 ? 'Australia ' + datum.pct_lbl : datum.pct_lbl",
+          "as": "lbl"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "bottom",
+        "dx": 0,
+        "fontSize": 12,
+        "fontWeight": 600,
+        "color": "#d95f02",
+        "dy": -9
+      },
+      "encoding": {
+        "text": {
+          "field": "lbl"
+        }
+      }
+    }
+  ]
+}

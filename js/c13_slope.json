@@ -1,0 +1,382 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {
+    "text": "Australian schools lead on gardens and Indigenous knowledge, and lag on field work",
+    "subtitle": [
+      "Share of students in schools that offer each activity frequently, principals' reports, PISA 2025.",
+      "Coloured lines differ from the OECD average by 5 points or more."
+    ],
+    "offset": 51
+  },
+  "width": "container",
+  "height": 520,
+  "data": {
+    "url": "data/c13_slope_school_activities.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "au_minus_oecd_pts": "number",
+        "pct": "number",
+        "x_order": "number"
+      }
+    }
+  },
+  "transform": [
+    {
+      "calculate": "datum.au_minus_oecd_pts >= 5 ? 'Australia ahead by 5+ points' : datum.au_minus_oecd_pts <= -5 ? 'Australia behind by 5+ points' : 'Within 5 points'",
+      "as": "group"
+    },
+    {
+      "calculate": "abs(datum.au_minus_oecd_pts) >= 5",
+      "as": "big"
+    },
+    {
+      "calculate": "(datum.pct < 1 ? format(datum.pct, '.2f') : format(datum.pct, '.1f')) + '%'",
+      "as": "pct_txt"
+    },
+    {
+      "calculate": "(datum.au_minus_oecd_pts > 0 ? '+' : '') + format(datum.au_minus_oecd_pts, '.1f') + ' points'",
+      "as": "diff_txt"
+    },
+    {
+      "lookup": "activity_label",
+      "from": {
+        "data": {
+          "values": [
+            {
+              "a": "Biodiversity audit of school grounds",
+              "label_y": 11.36
+            },
+            {
+              "a": "Field trips to waste facilities",
+              "label_y": 13.76
+            },
+            {
+              "a": "Celebrating environmental targets",
+              "label_y": 16.16
+            },
+            {
+              "a": "Guest speakers",
+              "label_y": 18.56
+            },
+            {
+              "a": "Rubbish collection",
+              "label_y": 33.59
+            },
+            {
+              "a": "School garden",
+              "label_y": 38.21
+            },
+            {
+              "a": "Indigenous knowledge sharing",
+              "label_y": 41.38
+            },
+            {
+              "a": "Recycling programme",
+              "label_y": 58.31
+            }
+          ]
+        },
+        "key": "a",
+        "fields": [
+          "label_y"
+        ]
+      }
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "x_order",
+      "type": "quantitative",
+      "scale": {
+        "domain": [
+          -0.14,
+          1.95
+        ]
+      },
+      "axis": {
+        "orient": "top",
+        "title": null,
+        "values": [
+          0,
+          1
+        ],
+        "labelExpr": "datum.value == 0 ? 'OECD average' : 'Australia'",
+        "labelFontSize": 14,
+        "labelColor": "#1d1d1f",
+        "labelFontWeight": 600,
+        "grid": false,
+        "ticks": false,
+        "domain": false,
+        "labelPadding": 10
+      }
+    },
+    "y": {
+      "field": "pct",
+      "type": "quantitative",
+      "scale": {
+        "domain": [
+          8,
+          62
+        ]
+      },
+      "axis": {
+        "title": "Students in schools offering it frequently",
+        "values": [
+          10,
+          20,
+          30,
+          40,
+          50,
+          60
+        ],
+        "labelExpr": "datum.value + '%'",
+        "grid": true,
+        "domain": false,
+        "ticks": false
+      }
+    },
+    "color": {
+      "field": "group",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "Australia ahead by 5+ points",
+          "Australia behind by 5+ points",
+          "Within 5 points"
+        ],
+        "range": [
+          "#2f6f4e",
+          "#762a83",
+          "#d2d2d7"
+        ]
+      },
+      "legend": {
+        "title": null,
+        "orient": "none",
+        "labelLimit": 260,
+        "legendX": -56,
+        "legendY": -58
+      }
+    }
+  },
+  "layer": [
+    {
+      "params": [
+        {
+          "name": "hover",
+          "select": {
+            "type": "point",
+            "fields": [
+              "activity_label"
+            ],
+            "on": "mouseover",
+            "clear": "mouseout"
+          }
+        }
+      ],
+      "mark": {
+        "type": "line",
+        "strokeCap": "round"
+      },
+      "encoding": {
+        "detail": {
+          "field": "activity_label"
+        },
+        "order": {
+          "field": "x_order"
+        },
+        "strokeWidth": {
+          "condition": {
+            "test": "datum.big",
+            "value": 2.5
+          },
+          "value": 1.25
+        },
+        "opacity": {
+          "condition": {
+            "param": "hover",
+            "empty": true,
+            "value": 1
+          },
+          "value": 0.2
+        },
+        "tooltip": [
+          {
+            "field": "activity_label",
+            "title": "Activity"
+          },
+          {
+            "field": "diff_txt",
+            "title": "Australia minus OECD"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "circle",
+        "stroke": "#ffffff",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "size": {
+          "condition": {
+            "test": "datum.big",
+            "value": 70
+          },
+          "value": 30
+        },
+        "opacity": {
+          "condition": {
+            "param": "hover",
+            "empty": true,
+            "value": 1
+          },
+          "value": 0.2
+        },
+        "tooltip": [
+          {
+            "field": "activity_label",
+            "title": "Activity"
+          },
+          {
+            "field": "series",
+            "title": "System"
+          },
+          {
+            "field": "pct_txt",
+            "title": "Students in schools offering it frequently"
+          },
+          {
+            "field": "diff_txt",
+            "title": "Australia minus OECD"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.series == 'Australia' && datum.big"
+        },
+        {
+          "calculate": "1.035",
+          "as": "x0"
+        },
+        {
+          "calculate": "1.075",
+          "as": "x1"
+        }
+      ],
+      "mark": {
+        "type": "rule",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "x": {
+          "field": "x0",
+          "type": "quantitative"
+        },
+        "x2": {
+          "field": "x1"
+        },
+        "y": {
+          "field": "pct",
+          "type": "quantitative"
+        },
+        "y2": {
+          "field": "label_y"
+        },
+        "opacity": {
+          "condition": {
+            "param": "hover",
+            "empty": true,
+            "value": 0.6
+          },
+          "value": 0.2
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.series == 'Australia' && datum.big"
+        },
+        {
+          "calculate": "1.09",
+          "as": "lx"
+        },
+        {
+          "calculate": "datum.activity_label + '  ' + (datum.au_minus_oecd_pts > 0 ? '+' : '−') + format(abs(datum.au_minus_oecd_pts), '.0f')",
+          "as": "end_label"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "fontSize": 12
+      },
+      "encoding": {
+        "x": {
+          "field": "lx",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "label_y",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "end_label"
+        },
+        "opacity": {
+          "condition": {
+            "param": "hover",
+            "empty": true,
+            "value": 1
+          },
+          "value": 0.2
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.activity_label == 'Indigenous knowledge sharing' && datum.series == 'Australia'"
+        },
+        {
+          "calculate": "1.09",
+          "as": "ax"
+        },
+        {
+          "calculate": "50",
+          "as": "ay"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "fontSize": 11,
+        "color": "#6e6e73"
+      },
+      "encoding": {
+        "x": {
+          "field": "ax",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "ay",
+          "type": "quantitative"
+        },
+        "text": {
+          "value": "Widest gap: Indigenous knowledge, 41% against 17%"
+        },
+        "color": {
+          "value": "#6e6e73"
+        }
+      }
+    }
+  ]
+}

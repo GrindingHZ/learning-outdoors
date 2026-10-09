@@ -1,0 +1,389 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {
+    "text": "Where more students go on field trips, more want an environmental career",
+    "subtitle": "Each dot is a country or economy in PISA 2025. The dashed line shows the overall direction. Drag across the chart to highlight a group."
+  },
+  "width": "container",
+  "height": 480,
+  "data": {
+    "url": "data/c15_scatter_field_trips_vs_career.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "agree_field_trips": "number",
+        "interested_pct": "number",
+        "env_science_mean": "number",
+        "awareness_index": "number"
+      }
+    }
+  },
+  "transform": [
+    {
+      "calculate": "(datum.is_australia === true || datum.is_australia === 'True') ? 'Australia' : 'Other'",
+      "as": "who"
+    },
+    {
+      "calculate": "(datum.agree_field_trips < 1 ? format(datum.agree_field_trips, '.2f') : format(datum.agree_field_trips, '.1f')) + '%'",
+      "as": "trips_txt"
+    },
+    {
+      "calculate": "(datum.interested_pct < 1 ? format(datum.interested_pct, '.2f') : format(datum.interested_pct, '.1f')) + '%'",
+      "as": "career_txt"
+    },
+    {
+      "calculate": "format(datum.env_science_mean, '.0f') + ' points'",
+      "as": "score_txt"
+    },
+    {
+      "lookup": "display_name",
+      "from": {
+        "data": {
+          "values": [
+            {
+              "name": "Australia",
+              "ldx": -1.6,
+              "ldy": 1.4,
+              "lalign": "right",
+              "ltext": "Australia 21%, 56%"
+            },
+            {
+              "name": "United Kingdom",
+              "ldx": -1.4,
+              "ldy": 0,
+              "lalign": "right",
+              "ltext": "United Kingdom"
+            },
+            {
+              "name": "Netherlands",
+              "ldx": 0,
+              "ldy": -2.3,
+              "lalign": "center",
+              "ltext": "Netherlands"
+            },
+            {
+              "name": "Vietnam",
+              "ldx": 1.5,
+              "ldy": 0,
+              "lalign": "left",
+              "ltext": "Vietnam"
+            },
+            {
+              "name": "Indonesia",
+              "ldx": 0,
+              "ldy": -2.4,
+              "lalign": "center",
+              "ltext": "Indonesia"
+            },
+            {
+              "name": "Thailand",
+              "ldx": -1.5,
+              "ldy": 0,
+              "lalign": "right",
+              "ltext": "Thailand"
+            },
+            {
+              "name": "Malaysia",
+              "ldx": 1.5,
+              "ldy": 0,
+              "lalign": "left",
+              "ltext": "Malaysia"
+            }
+          ]
+        },
+        "key": "name",
+        "fields": [
+          "ldx",
+          "ldy",
+          "lalign",
+          "ltext"
+        ]
+      }
+    },
+    {
+      "calculate": "datum.agree_field_trips + (isValid(datum.ldx) ? datum.ldx : 0)",
+      "as": "lx"
+    },
+    {
+      "calculate": "datum.interested_pct + (isValid(datum.ldy) ? datum.ldy : 0)",
+      "as": "ly"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "agree_field_trips",
+      "type": "quantitative",
+      "scale": {
+        "domain": [
+          0,
+          100
+        ]
+      },
+      "axis": {
+        "title": "Students taken on environmental field trips",
+        "values": [
+          0,
+          25,
+          50,
+          75,
+          100
+        ],
+        "labelExpr": "datum.value + '%'",
+        "grid": true
+      }
+    },
+    "y": {
+      "field": "interested_pct",
+      "type": "quantitative",
+      "scale": {
+        "domain": [
+          30,
+          100
+        ]
+      },
+      "axis": {
+        "title": "Students interested in an environmental career",
+        "values": [
+          30,
+          50,
+          70,
+          90
+        ],
+        "labelExpr": "datum.value + '%'",
+        "grid": true
+      }
+    }
+  },
+  "layer": [
+    {
+      "transform": [
+        {
+          "regression": "interested_pct",
+          "on": "agree_field_trips"
+        }
+      ],
+      "mark": {
+        "type": "line",
+        "color": "#c7c7cc",
+        "strokeDash": [
+          6,
+          4
+        ],
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "x": {
+          "field": "agree_field_trips",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "interested_pct",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "params": [
+        {
+          "name": "brush",
+          "select": {
+            "type": "interval",
+            "encodings": [
+              "x",
+              "y"
+            ]
+          }
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "stroke": "#ffffff",
+        "strokeWidth": 1,
+        "size": 90
+      },
+      "encoding": {
+        "color": {
+          "field": "who",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Australia",
+              "Other"
+            ],
+            "range": [
+              "#d95f02",
+              "#8e8e93"
+            ]
+          },
+          "legend": null
+        },
+        "opacity": {
+          "condition": {
+            "param": "brush",
+            "empty": true,
+            "value": 0.8
+          },
+          "value": 0.2
+        },
+        "tooltip": [
+          {
+            "field": "display_name",
+            "title": "Country or economy"
+          },
+          {
+            "field": "trips_txt",
+            "title": "Taken on field trips"
+          },
+          {
+            "field": "career_txt",
+            "title": "Interested in an environmental career"
+          },
+          {
+            "field": "score_txt",
+            "title": "Environmental science"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "isValid(datum.ltext) && datum.who != 'Australia' && datum.lalign == 'left'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "color": "#6e6e73",
+        "align": "left"
+      },
+      "encoding": {
+        "x": {
+          "field": "lx",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "ly",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "ltext"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "isValid(datum.ltext) && datum.who != 'Australia' && datum.lalign == 'center'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "color": "#6e6e73",
+        "align": "center"
+      },
+      "encoding": {
+        "x": {
+          "field": "lx",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "ly",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "ltext"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "isValid(datum.ltext) && datum.who != 'Australia' && datum.lalign == 'right'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "color": "#6e6e73",
+        "align": "right"
+      },
+      "encoding": {
+        "x": {
+          "field": "lx",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "ly",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "ltext"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.who == 'Australia'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "fontWeight": 600,
+        "color": "#d95f02",
+        "align": "right"
+      },
+      "encoding": {
+        "x": {
+          "field": "lx",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "ly",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "ltext"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.display_name == 'Netherlands'"
+        },
+        {
+          "calculate": "1",
+          "as": "ax"
+        },
+        {
+          "calculate": "33.5",
+          "as": "ay"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "fontSize": 11,
+        "color": "#6e6e73"
+      },
+      "encoding": {
+        "x": {
+          "field": "ax",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "ay",
+          "type": "quantitative"
+        },
+        "text": {
+          "value": "Few field trips and lower interest: Australia, the United Kingdom, the Netherlands"
+        }
+      }
+    }
+  ]
+}

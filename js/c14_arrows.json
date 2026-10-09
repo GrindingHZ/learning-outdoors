@@ -1,0 +1,307 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {
+    "text": "Fewer Australian students can explain greenhouse gases than in 2006",
+    "subtitle": "Share of 15 year olds who say they could explain the issue, PISA 2006 and 2025. Arrows point from 2006 to 2025.",
+    "offset": 51
+  },
+  "width": "container",
+  "height": 240,
+  "data": {
+    "url": "data/c14_arrows_awareness_2006_2025.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "pct_2006": "number",
+        "pct_2025": "number",
+        "change_pts": "number"
+      }
+    }
+  },
+  "transform": [
+    {
+      "calculate": "datum.change_pts < 0 ? 'triangle-left' : 'triangle-right'",
+      "as": "head"
+    },
+    {
+      "calculate": "(datum.change_pts > 0 ? '+' : '') + format(datum.change_pts, '.1f') + ' points'",
+      "as": "chg_txt"
+    },
+    {
+      "calculate": "(datum.pct_2006 < 1 ? format(datum.pct_2006, '.2f') : format(datum.pct_2006, '.1f')) + '%'",
+      "as": "p06_txt"
+    },
+    {
+      "calculate": "(datum.pct_2025 < 1 ? format(datum.pct_2025, '.2f') : format(datum.pct_2025, '.1f')) + '%'",
+      "as": "p25_txt"
+    }
+  ],
+  "encoding": {
+    "y": {
+      "field": "issue_label",
+      "type": "nominal",
+      "sort": [
+        "Greenhouse gases",
+        "Clearing forests",
+        "Nuclear waste"
+      ],
+      "scale": {
+        "paddingInner": 0.35,
+        "paddingOuter": 0.1
+      },
+      "axis": {
+        "title": null,
+        "ticks": false,
+        "domain": false,
+        "labelPadding": 14,
+        "labelColor": "#1d1d1f",
+        "labelFontSize": 12
+      }
+    },
+    "yOffset": {
+      "field": "series",
+      "type": "nominal",
+      "sort": [
+        "Australia",
+        "OECD average"
+      ]
+    },
+    "x": {
+      "type": "quantitative",
+      "scale": {
+        "domain": [
+          40,
+          85
+        ]
+      },
+      "axis": {
+        "title": "Share of students who could explain the issue",
+        "values": [
+          40,
+          50,
+          60,
+          70,
+          80
+        ],
+        "labelExpr": "datum.value + '%'",
+        "grid": true
+      }
+    },
+    "color": {
+      "field": "series",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "Australia",
+          "OECD average"
+        ],
+        "range": [
+          "#d95f02",
+          "#8e8e93"
+        ]
+      },
+      "legend": {
+        "title": null,
+        "orient": "none",
+        "legendX": -120,
+        "legendY": -34
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "strokeWidth": 2.5
+      },
+      "encoding": {
+        "x": {
+          "field": "pct_2006"
+        },
+        "x2": {
+          "field": "pct_2025"
+        },
+        "tooltip": [
+          {
+            "field": "issue_label",
+            "title": "Issue"
+          },
+          {
+            "field": "series",
+            "title": "System"
+          },
+          {
+            "field": "p06_txt",
+            "title": "2006"
+          },
+          {
+            "field": "p25_txt",
+            "title": "2025"
+          },
+          {
+            "field": "chg_txt",
+            "title": "Change"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "shape": "circle",
+        "size": 46,
+        "filled": false,
+        "fill": "#f7f9f8",
+        "strokeWidth": 2,
+        "opacity": 1
+      },
+      "encoding": {
+        "x": {
+          "field": "pct_2006"
+        },
+        "tooltip": [
+          {
+            "field": "issue_label",
+            "title": "Issue"
+          },
+          {
+            "field": "series",
+            "title": "System"
+          },
+          {
+            "field": "p06_txt",
+            "title": "2006"
+          },
+          {
+            "field": "p25_txt",
+            "title": "2025"
+          },
+          {
+            "field": "chg_txt",
+            "title": "Change"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 130,
+        "opacity": 1
+      },
+      "encoding": {
+        "x": {
+          "field": "pct_2025"
+        },
+        "shape": {
+          "field": "head",
+          "type": "nominal",
+          "scale": null,
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "issue_label",
+            "title": "Issue"
+          },
+          {
+            "field": "series",
+            "title": "System"
+          },
+          {
+            "field": "p06_txt",
+            "title": "2006"
+          },
+          {
+            "field": "p25_txt",
+            "title": "2025"
+          },
+          {
+            "field": "chg_txt",
+            "title": "Change"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.change_pts < 0"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -13,
+        "fontSize": 12,
+        "fontWeight": 600
+      },
+      "encoding": {
+        "x": {
+          "field": "pct_2025"
+        },
+        "text": {
+          "field": "chg_txt"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.change_pts >= 0"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 13,
+        "fontSize": 12,
+        "fontWeight": 600
+      },
+      "encoding": {
+        "x": {
+          "field": "pct_2025"
+        },
+        "text": {
+          "field": "chg_txt"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "issue_label": "Greenhouse gases",
+            "series": "Australia",
+            "x": 71.95,
+            "t": "2006"
+          },
+          {
+            "issue_label": "Greenhouse gases",
+            "series": "Australia",
+            "x": 63.27,
+            "t": "2025"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "dy": -14,
+        "fontSize": 11,
+        "color": "#6e6e73"
+      },
+      "encoding": {
+        "x": {
+          "field": "x"
+        },
+        "text": {
+          "field": "t"
+        },
+        "color": {
+          "value": "#6e6e73"
+        }
+      }
+    }
+  ]
+}
