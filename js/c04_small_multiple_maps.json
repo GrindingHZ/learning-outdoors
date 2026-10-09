@@ -1,0 +1,366 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {
+    "text": "Tasmania and the ACT stand out, with activities at more than twice the national rate",
+    "subtitle": "State rate divided by the national rate. 1.0x means the same as Australia overall."
+  },
+  "data": {
+    "url": "data/c04_small_multiple_maps_index.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "rate_pct": "number",
+        "national_rate_pct": "number",
+        "index_vs_national": "number"
+      }
+    }
+  },
+  "transform": [
+    {
+      "lookup": "region_name",
+      "from": {
+        "data": {
+          "url": "data/geo/australian-states.topojson",
+          "format": {
+            "type": "topojson",
+            "feature": "states"
+          }
+        },
+        "key": "properties.STATE_NAME"
+      },
+      "as": "geo"
+    },
+    {
+      "lookup": "region_name",
+      "from": {
+        "data": {
+          "url": "data/c03_symbol_map_bush_walkers.csv",
+          "format": {
+            "type": "csv",
+            "parse": {
+              "lon": "number",
+              "lat": "number",
+              "rate_pct": "number",
+              "walkers": "number",
+              "motive_outdoors_pct": "number",
+              "share_of_all_walkers_pct": "number"
+            }
+          }
+        },
+        "key": "region_name",
+        "fields": [
+          "lon",
+          "lat"
+        ]
+      }
+    },
+    {
+      "calculate": "(datum.rate_pct < 1 ? format(datum.rate_pct, '.2f') : format(datum.rate_pct, '.1f')) + '%'",
+      "as": "rate_txt"
+    },
+    {
+      "calculate": "(datum.national_rate_pct < 1 ? format(datum.national_rate_pct, '.2f') : format(datum.national_rate_pct, '.1f')) + '%'",
+      "as": "national_txt"
+    }
+  ],
+  "facet": {
+    "field": "activity_label",
+    "type": "nominal",
+    "sort": {
+      "field": "national_rate_pct",
+      "op": "max",
+      "order": "descending"
+    },
+    "header": {
+      "title": null,
+      "labelFontSize": 14,
+      "labelFontWeight": 600,
+      "labelAnchor": "start",
+      "labelAlign": "left",
+      "labelPadding": 6
+    }
+  },
+  "columns": 3,
+  "spacing": {
+    "row": 24,
+    "column": 18
+  },
+  "spec": {
+    "width": 277,
+    "height": 220,
+    "projection": {
+      "type": "conicEqualArea",
+      "parallels": [
+        -18,
+        -36
+      ],
+      "rotate": [
+        -132,
+        0
+      ]
+    },
+    "layer": [
+      {
+        "mark": {
+          "type": "geoshape",
+          "stroke": "#ffffff",
+          "strokeWidth": 1
+        },
+        "encoding": {
+          "shape": {
+            "field": "geo",
+            "type": "geojson"
+          },
+          "color": {
+            "field": "index_class",
+            "type": "ordinal",
+            "scale": {
+              "domain": [
+                "Under 0.5x",
+                "0.5–0.8x",
+                "0.8–1.25x, about average",
+                "1.25–2x",
+                "2x or more"
+              ],
+              "range": [
+                "#762a83",
+                "#c2a5cf",
+                "#e9e9ed",
+                "#8fbfa3",
+                "#2f6f4e"
+              ]
+            },
+            "legend": {
+              "title": "Times the national rate",
+              "orient": "top",
+              "direction": "horizontal",
+              "type": "symbol",
+              "symbolType": "square",
+              "symbolSize": 150,
+              "symbolStrokeColor": "#c7c7cc",
+              "symbolStrokeWidth": 0.5,
+              "labelLimit": 220,
+              "columnPadding": 14,
+              "titleLimit": 420
+            }
+          },
+          "tooltip": [
+            {
+              "field": "region_name",
+              "title": "State or territory"
+            },
+            {
+              "field": "activity_label",
+              "title": "Activity"
+            },
+            {
+              "field": "index_label",
+              "title": "Times the national rate"
+            },
+            {
+              "field": "rate_txt",
+              "title": "State rate"
+            },
+            {
+              "field": "national_txt",
+              "title": "National rate"
+            }
+          ]
+        }
+      },
+      {
+        "transform": [
+          {
+            "filter": "datum.region != 'ACT' && datum.region != 'TAS' && (datum.index_vs_national >= 1.4 || datum.index_vs_national <= 0.7)"
+          }
+        ],
+        "mark": {
+          "type": "text",
+          "fontSize": 11,
+          "fontWeight": 600
+        },
+        "encoding": {
+          "longitude": {
+            "field": "lon",
+            "type": "quantitative"
+          },
+          "latitude": {
+            "field": "lat",
+            "type": "quantitative"
+          },
+          "text": {
+            "field": "index_label"
+          },
+          "color": {
+            "condition": {
+              "test": "datum.index_class_order == 0 || datum.index_class_order == 4",
+              "value": "#ffffff"
+            },
+            "value": "#1d1d1f"
+          }
+        }
+      },
+      {
+        "transform": [
+          {
+            "filter": "datum.region == 'TAS' && (datum.index_vs_national >= 1.4 || datum.index_vs_national <= 0.7)"
+          }
+        ],
+        "mark": {
+          "type": "text",
+          "fontSize": 11,
+          "fontWeight": 600,
+          "color": "#1d1d1f",
+          "dy": 17
+        },
+        "encoding": {
+          "longitude": {
+            "field": "lon",
+            "type": "quantitative"
+          },
+          "latitude": {
+            "field": "lat",
+            "type": "quantitative"
+          },
+          "text": {
+            "field": "index_label"
+          }
+        }
+      },
+      {
+        "transform": [
+          {
+            "filter": "datum.region == 'ACT'"
+          }
+        ],
+        "mark": {
+          "type": "circle",
+          "size": 90,
+          "stroke": "#ffffff",
+          "strokeWidth": 1.2,
+          "opacity": 1
+        },
+        "encoding": {
+          "longitude": {
+            "field": "lon",
+            "type": "quantitative"
+          },
+          "latitude": {
+            "field": "lat",
+            "type": "quantitative"
+          },
+          "color": {
+            "field": "index_class",
+            "type": "ordinal",
+            "scale": {
+              "domain": [
+                "Under 0.5x",
+                "0.5–0.8x",
+                "0.8–1.25x, about average",
+                "1.25–2x",
+                "2x or more"
+              ],
+              "range": [
+                "#762a83",
+                "#c2a5cf",
+                "#e9e9ed",
+                "#8fbfa3",
+                "#2f6f4e"
+              ]
+            }
+          },
+          "tooltip": [
+            {
+              "field": "region_name",
+              "title": "State or territory"
+            },
+            {
+              "field": "activity_label",
+              "title": "Activity"
+            },
+            {
+              "field": "index_label",
+              "title": "Times the national rate"
+            },
+            {
+              "field": "rate_txt",
+              "title": "State rate"
+            },
+            {
+              "field": "national_txt",
+              "title": "National rate"
+            }
+          ]
+        }
+      },
+      {
+        "transform": [
+          {
+            "filter": "datum.region == 'ACT' && (datum.index_vs_national >= 1.4 || datum.index_vs_national <= 0.7)"
+          }
+        ],
+        "mark": {
+          "type": "text",
+          "align": "left",
+          "baseline": "middle",
+          "dx": 8,
+          "fontSize": 11,
+          "fontWeight": 600,
+          "color": "#1d1d1f"
+        },
+        "encoding": {
+          "longitude": {
+            "field": "lon",
+            "type": "quantitative"
+          },
+          "latitude": {
+            "field": "lat",
+            "type": "quantitative"
+          },
+          "text": {
+            "field": "index_label"
+          }
+        }
+      },
+      {
+        "transform": [
+          {
+            "filter": "datum.activity_label == 'Bush walking' && datum.region == 'WA'"
+          },
+          {
+            "calculate": "113.6",
+            "as": "alon"
+          },
+          {
+            "calculate": "-38.4",
+            "as": "alat"
+          }
+        ],
+        "mark": {
+          "type": "text",
+          "align": "left",
+          "baseline": "middle",
+          "fontSize": 11,
+          "color": "#6e6e73",
+          "lineHeight": 13
+        },
+        "encoding": {
+          "longitude": {
+            "field": "alon",
+            "type": "quantitative"
+          },
+          "latitude": {
+            "field": "alat",
+            "type": "quantitative"
+          },
+          "text": {
+            "value": [
+              "Near average everywhere",
+              "except Tasmania and the ACT"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

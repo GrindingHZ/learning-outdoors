@@ -1,0 +1,307 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {
+    "text": [
+      "New South Wales has 1.2 million bush",
+      "walkers, nearly a third of the total"
+    ],
+    "subtitle": [
+      "Circle size is the number of adults who bush walked in 2025.",
+      "Read it against the share of adults on the left."
+    ],
+    "offset": 84
+  },
+  "width": "container",
+  "height": 365,
+  "projection": {
+    "type": "conicEqualArea",
+    "parallels": [
+      -18,
+      -36
+    ],
+    "rotate": [
+      -132,
+      0
+    ]
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "data/geo/australian-states.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "states"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#f5f5f7",
+        "stroke": "#ffffff",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "data": {
+        "url": "data/c03_symbol_map_bush_walkers.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "lon": "number",
+            "lat": "number",
+            "rate_pct": "number",
+            "walkers": "number",
+            "motive_outdoors_pct": "number",
+            "share_of_all_walkers_pct": "number"
+          }
+        }
+      },
+      "transform": [
+        {
+          "calculate": "(datum.rate_pct < 1 ? format(datum.rate_pct, '.2f') : format(datum.rate_pct, '.1f')) + '%'",
+          "as": "rate_txt"
+        },
+        {
+          "calculate": "format(datum.walkers, ',')",
+          "as": "walkers_txt"
+        },
+        {
+          "calculate": "format(datum.share_of_all_walkers_pct, '.1f') + '% of all bush walkers'",
+          "as": "share_txt"
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "opacity": 0.7,
+        "stroke": "#ffffff",
+        "strokeWidth": 1.5,
+        "color": "#7fb797"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "walkers",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              1250000
+            ],
+            "range": [
+              0,
+              3400
+            ]
+          },
+          "legend": {
+            "title": "Bush walkers",
+            "values": [
+              100000,
+              500000,
+              1200000
+            ],
+            "format": ".2s",
+            "orient": "bottom",
+            "direction": "horizontal",
+            "symbolFillColor": "#7fb797",
+            "symbolStrokeColor": "#ffffff",
+            "labelOffset": 6,
+            "columnPadding": 28,
+            "symbolOpacity": 0.7
+          }
+        },
+        "tooltip": [
+          {
+            "field": "region_name",
+            "title": "State or territory"
+          },
+          {
+            "field": "walkers_txt",
+            "title": "Bush walkers"
+          },
+          {
+            "field": "rate_txt",
+            "title": "Share of adults"
+          },
+          {
+            "field": "share_txt",
+            "title": "Share of Australia"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/c03_symbol_map_bush_walkers.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "lon": "number",
+            "lat": "number",
+            "rate_pct": "number",
+            "walkers": "number",
+            "motive_outdoors_pct": "number",
+            "share_of_all_walkers_pct": "number"
+          }
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.walkers >= 400000"
+        },
+        {
+          "calculate": "datum.region + ' ' + format(datum.walkers, '.2s')",
+          "as": "label"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": 600,
+        "color": "#1d1d1f"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/c03_symbol_map_bush_walkers.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "lon": "number",
+            "lat": "number",
+            "rate_pct": "number",
+            "walkers": "number",
+            "motive_outdoors_pct": "number",
+            "share_of_all_walkers_pct": "number"
+          }
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.walkers < 400000 && datum.region != 'ACT'"
+        },
+        {
+          "calculate": "datum.region + ' ' + format(datum.walkers, '.2s')",
+          "as": "label"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": 600,
+        "color": "#1d1d1f",
+        "dy": 24
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/c03_symbol_map_bush_walkers.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "lon": "number",
+            "lat": "number",
+            "rate_pct": "number",
+            "walkers": "number",
+            "motive_outdoors_pct": "number",
+            "share_of_all_walkers_pct": "number"
+          }
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.region == 'ACT'"
+        },
+        {
+          "calculate": "[datum.region, format(datum.walkers, '.2s')]",
+          "as": "label"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": 600,
+        "color": "#1d1d1f",
+        "align": "left",
+        "dx": 12,
+        "baseline": "middle",
+        "lineHeight": 13
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "lon": 112.8,
+            "lat": -41.8,
+            "t": "NSW, VIC and QLD hold three in four walkers"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "fontSize": 11,
+        "color": "#6e6e73"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "t"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,453 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {
+    "text": {
+      "expr": "activity == 'Bush walking' ? ['Bush walking: highest in Tasmania,', 'lowest in South Australia'] : activity == 'Canoeing and kayaking' ? ['Canoeing and kayaking: highest in Tasmania,', 'lowest in Victoria'] : activity == 'Diving and snorkelling' ? ['Diving and snorkelling: highest in the NT,', 'lowest in New South Wales'] : activity == 'Equestrian' ? ['Equestrian: highest in the NT,', 'lowest in South Australia'] : activity == 'Fishing' ? ['Fishing: highest in the NT,', 'lowest in the ACT'] : activity == 'Mountain biking' ? ['Mountain biking: highest in Tasmania,', 'lowest in Victoria'] : activity == 'Rock climbing and caving' ? ['Rock climbing and caving: highest in the ACT,', 'lowest in South Australia'] : activity == 'Rowing' ? ['Rowing: highest in the ACT,', 'lowest in the NT'] : activity == 'Sailing' ? ['Sailing: highest in Tasmania,', 'lowest in South Australia'] : activity == 'Skiing and snowboarding' ? ['Skiing and snowboarding: highest in the ACT,', 'lowest in South Australia'] : activity == 'Surfing' ? ['Surfing: highest in Western Australia,', 'lowest in the NT'] : ['', '']"
+    },
+    "subtitle": [
+      "Share of adults who did the activity in 2025.",
+      "Choose an activity to redraw the map."
+    ]
+  },
+  "width": "container",
+  "height": 365,
+  "params": [
+    {
+      "name": "activity",
+      "value": "Bush walking",
+      "bind": {
+        "input": "select",
+        "name": "Activity ",
+        "element": "#c02-control",
+        "options": [
+          "Bush walking",
+          "Surfing",
+          "Fishing",
+          "Canoeing and kayaking",
+          "Skiing and snowboarding",
+          "Mountain biking",
+          "Diving and snorkelling",
+          "Rowing",
+          "Rock climbing and caving",
+          "Equestrian",
+          "Sailing"
+        ]
+      }
+    }
+  ],
+  "projection": {
+    "type": "conicEqualArea",
+    "parallels": [
+      -18,
+      -36
+    ],
+    "rotate": [
+      -132,
+      0
+    ]
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "data/c02_choropleth_state_activity.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "rate_pct": "number",
+            "participants": "number",
+            "state_rank": "number",
+            "national_rate_pct": "number",
+            "vs_national_pts": "number"
+          }
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.activity_label == activity"
+        },
+        {
+          "lookup": "region_name",
+          "from": {
+            "data": {
+              "url": "data/geo/australian-states.topojson",
+              "format": {
+                "type": "topojson",
+                "feature": "states"
+              }
+            },
+            "key": "properties.STATE_NAME"
+          },
+          "as": "geo"
+        },
+        {
+          "calculate": "(datum.rate_pct < 1 ? format(datum.rate_pct, '.2f') : format(datum.rate_pct, '.1f')) + '%'",
+          "as": "rate_txt"
+        },
+        {
+          "calculate": "format(datum.participants, ',')",
+          "as": "people_txt"
+        },
+        {
+          "calculate": "datum.state_rank + ' of 8'",
+          "as": "rank_txt"
+        },
+        {
+          "calculate": "(datum.vs_national_pts > 0 ? '+' : '') + format(datum.vs_national_pts, '.1f') + ' points (Australia ' + format(datum.national_rate_pct, '.1f') + '%)'",
+          "as": "vs_txt"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#ffffff",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "shape": {
+          "field": "geo",
+          "type": "geojson"
+        },
+        "color": {
+          "field": "rate_class",
+          "type": "ordinal",
+          "scale": {
+            "domain": {
+              "expr": "activity == 'Bush walking' ? ['15.4–17.8%', '17.8–20.2%', '20.2–22.7%', '22.7–25.1%', '25.1–27.5%'] : activity == 'Canoeing and kayaking' ? ['0.8–1.0%', '1.0–1.3%', '1.3–1.6%', '1.6–1.8%', '1.8–2.1%'] : activity == 'Equestrian' ? ['0.2–0.5%', '0.5–0.7%', '0.7–1.0%', '1.0–1.3%', '1.3–1.6%'] : activity == 'Fishing' ? ['0.2–0.5%', '0.5–0.7%', '0.7–1.0%', '1.0–1.3%', '1.3–1.5%'] : activity == 'Mountain biking' ? ['0.5–0.8%', '0.8–1.0%', '1.0–1.3%', '1.3–1.5%', '1.5–1.8%'] : activity == 'Rock climbing and caving' ? ['0.17–0.25%', '0.25–0.34%', '0.34–0.42%', '0.42–0.51%', '0.51–0.59%'] : activity == 'Rowing' ? ['0.4–0.6%', '0.6–0.8%', '0.8–0.9%', '0.9–1.1%', '1.1–1.2%'] : activity == 'Sailing' ? ['0.11–0.22%', '0.22–0.33%', '0.33–0.45%', '0.45–0.56%', '0.56–0.67%'] : activity == 'Skiing and snowboarding' ? ['0.3–0.6%', '0.6–0.9%', '0.9–1.2%', '1.2–1.5%', '1.5–1.8%'] : activity == 'Surfing' ? ['0.2–0.5%', '0.5–0.8%', '0.8–1.1%', '1.1–1.5%', '1.5–1.8%'] : activity == 'Diving and snorkelling' ? ['0.7–1.1%', '1.1–1.4%', '1.4–1.8%', '1.8–2.2%', '2.2–2.6%'] : []"
+            },
+            "range": [
+              "#e8f2ec",
+              "#b9d9c6",
+              "#7fb797",
+              "#3f8a63",
+              "#1f5a3d"
+            ]
+          },
+          "legend": {
+            "title": "% of adults, five equal steps",
+            "orient": "top",
+            "direction": "horizontal",
+            "type": "symbol",
+            "symbolType": "square",
+            "symbolSize": 150,
+            "symbolStrokeColor": "#c7c7cc",
+            "symbolStrokeWidth": 0.5,
+            "labelLimit": 220,
+            "columnPadding": 14,
+            "columns": 3,
+            "rowPadding": 4,
+            "titleLimit": 420
+          }
+        },
+        "tooltip": [
+          {
+            "field": "region_name",
+            "title": "State or territory"
+          },
+          {
+            "field": "rate_txt",
+            "title": "Share of adults"
+          },
+          {
+            "field": "people_txt",
+            "title": "Estimated participants"
+          },
+          {
+            "field": "rank_txt",
+            "title": "Rank"
+          },
+          {
+            "field": "vs_txt",
+            "title": "Compared with Australia"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/c02_choropleth_state_activity.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "rate_pct": "number",
+            "participants": "number",
+            "state_rank": "number",
+            "national_rate_pct": "number",
+            "vs_national_pts": "number"
+          }
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.activity_label == activity && datum.region == 'ACT'"
+        },
+        {
+          "calculate": "149.13",
+          "as": "lon"
+        },
+        {
+          "calculate": "-35.28",
+          "as": "lat"
+        },
+        {
+          "calculate": "(datum.rate_pct < 1 ? format(datum.rate_pct, '.2f') : format(datum.rate_pct, '.1f')) + '%'",
+          "as": "rate_txt"
+        },
+        {
+          "calculate": "format(datum.participants, ',')",
+          "as": "people_txt"
+        },
+        {
+          "calculate": "datum.state_rank + ' of 8'",
+          "as": "rank_txt"
+        },
+        {
+          "calculate": "(datum.vs_national_pts > 0 ? '+' : '') + format(datum.vs_national_pts, '.1f') + ' points (Australia ' + format(datum.national_rate_pct, '.1f') + '%)'",
+          "as": "vs_txt"
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "size": 300,
+        "stroke": "#ffffff",
+        "strokeWidth": 1.5,
+        "opacity": 1
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "rate_class",
+          "type": "ordinal",
+          "scale": {
+            "domain": {
+              "expr": "activity == 'Bush walking' ? ['15.4–17.8%', '17.8–20.2%', '20.2–22.7%', '22.7–25.1%', '25.1–27.5%'] : activity == 'Canoeing and kayaking' ? ['0.8–1.0%', '1.0–1.3%', '1.3–1.6%', '1.6–1.8%', '1.8–2.1%'] : activity == 'Equestrian' ? ['0.2–0.5%', '0.5–0.7%', '0.7–1.0%', '1.0–1.3%', '1.3–1.6%'] : activity == 'Fishing' ? ['0.2–0.5%', '0.5–0.7%', '0.7–1.0%', '1.0–1.3%', '1.3–1.5%'] : activity == 'Mountain biking' ? ['0.5–0.8%', '0.8–1.0%', '1.0–1.3%', '1.3–1.5%', '1.5–1.8%'] : activity == 'Rock climbing and caving' ? ['0.17–0.25%', '0.25–0.34%', '0.34–0.42%', '0.42–0.51%', '0.51–0.59%'] : activity == 'Rowing' ? ['0.4–0.6%', '0.6–0.8%', '0.8–0.9%', '0.9–1.1%', '1.1–1.2%'] : activity == 'Sailing' ? ['0.11–0.22%', '0.22–0.33%', '0.33–0.45%', '0.45–0.56%', '0.56–0.67%'] : activity == 'Skiing and snowboarding' ? ['0.3–0.6%', '0.6–0.9%', '0.9–1.2%', '1.2–1.5%', '1.5–1.8%'] : activity == 'Surfing' ? ['0.2–0.5%', '0.5–0.8%', '0.8–1.1%', '1.1–1.5%', '1.5–1.8%'] : activity == 'Diving and snorkelling' ? ['0.7–1.1%', '1.1–1.4%', '1.4–1.8%', '1.8–2.2%', '2.2–2.6%'] : []"
+            },
+            "range": [
+              "#e8f2ec",
+              "#b9d9c6",
+              "#7fb797",
+              "#3f8a63",
+              "#1f5a3d"
+            ]
+          }
+        },
+        "tooltip": [
+          {
+            "field": "region_name",
+            "title": "State or territory"
+          },
+          {
+            "field": "rate_txt",
+            "title": "Share of adults"
+          },
+          {
+            "field": "people_txt",
+            "title": "Estimated participants"
+          },
+          {
+            "field": "rank_txt",
+            "title": "Rank"
+          },
+          {
+            "field": "vs_txt",
+            "title": "Compared with Australia"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/c02_choropleth_state_activity.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "rate_pct": "number",
+            "participants": "number",
+            "state_rank": "number",
+            "national_rate_pct": "number",
+            "vs_national_pts": "number"
+          }
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.activity_label == activity && datum.region != 'ACT'"
+        },
+        {
+          "lookup": "region_name",
+          "from": {
+            "data": {
+              "url": "data/c03_symbol_map_bush_walkers.csv",
+              "format": {
+                "type": "csv",
+                "parse": {
+                  "lon": "number",
+                  "lat": "number",
+                  "rate_pct": "number",
+                  "walkers": "number",
+                  "motive_outdoors_pct": "number",
+                  "share_of_all_walkers_pct": "number"
+                }
+              }
+            },
+            "key": "region_name",
+            "fields": [
+              "lon",
+              "lat"
+            ]
+          }
+        },
+        {
+          "calculate": "datum.rate_pct >= 10 ? format(datum.rate_pct, '.0f') + '%' : format(datum.rate_pct, '.1f') + '%'",
+          "as": "label"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": 600
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.rate_class_order >= 3",
+            "value": "#ffffff"
+          },
+          "value": "#1d1d1f"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/c02_choropleth_state_activity.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "rate_pct": "number",
+            "participants": "number",
+            "state_rank": "number",
+            "national_rate_pct": "number",
+            "vs_national_pts": "number"
+          }
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.activity_label == activity && datum.region == 'ACT'"
+        },
+        {
+          "calculate": "149.13",
+          "as": "lon"
+        },
+        {
+          "calculate": "-35.28",
+          "as": "lat"
+        },
+        {
+          "calculate": "['ACT', (datum.rate_pct >= 10 ? format(datum.rate_pct, '.0f') : format(datum.rate_pct, '.1f')) + '%']",
+          "as": "label"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": 600,
+        "align": "left",
+        "dx": 12,
+        "color": "#1d1d1f",
+        "baseline": "middle",
+        "lineHeight": 13
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/c02_choropleth_state_activity.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "rate_pct": "number",
+            "participants": "number",
+            "state_rank": "number",
+            "national_rate_pct": "number",
+            "vs_national_pts": "number"
+          }
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.activity_label == activity"
+        },
+        {
+          "aggregate": [
+            {
+              "op": "max",
+              "field": "national_rate_pct",
+              "as": "nat"
+            }
+          ]
+        },
+        {
+          "calculate": "'Australia overall: ' + format(datum.nat, datum.nat >= 1 ? '.1f' : '.2f') + '%'",
+          "as": "t"
+        },
+        {
+          "calculate": "112.8",
+          "as": "lon"
+        },
+        {
+          "calculate": "-41.8",
+          "as": "lat"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "fontSize": 11,
+        "color": "#6e6e73"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "t"
+        }
+      }
+    }
+  ]
+}

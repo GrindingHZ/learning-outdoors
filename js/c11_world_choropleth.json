@@ -1,0 +1,337 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {
+    "text": "Australian 15 year olds rank 11th of 85 in environmental science",
+    "subtitle": "PISA 2025 environmental science score. The three darker greens are at or above the OECD average of 480. Grey: did not take part."
+  },
+  "width": "container",
+  "height": 410,
+  "projection": {
+    "type": "equalEarth"
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "data/geo/world-110m.json",
+        "format": {
+          "type": "topojson",
+          "feature": "countries"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.id != 10"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "fill": "#ebebef",
+        "stroke": "#ffffff",
+        "strokeWidth": 0.5
+      }
+    },
+    {
+      "data": {
+        "url": "data/c11_world_choropleth_pisa.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "iso_num": "number",
+            "env_science_mean": "number",
+            "vs_oecd_pts": "number",
+            "rank_env_science": "number",
+            "pct_level2_or_above": "number"
+          }
+        }
+      },
+      "transform": [
+        {
+          "filter": "isValid(datum.env_science_mean) && datum.iso_num != 156 && datum.iso_num != 804"
+        },
+        {
+          "lookup": "iso_num",
+          "from": {
+            "data": {
+              "url": "data/geo/world-110m.json",
+              "format": {
+                "type": "topojson",
+                "feature": "countries"
+              }
+            },
+            "key": "id"
+          },
+          "as": "geo"
+        },
+        {
+          "filter": "isValid(datum.geo)"
+        },
+        {
+          "calculate": "format(datum.env_science_mean, '.0f') + ' points'",
+          "as": "score_txt"
+        },
+        {
+          "calculate": "(datum.vs_oecd_pts > 0 ? '+' : '') + format(datum.vs_oecd_pts, '.0f') + ' points'",
+          "as": "vs_txt"
+        },
+        {
+          "calculate": "format(datum.rank_env_science, 'd') + ' of 85'",
+          "as": "rank_txt"
+        },
+        {
+          "calculate": "format(datum.pct_level2_or_above, '.1f') + '%'",
+          "as": "lvl_txt"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#ffffff",
+        "strokeWidth": 0.5
+      },
+      "encoding": {
+        "shape": {
+          "field": "geo",
+          "type": "geojson"
+        },
+        "color": {
+          "field": "score_class",
+          "type": "ordinal",
+          "scale": {
+            "domain": [
+              "Under 400",
+              "400–480",
+              "480–520",
+              "520–560",
+              "560 or more"
+            ],
+            "range": [
+              "#cfe4d6",
+              "#a9d0b8",
+              "#5f9f7d",
+              "#3a8560",
+              "#1f5a3d"
+            ]
+          },
+          "legend": {
+            "title": "Environmental science score (OECD average 480)",
+            "orient": "top",
+            "direction": "horizontal",
+            "type": "symbol",
+            "symbolType": "square",
+            "symbolSize": 150,
+            "symbolStrokeColor": "#c7c7cc",
+            "symbolStrokeWidth": 0.5,
+            "labelLimit": 220,
+            "columnPadding": 14,
+            "titleLimit": 420
+          }
+        },
+        "tooltip": [
+          {
+            "field": "display_name",
+            "title": "Country or economy"
+          },
+          {
+            "field": "score_txt",
+            "title": "Score"
+          },
+          {
+            "field": "vs_txt",
+            "title": "Compared with OECD average"
+          },
+          {
+            "field": "rank_txt",
+            "title": "Rank"
+          },
+          {
+            "field": "lvl_txt",
+            "title": "Students at baseline level or above"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/c11_world_choropleth_pisa.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "iso_num": "number",
+            "env_science_mean": "number",
+            "vs_oecd_pts": "number",
+            "rank_env_science": "number",
+            "pct_level2_or_above": "number"
+          }
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.iso_num == 702 || datum.iso_num == 344 || datum.iso_num == 446 || datum.iso_num == 156 || datum.iso_num == 804"
+        },
+        {
+          "lookup": "iso_num",
+          "from": {
+            "data": {
+              "values": [
+                {
+                  "k": 702,
+                  "lon": 103.82,
+                  "lat": 1.35
+                },
+                {
+                  "k": 344,
+                  "lon": 115.8,
+                  "lat": 22.8
+                },
+                {
+                  "k": 446,
+                  "lon": 111.8,
+                  "lat": 21.6
+                },
+                {
+                  "k": 156,
+                  "lon": 119.5,
+                  "lat": 33.3
+                },
+                {
+                  "k": 804,
+                  "lon": 31.2,
+                  "lat": 49.0
+                }
+              ]
+            },
+            "key": "k",
+            "fields": [
+              "lon",
+              "lat"
+            ]
+          }
+        },
+        {
+          "calculate": "format(datum.env_science_mean, '.0f') + ' points'",
+          "as": "score_txt"
+        },
+        {
+          "calculate": "(datum.vs_oecd_pts > 0 ? '+' : '') + format(datum.vs_oecd_pts, '.0f') + ' points'",
+          "as": "vs_txt"
+        },
+        {
+          "calculate": "format(datum.rank_env_science, 'd') + ' of 85'",
+          "as": "rank_txt"
+        },
+        {
+          "calculate": "format(datum.pct_level2_or_above, '.1f') + '%'",
+          "as": "lvl_txt"
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "size": 46,
+        "stroke": "#6e6e73",
+        "strokeWidth": 0.8,
+        "opacity": 1
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "score_class",
+          "type": "ordinal",
+          "scale": {
+            "domain": [
+              "Under 400",
+              "400–480",
+              "480–520",
+              "520–560",
+              "560 or more"
+            ],
+            "range": [
+              "#cfe4d6",
+              "#a9d0b8",
+              "#5f9f7d",
+              "#3a8560",
+              "#1f5a3d"
+            ]
+          }
+        },
+        "tooltip": [
+          {
+            "field": "display_name",
+            "title": "Country or economy"
+          },
+          {
+            "field": "score_txt",
+            "title": "Score"
+          },
+          {
+            "field": "vs_txt",
+            "title": "Compared with OECD average"
+          },
+          {
+            "field": "rank_txt",
+            "title": "Rank"
+          },
+          {
+            "field": "lvl_txt",
+            "title": "Students at baseline level or above"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/geo/world-110m.json",
+        "format": {
+          "type": "topojson",
+          "feature": "countries"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.id == 36"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "fill": null,
+        "stroke": "#d95f02",
+        "strokeWidth": 2
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "lon": 126,
+            "lat": -49,
+            "t": "Australia: 510 points, 11th of 85"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "fontWeight": 600,
+        "color": "#d95f02"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "t"
+        }
+      }
+    }
+  ]
+}
