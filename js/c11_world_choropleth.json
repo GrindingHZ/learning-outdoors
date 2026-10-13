@@ -165,37 +165,47 @@
       },
       "transform": [
         {
-          "filter": "datum.iso_num == 702 || datum.iso_num == 344 || datum.iso_num == 446 || datum.iso_num == 156 || datum.iso_num == 804"
+          "filter": "indexof(['SGP', 'HKG', 'MAC', 'CHN', 'UKR', 'MLT', 'XKX'], datum.iso3) >= 0"
         },
         {
-          "lookup": "iso_num",
+          "lookup": "iso3",
           "from": {
             "data": {
               "values": [
                 {
-                  "k": 702,
+                  "k": "SGP",
                   "lon": 103.82,
                   "lat": 1.35
                 },
                 {
-                  "k": 344,
+                  "k": "HKG",
                   "lon": 115.8,
                   "lat": 22.8
                 },
                 {
-                  "k": 446,
+                  "k": "MAC",
                   "lon": 111.8,
                   "lat": 21.6
                 },
                 {
-                  "k": 156,
+                  "k": "CHN",
                   "lon": 119.5,
                   "lat": 33.3
                 },
                 {
-                  "k": 804,
+                  "k": "UKR",
                   "lon": 31.2,
                   "lat": 49.0
+                },
+                {
+                  "k": "MLT",
+                  "lon": 14.4,
+                  "lat": 35.9
+                },
+                {
+                  "k": "XKX",
+                  "lon": 20.9,
+                  "lat": 42.6
                 }
               ]
             },
