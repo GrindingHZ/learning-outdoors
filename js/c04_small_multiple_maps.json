@@ -86,7 +86,7 @@
     "column": 18
   },
   "spec": {
-    "width": 277,
+    "width": 276,
     "height": 220,
     "projection": {
       "type": "conicEqualArea",
