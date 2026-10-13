@@ -115,6 +115,11 @@
             "symbolStrokeWidth": 1
           }
         },
+        "order": {
+          "field": "walkers",
+          "type": "quantitative",
+          "sort": "descending"
+        },
         "tooltip": [
           {
             "field": "region_name",
