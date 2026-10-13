@@ -6,9 +6,7 @@
     "offset": 79
   },
   "width": "container",
-  "height": {
-    "step": 30
-  },
+  "height": 390,
   "data": {
     "url": "data/c06_heatmap_age_profile.csv",
     "format": {

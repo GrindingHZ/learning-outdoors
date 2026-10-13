@@ -6,9 +6,7 @@
     "offset": 51
   },
   "width": "container",
-  "height": {
-    "step": 34
-  },
+  "height": 272,
   "data": {
     "url": "data/c10_dumbbell_places.csv",
     "format": {

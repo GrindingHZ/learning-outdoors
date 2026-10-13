@@ -6,9 +6,7 @@
     "offset": 45
   },
   "width": "container",
-  "height": {
-    "step": 22
-  },
+  "height": 550,
   "data": {
     "url": "data/c05_strip_all_activities.csv",
     "format": {

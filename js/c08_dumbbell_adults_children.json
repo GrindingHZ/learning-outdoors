@@ -6,9 +6,7 @@
     "offset": 51
   },
   "width": "container",
-  "height": {
-    "step": 26
-  },
+  "height": 416,
   "data": {
     "url": "data/c08_dumbbell_adults_vs_children.csv",
     "format": {
