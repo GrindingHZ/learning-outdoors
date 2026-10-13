@@ -163,7 +163,8 @@
               "country"
             ],
             "on": "mouseover",
-            "clear": "mouseout"
+            "clear": "mouseout",
+            "nearest": true
           }
         }
       ],
