@@ -72,9 +72,9 @@
       "mark": {
         "type": "circle",
         "opacity": 0.7,
-        "stroke": "#ffffff",
-        "strokeWidth": 1.5,
-        "color": "#7fb797"
+        "fill": "#7fb797",
+        "stroke": "#3f8a63",
+        "strokeWidth": 1
       },
       "encoding": {
         "longitude": {
@@ -109,10 +109,10 @@
             "orient": "bottom",
             "direction": "horizontal",
             "symbolFillColor": "#7fb797",
-            "symbolStrokeColor": "#ffffff",
             "labelOffset": 6,
             "columnPadding": 28,
-            "symbolOpacity": 0.7
+            "symbolOpacity": 0.7,
+            "symbolStrokeWidth": 1
           }
         },
         "tooltip": [
