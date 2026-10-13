@@ -172,7 +172,29 @@
             "value": "#ffffff"
           },
           "value": "#1d1d1f"
-        }
+        },
+        "tooltip": [
+          {
+            "field": "activity_label",
+            "title": "Activity"
+          },
+          {
+            "field": "age_label",
+            "title": "Age band"
+          },
+          {
+            "field": "label",
+            "title": "Share of this age band"
+          },
+          {
+            "field": "total_txt",
+            "title": "All adults"
+          },
+          {
+            "field": "index_txt",
+            "title": "Relative"
+          }
+        ]
       }
     },
     {
