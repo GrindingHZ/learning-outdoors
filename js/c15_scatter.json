@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "title": {
-    "text": "Where more students go on field trips, more want an environmental career",
+    "text": "Where more students go on field trips, more tend to want an environmental career",
     "subtitle": "Each dot is a country or economy in PISA 2025. The dashed line shows the overall direction. Drag across the chart to highlight a group."
   },
   "width": "container",
