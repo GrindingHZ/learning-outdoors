@@ -61,6 +61,10 @@
     {
       "calculate": "(datum.national_rate_pct < 1 ? format(datum.national_rate_pct, '.2f') : format(datum.national_rate_pct, '.1f')) + '%'",
       "as": "national_txt"
+    },
+    {
+      "calculate": "format(datum.index_vs_national, (datum.index_class_order == 0 && datum.index_vs_national >= 0.45) || (datum.index_class_order == 3 && datum.index_vs_national >= 1.95) ? '.2f' : '.1f') + 'x'",
+      "as": "index_txt"
     }
   ],
   "facet": {
@@ -154,7 +158,7 @@
               "title": "Activity"
             },
             {
-              "field": "index_label",
+              "field": "index_txt",
               "title": "Times the national rate"
             },
             {
@@ -189,7 +193,7 @@
             "type": "quantitative"
           },
           "text": {
-            "field": "index_label"
+            "field": "index_txt"
           },
           "color": {
             "condition": {
@@ -223,7 +227,7 @@
             "type": "quantitative"
           },
           "text": {
-            "field": "index_label"
+            "field": "index_txt"
           }
         }
       },
@@ -279,7 +283,7 @@
               "title": "Activity"
             },
             {
-              "field": "index_label",
+              "field": "index_txt",
               "title": "Times the national rate"
             },
             {
@@ -318,7 +322,7 @@
             "type": "quantitative"
           },
           "text": {
-            "field": "index_label"
+            "field": "index_txt"
           }
         }
       },
