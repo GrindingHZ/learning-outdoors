@@ -240,8 +240,6 @@
         "mark": {
           "type": "circle",
           "size": 90,
-          "stroke": "#ffffff",
-          "strokeWidth": 1.2,
           "opacity": 1
         },
         "encoding": {
@@ -273,6 +271,20 @@
               ]
             }
           },
+          "stroke": {
+            "condition": {
+              "test": "datum.index_class_order == 0 || datum.index_class_order == 4",
+              "value": "#ffffff"
+            },
+            "value": "#6e6e73"
+          },
+          "strokeWidth": {
+            "condition": {
+              "test": "datum.index_class_order == 0 || datum.index_class_order == 4",
+              "value": 1.2
+            },
+            "value": 0.8
+          },
           "tooltip": [
             {
               "field": "region_name",
@@ -300,7 +312,7 @@
       {
         "transform": [
           {
-            "filter": "datum.region == 'ACT' && (datum.index_vs_national >= 1.4 || datum.index_vs_national <= 0.7)"
+            "filter": "datum.region == 'ACT'"
           }
         ],
         "mark": {
