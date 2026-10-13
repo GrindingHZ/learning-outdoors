@@ -81,7 +81,7 @@ Datasets: two tables (AusPlay 2025 and PISA 2025) and spatial geometry (Australi
 | 10 | Place by cohort (categorical); share (quantitative) | Compare pairs | Two point marks joined by a line; position on a common scale; hue for cohort |
 | 11 | Country polygons; mean score (quantitative) | Locate Australia; summarise the world distribution | Area marks on an Equal Earth projection; luminance classes that break at the OECD average; outline and text annotate Australia |
 | 12 | 90 countries by four statements (categorical); share (quantitative) | Compare one item against the whole distribution; identify outliers | Line marks across parallel axes; vertical position; hue and luminance pop Australia and the OECD average out of the grey context; hover identifies a country |
-| 13 | 14 activities by two groups; share and gap (quantitative) | Compare two groups; find the largest differences | Line marks (slopes); position and slope; hue for the direction of the gap; stroke width for its size |
+| 13 | 14 activities by two groups; share and gap (quantitative) | Compare two groups; find the largest differences | Line marks (slopes); position and slope; hue for the direction of the gap; a thicker stroke where the gap is 5 points or more |
 | 14 | Three issues by two series by two years; share (quantitative) | Discover the direction and size of change | Arrow marks; position; length encodes the change and arrowhead direction its sign; hue for series |
 | 15 | 82 countries; two quantitative attributes | Discover correlation; locate Australia | Point marks; horizontal and vertical position; hue highlights Australia; trend line; a brush selects a group |
 
