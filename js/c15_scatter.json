@@ -217,6 +217,10 @@
           },
           "legend": null
         },
+        "order": {
+          "field": "who",
+          "sort": "descending"
+        },
         "opacity": {
           "condition": {
             "param": "brush",
