@@ -208,8 +208,6 @@
       "mark": {
         "type": "circle",
         "size": 300,
-        "stroke": "#ffffff",
-        "strokeWidth": 1.5,
         "opacity": 1
       },
       "encoding": {
@@ -236,6 +234,20 @@
               "#1f5a3d"
             ]
           }
+        },
+        "stroke": {
+          "condition": {
+            "test": "datum.rate_class_order >= 3",
+            "value": "#ffffff"
+          },
+          "value": "#6e6e73"
+        },
+        "strokeWidth": {
+          "condition": {
+            "test": "datum.rate_class_order >= 3",
+            "value": 1.5
+          },
+          "value": 0.8
         },
         "tooltip": [
           {
@@ -277,7 +289,7 @@
       },
       "transform": [
         {
-          "filter": "datum.activity_label == activity && datum.region != 'ACT'"
+          "filter": "datum.activity_label == activity && datum.region != 'ACT' && datum.region != 'TAS'"
         },
         {
           "lookup": "region_name",
@@ -331,6 +343,76 @@
             "value": "#ffffff"
           },
           "value": "#1d1d1f"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/c02_choropleth_state_activity.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "rate_pct": "number",
+            "participants": "number",
+            "state_rank": "number",
+            "national_rate_pct": "number",
+            "vs_national_pts": "number"
+          }
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.activity_label == activity && datum.region == 'TAS'"
+        },
+        {
+          "lookup": "region_name",
+          "from": {
+            "data": {
+              "url": "data/c03_symbol_map_bush_walkers.csv",
+              "format": {
+                "type": "csv",
+                "parse": {
+                  "lon": "number",
+                  "lat": "number",
+                  "rate_pct": "number",
+                  "walkers": "number",
+                  "motive_outdoors_pct": "number",
+                  "share_of_all_walkers_pct": "number"
+                }
+              }
+            },
+            "key": "region_name",
+            "fields": [
+              "lon",
+              "lat"
+            ]
+          }
+        },
+        {
+          "calculate": "format(datum.rate_pct, activity == 'Rock climbing and caving' || activity == 'Sailing' ? '.2f' : '.1f') + '%'",
+          "as": "label"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": 600,
+        "color": "#1d1d1f",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 20
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
         }
       }
     },
