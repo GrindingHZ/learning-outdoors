@@ -1,8 +1,14 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "title": {
-    "text": "Bush walking is 3rd. The next nature activity, surfing, is 19th.",
-    "subtitle": "The 25 most popular physical activities for adults: share who took part in the 12 months to December 2025.",
+    "text": [
+      "Bush walking ranks 3rd.",
+      "The next nature activity, surfing, is 19th."
+    ],
+    "subtitle": [
+      "The 25 most popular activities for adults.",
+      "Share who took part in 2025."
+    ],
     "offset": 45
   },
   "width": "container",
