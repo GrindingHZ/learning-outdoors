@@ -2,14 +2,16 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "title": {
     "text": [
-      "17 in 100 adults bush walk.",
-      "Just 1 in 100 children walk in a group."
+      "Out of every 100: 17 adults bush walk,",
+      "1 child walks in an organised group,",
+      "21 students go on field trips"
     ],
     "subtitle": [
       "Each figure is one person.",
-      "Adults: bush walked at least once in 2025.",
-      "Children 0–14: in an organised group, outside school.",
-      "15 year olds: teacher takes them on field trips."
+      "Adults: bush walked in 2025.",
+      "Children 0–14: in an organised group, outside school hours.",
+      "15 year olds: teacher takes them on field trips",
+      "to investigate environmental issues (PISA 2025)."
     ]
   },
   "data": {
