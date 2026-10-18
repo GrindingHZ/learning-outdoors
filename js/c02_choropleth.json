@@ -5,8 +5,9 @@
       "expr": "activity == 'Bush walking' ? ['Bush walking: highest in Tasmania,', 'lowest in South Australia'] : activity == 'Canoeing and kayaking' ? ['Canoeing and kayaking: highest in Tasmania,', 'lowest in Victoria'] : activity == 'Diving and snorkelling' ? ['Diving and snorkelling: highest in the NT,', 'lowest in New South Wales'] : activity == 'Equestrian' ? ['Equestrian: highest in the NT,', 'lowest in South Australia'] : activity == 'Fishing' ? ['Fishing: highest in the NT,', 'lowest in the ACT'] : activity == 'Mountain biking' ? ['Mountain biking: highest in Tasmania,', 'lowest in Victoria'] : activity == 'Rock climbing and caving' ? ['Rock climbing and caving: highest in the ACT,', 'lowest in South Australia'] : activity == 'Rowing' ? ['Rowing: highest in the ACT,', 'lowest in the NT'] : activity == 'Sailing' ? ['Sailing: highest in Tasmania,', 'lowest in South Australia'] : activity == 'Skiing and snowboarding' ? ['Skiing and snowboarding: highest in the ACT,', 'lowest in South Australia'] : activity == 'Surfing' ? ['Surfing: highest in Western Australia,', 'lowest in the NT'] : ['', '']"
     },
     "subtitle": [
-      "Share of adults who did the activity in 2025.",
-      "Choose an activity to redraw the map."
+      "Share of adults who did it in 2025.",
+      "Darker green means a bigger share.",
+      "Pick an activity to redraw the map."
     ]
   },
   "width": "container",
@@ -122,7 +123,7 @@
             ]
           },
           "legend": {
-            "title": "% of adults, five equal steps",
+            "title": "% of adults who did it",
             "orient": "top",
             "direction": "horizontal",
             "type": "symbol",
