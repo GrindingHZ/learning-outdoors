@@ -1,8 +1,15 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "title": {
-    "text": "Tasmania and the ACT stand out, with activities at more than twice the national rate",
-    "subtitle": "State rate divided by the national rate. 1.0x means the same as Australia overall."
+    "text": [
+      "Tasmania and the ACT stand out,",
+      "some activities at over twice the national rate"
+    ],
+    "subtitle": [
+      "Each state's rate compared with Australia's.",
+      "Green: more common there. Purple: less common.",
+      "2x means twice the national rate."
+    ]
   },
   "data": {
     "url": "data/c04_small_multiple_maps_index.csv",
@@ -135,7 +142,7 @@
               ]
             },
             "legend": {
-              "title": "Times the national rate",
+              "title": "Compared with Australia overall",
               "orient": "top",
               "direction": "horizontal",
               "type": "symbol",
@@ -145,7 +152,8 @@
               "symbolStrokeWidth": 0.5,
               "labelLimit": 220,
               "columnPadding": 14,
-              "titleLimit": 420
+              "titleLimit": 420,
+              "labelExpr": "{'Under 0.5x': 'Much less (under 0.5x)', '0.5–0.8x': 'Less (0.5–0.8x)', '0.8–1.25x, about average': 'About the same', '1.25–2x': 'More (1.25–2x)', '2x or more': 'Much more (2x or more)'}[datum.label]"
             }
           },
           "tooltip": [
@@ -159,7 +167,7 @@
             },
             {
               "field": "index_txt",
-              "title": "Times the national rate"
+              "title": "Compared with Australia overall"
             },
             {
               "field": "rate_txt",
@@ -296,7 +304,7 @@
             },
             {
               "field": "index_txt",
-              "title": "Times the national rate"
+              "title": "Compared with Australia overall"
             },
             {
               "field": "rate_txt",
