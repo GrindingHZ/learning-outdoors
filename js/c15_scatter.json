@@ -1,8 +1,15 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "title": {
-    "text": "Where more students go on field trips, more tend to want an environmental career",
-    "subtitle": "Each dot is a country or economy in PISA 2025. The dashed line shows the overall direction. Drag across the chart to highlight a group."
+    "text": [
+      "Countries with more field trips tend to have",
+      "more students wanting environmental careers"
+    ],
+    "subtitle": [
+      "Each dot is a country or economy (PISA 2025).",
+      "Dashed line: the overall trend.",
+      "Drag across the chart to highlight dots."
+    ]
   },
   "width": "container",
   "height": 480,
@@ -385,7 +392,10 @@
           "type": "quantitative"
         },
         "text": {
-          "value": "Few field trips and lower interest: Australia, the United Kingdom, the Netherlands"
+          "value": [
+            "Few field trips, lower interest:",
+            "Australia, the UK and the Netherlands"
+          ]
         }
       }
     }
