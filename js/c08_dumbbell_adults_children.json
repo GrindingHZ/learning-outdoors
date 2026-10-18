@@ -1,8 +1,15 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "title": {
-    "text": "Nature is what adults do. Football is what children do.",
-    "subtitle": "Adults: any participation. Children: organised activity outside school hours only. Each step along the axis is ten times more people.",
+    "text": [
+      "Nature is what adults do.",
+      "Football is what children do."
+    ],
+    "subtitle": [
+      "Adults: any participation.",
+      "Children: organised activity outside school only.",
+      "Each step right is ten times more people."
+    ],
     "offset": 51
   },
   "width": "container",
