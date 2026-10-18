@@ -1,10 +1,13 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "title": {
-    "text": "Australian schools lead on gardens and Indigenous knowledge, and lag on field work",
+    "text": [
+      "Australian schools lead on gardens and Indigenous knowledge,",
+      "but lag on field work"
+    ],
     "subtitle": [
-      "Share of students in schools that offer each activity frequently, principals' reports, PISA 2025.",
-      "Coloured lines differ from the OECD average by 5 points or more."
+      "Share of students whose school offers it often.",
+      "Principals' reports, PISA 2025."
     ],
     "offset": 51
   },
