@@ -1,8 +1,14 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "title": {
-    "text": "Adults are active in public space. Children are active at the club.",
-    "subtitle": "Share of participants whose activity took place at each kind of place, 2025. People can name more than one.",
+    "text": [
+      "Adults are active in public spaces.",
+      "Children are active at sports clubs."
+    ],
+    "subtitle": [
+      "Where people did their activity, 2025.",
+      "People could name more than one place."
+    ],
     "offset": 51
   },
   "width": "container",
@@ -244,7 +250,7 @@
           "type": "quantitative"
         },
         "text": {
-          "value": "Children's share is higher at clubs, schools and private venues"
+          "value": "Children lead at clubs, schools and private venues"
         }
       }
     }
