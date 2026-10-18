@@ -1,8 +1,15 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "title": {
-    "text": "Australian 15 year olds rank 11th of 85 in environmental science",
-    "subtitle": "PISA 2025 environmental science score. The three darker greens are at or above the OECD average of 480. Grey: no national score."
+    "text": [
+      "Australian 15 year olds rank 11th of 85",
+      "in environmental science"
+    ],
+    "subtitle": [
+      "Average environmental science score, PISA 2025.",
+      "Darker green means a higher score.",
+      "OECD average is 480. Grey: no national score."
+    ]
   },
   "width": "container",
   "height": 410,
@@ -112,7 +119,7 @@
             ]
           },
           "legend": {
-            "title": "Environmental science score (OECD average 480)",
+            "title": "Score (OECD average 480)",
             "orient": "top",
             "direction": "horizontal",
             "type": "symbol",
