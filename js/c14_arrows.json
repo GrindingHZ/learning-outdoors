@@ -1,8 +1,14 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "title": {
-    "text": "Fewer Australian students can explain greenhouse gases than in 2006",
-    "subtitle": "Share of 15 year olds who say they could explain the issue, PISA 2006 and 2025. Arrows point from 2006 to 2025.",
+    "text": [
+      "Fewer Australian students can explain",
+      "greenhouse gases than in 2006"
+    ],
+    "subtitle": [
+      "Students who say they could explain each issue.",
+      "Arrows point from 2006 to 2025."
+    ],
     "offset": 51
   },
   "width": "container",
