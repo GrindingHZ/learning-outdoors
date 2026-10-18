@@ -1,8 +1,15 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "title": {
-    "text": "Bush walking peaks at 35 to 44 and holds to 64. Running falls away after 34.",
-    "subtitle": "Participation in each age band relative to the activity's overall rate. Darker green means that age group is over-represented.",
+    "text": [
+      "Bush walking stays strong from 25 to 64.",
+      "Running drops away after 34."
+    ],
+    "subtitle": [
+      "Each number: % of that age band who do it.",
+      "Green: more common than for all adults.",
+      "Purple: less common than for all adults."
+    ],
     "offset": 79
   },
   "width": "container",
@@ -118,7 +125,7 @@
             "interpolate": "lab"
           },
           "legend": {
-            "title": "Times the activity's overall rate",
+            "title": "Compared with all adults",
             "orient": "none",
             "values": [
               0.4,
@@ -127,7 +134,7 @@
               1.3,
               1.6
             ],
-            "labelExpr": "(datum.value <= 0.4 ? '≤' : datum.value >= 1.6 ? '≥' : '') + format(datum.value, '.1f') + 'x'",
+            "labelExpr": "datum.value <= 0.4 ? 'Much less' : datum.value < 1 ? 'Less' : datum.value == 1 ? 'Same' : datum.value < 1.6 ? 'More' : 'Much more'",
             "gradientLength": 260,
             "legendX": -155,
             "legendY": -105
