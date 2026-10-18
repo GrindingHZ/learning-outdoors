@@ -6,8 +6,8 @@
       "walkers, nearly a third of the total"
     ],
     "subtitle": [
-      "Circle size is the number of adults who bush walked in 2025.",
-      "Read it against the share of adults on the left."
+      "Bigger circle means more bush walkers in 2025.",
+      "Compare with the share of adults on the left."
     ],
     "offset": 84
   },
@@ -99,7 +99,7 @@
             ]
           },
           "legend": {
-            "title": "Bush walkers",
+            "title": "Number of bush walkers",
             "values": [
               100000,
               500000,
@@ -127,7 +127,7 @@
           },
           {
             "field": "walkers_txt",
-            "title": "Bush walkers"
+            "title": "Number of bush walkers"
           },
           {
             "field": "rate_txt",
