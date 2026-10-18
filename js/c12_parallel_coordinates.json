@@ -1,10 +1,14 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "title": {
-    "text": "One in five Australian students is taken on field trips to investigate the environment",
+    "text": [
+      "Only 1 in 5 Australian students",
+      "is taken on environmental field trips"
+    ],
     "subtitle": [
-      "Share of students agreeing with each statement, PISA 2025. Each grey line is one of the other 89 countries and economies.",
-      "Hover a line to see which country it is."
+      "Share of students who agree, PISA 2025.",
+      "Orange: Australia. Dark grey: OECD average.",
+      "Light grey: 89 other countries. Hover to see which."
     ]
   },
   "width": "container",
