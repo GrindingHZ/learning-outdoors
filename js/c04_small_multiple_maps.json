@@ -6,9 +6,9 @@
       "some activities at over twice the national rate"
     ],
     "subtitle": [
-      "Each state's rate compared with Australia's.",
-      "Green: more common there. Purple: less common.",
-      "2x means twice the national rate."
+      "Each state's rate divided by the national rate.",
+      "1.0x means the same as Australia overall.",
+      "Green: more common there. Purple: less common."
     ]
   },
   "data": {
@@ -153,7 +153,7 @@
               "labelLimit": 220,
               "columnPadding": 14,
               "titleLimit": 420,
-              "labelExpr": "{'Under 0.5x': 'Much less (under 0.5x)', '0.5–0.8x': 'Less (0.5–0.8x)', '0.8–1.25x, about average': 'About the same', '1.25–2x': 'More (1.25–2x)', '2x or more': 'Much more (2x or more)'}[datum.label]"
+              "labelExpr": "{'Under 0.5x': 'Much less (under 0.5x)', '0.5–0.8x': 'Less (0.5–0.8x)', '0.8–1.25x, about average': 'About the same (0.8–1.25x)', '1.25–2x': 'More (1.25–2x)', '2x or more': 'Much more (2x or more)'}[datum.label]"
             }
           },
           "tooltip": [
