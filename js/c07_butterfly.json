@@ -1,10 +1,13 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "title": {
-    "text": "Most nature activities lean male. Bush walking and equestrian lean female.",
+    "text": [
+      "Most nature activities lean male.",
+      "Bush walking and equestrian lean female."
+    ],
     "subtitle": [
-      "Share of adults who did the activity in 2025. Women to the right, men to the left.",
-      "Bush walking's bars are cut short so the smaller activities stay readable; its values are labelled."
+      "Share of adults who did it in 2025.",
+      "Bush walking's bars are shortened; values are labelled."
     ]
   },
   "data": {
