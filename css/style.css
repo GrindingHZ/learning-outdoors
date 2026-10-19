@@ -200,6 +200,7 @@ figure.chart .vega-embed svg {
 }
 
 figure.chart figcaption {
+  max-width: 68ch;
   font-size: 13px;
   line-height: 1.45;
   color: var(--ink-2);
